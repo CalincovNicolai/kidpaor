@@ -30,6 +30,19 @@ Activity organizers are customers authorised to make payments.
 ### In Progress
 * Documentation (Writing the documentation for the idea selected: README, FRs, NFRs, Wiki, Backlog)
 
+## Future Plans
+* Design / UX / UI
+* Backend
+* Efficient Communication
+* Frontend
+* QA / Unit Testing
+* Soft Skills
+* Mobile
+* Project Management / Agile
+* DevOps
+* IoT
+* Public Speaking
+
 # Useful Links
 * [Repository](https://github.com/CalincovNicolai/kidpaor)
 * [README](https://github.com/CalincovNicolai/kidpaor/blob/master/README.md)
