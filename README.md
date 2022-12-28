@@ -34,6 +34,7 @@ Activity organizers are customers authorised to make payments.
 * [Repository](https://github.com/CalincovNicolai/kidpaor)
 * [README](https://github.com/CalincovNicolai/kidpaor/blob/master/README.md)
 * [Wiki Page](https://github.com/CalincovNicolai/kidpaor/wiki)
+* [GitHub Page](https://calincovnicolai.github.io/kidpaor/)
 * [Functional Requirements](https://github.com/CalincovNicolai/kidpaor/wiki/Functional-Requirements)
 * [Non-functional Requirements](https://github.com/CalincovNicolai/kidpaor/wiki/Non-Functional-Requirements)
 * [Backlog](https://github.com/users/CalincovNicolai/projects/4/views/1)
