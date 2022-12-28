@@ -32,7 +32,7 @@ Activity organizers are customers authorised to make payments.
 
 # Useful Links
 * [Repository](https://github.com/CalincovNicolai/kidpaor)
-* [README](https://www.google.com)
+* [README](https://github.com/CalincovNicolai/kidpaor/blob/master/README.md)
 * [Wiki Page](https://github.com/CalincovNicolai/kidpaor/wiki)
 * [Functional Requirements](https://github.com/CalincovNicolai/kidpaor/wiki/Functional-Requirements)
 * [Non-functional Requirements](https://github.com/CalincovNicolai/kidpaor/wiki/Non-Functional-Requirements)
