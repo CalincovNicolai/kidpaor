@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Core.Entities;
 using Kidpaor.Dtos;
-using Microsoft.Extensions.Configuration;
 
 namespace Kidpaor.Helpers;
 
