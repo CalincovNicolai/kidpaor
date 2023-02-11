@@ -1,4 +1,5 @@
 using Infrastructure.Data;
+using Kidpaor.Extensions;
 using Kidpaor.Middleware;
 using Microsoft.EntityFrameworkCore;
 
@@ -6,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddApplicationServices(builder.Configuration);
 
 var app = builder.Build();
 using (var scope = app.Services.CreateScope())
