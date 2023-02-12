@@ -4,6 +4,7 @@ using Core.Interfaces;
 using Core.Specifications;
 using Kidpaor.Dtos;
 using Kidpaor.Errors;
+using Kidpaor.Helpers;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kidpaor.Controllers;
@@ -25,12 +26,16 @@ public class ProductsController: BaseApiController
     }
 
     [HttpGet]
-    public async Task<ActionResult<IReadOnlyList<ProductToReturnDto>>> GetProducts()
+    public async Task<ActionResult<Pagination<ProductToReturnDto>>> GetProducts(
+        [FromQuery]ProductSpecParams productParams)
     {
-        var spec = new ProductsWithBrandsAndTypesSpecification();
-        
+        var spec = new ProductsWithBrandsAndTypesSpecification(productParams);
+        var countSpec = new ProductWithFiltersForCountSpecification(productParams);
+        var totalItems = await _productsRepo.CountAsync(countSpec);
         var products = await _productsRepo.ListAsync(spec);
-        return Ok(_mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products));
+        var data = _mapper.Map<IReadOnlyList<Product>, IReadOnlyList<ProductToReturnDto>>(products);
+        
+        return Ok(new Pagination<ProductToReturnDto>(productParams.PageIndex, productParams.PageSize, totalItems, data));
     }
     
     [HttpGet("{id}")]
