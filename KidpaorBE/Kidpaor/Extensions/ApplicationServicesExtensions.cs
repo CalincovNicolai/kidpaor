@@ -1,5 +1,7 @@
 ﻿using Core.Interfaces;
 using Infrastructure.Data;
+using Infrastructure.Identity;
+using Infrastructure.Services;
 using Kidpaor.Errors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -15,7 +17,10 @@ public static class ApplicationServicesExtensions
         services.AddSwaggerGen();
         services.AddEntityFrameworkNpgsql().AddDbContext<StoreContext>(opt =>
             opt.UseNpgsql(config.GetConnectionString("WebApiDatabase")));
+        services.AddEntityFrameworkNpgsql().AddDbContext<AppIdentityDbContext>(opt =>
+            opt.UseNpgsql(config.GetConnectionString("IdentityConnection")));
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<ITokenService, TokenService>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         services.Configure<ApiBehaviorOptions>(options =>

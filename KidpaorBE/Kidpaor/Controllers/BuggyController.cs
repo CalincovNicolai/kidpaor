@@ -1,5 +1,6 @@
 ﻿using Infrastructure.Data;
 using Kidpaor.Errors;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kidpaor.Controllers;
@@ -11,6 +12,13 @@ public class BuggyController : BaseApiController
     public BuggyController(StoreContext context)
     {
         _context = context;
+    }
+
+    [HttpGet("testauth")]
+    [Authorize]
+    public ActionResult<string> GetSecretText()
+    {
+        return "secret stuff";
     }
 
     [HttpGet("notfound")]
