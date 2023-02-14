@@ -4,7 +4,6 @@ using Core.Entities.Identity;
 using Core.Interfaces;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using JwtRegisteredClaimNames = Microsoft.IdentityModel.JsonWebTokens.JwtRegisteredClaimNames;
 
 namespace Infrastructure.Services;
 
@@ -23,8 +22,8 @@ public class TokenService : ITokenService
     {
         var claims = new List<Claim>
         {
-            new Claim(JwtRegisteredClaimNames.Email, user.Email),
-            new Claim(JwtRegisteredClaimNames.GivenName, user.DisplayName)
+            new Claim(ClaimTypes.Email, user.Email),
+            new Claim(ClaimTypes.GivenName, user.DisplayName)
         };
         
         var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
@@ -32,7 +31,7 @@ public class TokenService : ITokenService
         var tokenDescriptor = new SecurityTokenDescriptor
         {
             Subject = new ClaimsIdentity(claims),
-            Expires = System.DateTime.Now.AddDays(7),
+            Expires = DateTime.Now.AddDays(7),
             SigningCredentials = creds,
             Issuer = _configuration["Token:Issuer"]
         };

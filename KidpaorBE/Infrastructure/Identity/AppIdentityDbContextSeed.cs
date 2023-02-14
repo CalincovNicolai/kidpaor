@@ -9,6 +9,7 @@ public class AppIdentityDbContextSeed
     {
         if (!userManager.Users.Any())
         {
+        
             var user = new AppUser
             {
                 DisplayName = "Bob",
@@ -24,7 +25,7 @@ public class AppIdentityDbContextSeed
                     ZipCode = "90210"
                 }
             };
-            
+
             await userManager.CreateAsync(user, "Pa$$w0rd");
         }
     }
