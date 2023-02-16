@@ -21,6 +21,7 @@ public static class ApplicationServicesExtensions
             opt.UseNpgsql(config.GetConnectionString("IdentityConnection")));
         services.AddScoped<IProductRepository, ProductRepository>();
         services.AddScoped<IActivityRepository, ActivityRepository>();
+        services.AddScoped<IParentRepository, ParentRepository>();
         services.AddScoped<ITokenService, TokenService>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

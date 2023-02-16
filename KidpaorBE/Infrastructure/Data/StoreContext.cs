@@ -16,6 +16,8 @@ public class StoreContext: DbContext
     public DbSet<Activities> Activities { get; set; }
     public DbSet<ActivitiesCategories> ActivitiesCategories { get; set; }
     public DbSet<Organizers> Organizers { get; set; }
+    public DbSet<Parents> Parents { get; set; }
+    public DbSet<Kids> Kids { get; set; }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
