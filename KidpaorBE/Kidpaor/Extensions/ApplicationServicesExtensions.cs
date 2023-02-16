@@ -20,6 +20,7 @@ public static class ApplicationServicesExtensions
         services.AddEntityFrameworkNpgsql().AddDbContext<AppIdentityDbContext>(opt =>
             opt.UseNpgsql(config.GetConnectionString("IdentityConnection")));
         services.AddScoped<IProductRepository, ProductRepository>();
+        services.AddScoped<IActivityRepository, ActivityRepository>();
         services.AddScoped<ITokenService, TokenService>();
         services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
         services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
