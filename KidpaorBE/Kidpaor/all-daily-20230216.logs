@@ -1,0 +1,1114 @@
+2023-02-16 07:29:16.141 +02:00 [INF] Starting web application
+2023-02-16 07:29:17.579 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-02-16 07:29:17.588 +02:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2023-02-16 07:29:18.409 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-02-16 07:29:18.417 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-02-16 07:29:18.820 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'AppIdentityDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:29:18.880 +02:00 [DBG] Migrating using database 'identity-db' on server ''.
+2023-02-16 07:29:18.900 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.278 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.288 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.298 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.317 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:29:19.331 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (11ms).
+2023-02-16 07:29:19.338 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.436 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.450 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:19.569 +02:00 [INF] Executed DbCommand (120ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:19.576 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.581 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.589 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.670 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.676 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.678 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.681 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:29:19.683 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 07:29:19.685 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.687 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.691 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:19.699 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:19.704 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.707 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.727 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:29:19.731 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-02-16 07:29:19.733 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.735 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.740 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:29:19.751 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:29:19.771 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:29:19.773 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.778 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:19.796 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:29:19.864 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:29:19.871 +02:00 [DBG] Migrating using database 'kidpaor-db' on server ''.
+2023-02-16 07:29:19.873 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:19.974 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.978 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:19.981 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:19.983 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:29:19.985 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 07:29:19.987 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.060 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.064 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:20.074 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:20.077 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.079 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.082 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.158 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.160 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.162 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.165 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:29:20.167 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 07:29:20.169 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.172 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.174 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:20.179 +02:00 [INF] Executed DbCommand (5ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:29:20.185 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.187 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.190 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:29:20.192 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-02-16 07:29:20.194 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.195 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.197 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:29:20.206 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:29:20.210 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:29:20.211 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.213 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:29:20.217 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:29:20.265 +02:00 [DBG] Compiling query expression: 
+'DbSet<AppUser>()
+    .Any()'
+2023-02-16 07:29:20.476 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetUsers AS a)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Identity.AppIdentityDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-02-16 07:29:20.512 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:29:20.516 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-02-16 07:29:20.520 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:29:20.523 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.525 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:29:20.535 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:29:20.543 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:29:20.547 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:29:20.550 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:29:20.553 +02:00 [DBG] 'AppIdentityDbContext' disposed.
+2023-02-16 07:29:20.556 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:29:20.612 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-02-16 07:29:20.678 +02:00 [DBG] Hosting starting
+2023-02-16 07:29:20.707 +02:00 [INF] User profile is available. Using 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-16 07:29:20.713 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-2f49e022-c3ed-4a3b-8778-7197c134b3d1.xml'.
+2023-02-16 07:29:20.736 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-6553ee41-ca41-4ddf-a8dc-505dc652d171.xml'.
+2023-02-16 07:29:20.764 +02:00 [DBG] Found key {2f49e022-c3ed-4a3b-8778-7197c134b3d1}.
+2023-02-16 07:29:20.771 +02:00 [DBG] Found key {6553ee41-ca41-4ddf-a8dc-505dc652d171}.
+2023-02-16 07:29:20.785 +02:00 [DBG] Considering key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} with expiration date 2023-05-04 10:41:56Z as default key.
+2023-02-16 07:29:20.789 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:29:20.792 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-02-16 07:29:20.796 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:29:20.799 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-02-16 07:29:20.806 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-02-16 07:29:20.814 +02:00 [DBG] Using key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} as the default key.
+2023-02-16 07:29:20.817 +02:00 [DBG] Key ring with default key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} was loaded during application startup.
+2023-02-16 07:29:20.947 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 7F6462739130C51876E3AD75A098B0572C15D4D6)
+2023-02-16 07:29:20.990 +02:00 [INF] Now listening on: https://localhost:7275
+2023-02-16 07:29:20.993 +02:00 [INF] Now listening on: http://localhost:5151
+2023-02-16 07:29:20.995 +02:00 [DBG] Loaded hosting startup assembly Kidpaor
+2023-02-16 07:29:20.996 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-16 07:29:20.997 +02:00 [INF] Hosting environment: Development
+2023-02-16 07:29:20.999 +02:00 [INF] Content root path: D:\JTOM\kidpaor\KidpaorBE\Kidpaor\
+2023-02-16 07:29:21.002 +02:00 [DBG] Hosting started
+2023-02-16 07:31:20.591 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:31:20.861 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:31:25.328 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:31:25.584 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:31:50.634 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:31:50.896 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:32:44.352 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:32:44.620 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:32:55.122 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:32:55.388 +02:00 [DBG] Config reload token fired. Checking for changes...
+2023-02-16 07:32:57.301 +02:00 [INF] Application is shutting down...
+2023-02-16 07:32:57.306 +02:00 [DBG] Hosting stopping
+2023-02-16 07:32:57.324 +02:00 [DBG] Hosting stopped
+2023-02-16 07:33:04.982 +02:00 [INF] Starting web application
+2023-02-16 07:33:05.860 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-02-16 07:33:05.868 +02:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2023-02-16 07:33:06.683 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-02-16 07:33:06.687 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-02-16 07:33:07.342 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'AppIdentityDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:33:07.398 +02:00 [DBG] Migrating using database 'identity-db' on server ''.
+2023-02-16 07:33:07.413 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:07.732 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:07.741 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:07.751 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:07.795 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:33:07.810 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (12ms).
+2023-02-16 07:33:07.819 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:07.920 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:07.934 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.053 +02:00 [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.061 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.065 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.075 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.146 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.150 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.152 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.155 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:33:08.157 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 07:33:08.160 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.163 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.165 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.173 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.179 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.181 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.202 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:33:08.205 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-02-16 07:33:08.208 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.210 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.213 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:33:08.222 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:33:08.239 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:33:08.242 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.244 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:08.262 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:33:08.328 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:33:08.332 +02:00 [DBG] Migrating using database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.335 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.559 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.562 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.565 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.568 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:33:08.572 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2023-02-16 07:33:08.577 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.699 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.703 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.715 +02:00 [INF] Executed DbCommand (12ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.718 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.721 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.726 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.862 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.865 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.869 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.873 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:33:08.875 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 07:33:08.879 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.882 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.890 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.896 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:33:08.902 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.906 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.912 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:33:08.918 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2023-02-16 07:33:08.922 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.927 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.932 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:33:08.940 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:33:08.948 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:33:08.949 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:08.953 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:33:08.958 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:33:09.033 +02:00 [DBG] Compiling query expression: 
+'DbSet<AppUser>()
+    .Any()'
+2023-02-16 07:33:09.310 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetUsers AS a)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Identity.AppIdentityDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-02-16 07:33:09.350 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:33:09.352 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-02-16 07:33:09.357 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:33:09.361 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:09.364 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:33:09.372 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:33:09.379 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:33:09.382 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:33:09.384 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:33:09.391 +02:00 [DBG] 'AppIdentityDbContext' disposed.
+2023-02-16 07:33:09.395 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:33:09.426 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-02-16 07:33:09.491 +02:00 [DBG] Hosting starting
+2023-02-16 07:33:09.515 +02:00 [INF] User profile is available. Using 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-16 07:33:09.520 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-2f49e022-c3ed-4a3b-8778-7197c134b3d1.xml'.
+2023-02-16 07:33:09.528 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-6553ee41-ca41-4ddf-a8dc-505dc652d171.xml'.
+2023-02-16 07:33:09.537 +02:00 [DBG] Found key {2f49e022-c3ed-4a3b-8778-7197c134b3d1}.
+2023-02-16 07:33:09.545 +02:00 [DBG] Found key {6553ee41-ca41-4ddf-a8dc-505dc652d171}.
+2023-02-16 07:33:09.560 +02:00 [DBG] Considering key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} with expiration date 2023-05-04 10:41:56Z as default key.
+2023-02-16 07:33:09.564 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:33:09.567 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-02-16 07:33:09.569 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:33:09.575 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-02-16 07:33:09.579 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-02-16 07:33:09.584 +02:00 [DBG] Using key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} as the default key.
+2023-02-16 07:33:09.608 +02:00 [DBG] Key ring with default key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} was loaded during application startup.
+2023-02-16 07:33:09.674 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 7F6462739130C51876E3AD75A098B0572C15D4D6)
+2023-02-16 07:33:09.721 +02:00 [INF] Now listening on: https://localhost:7275
+2023-02-16 07:33:09.723 +02:00 [INF] Now listening on: http://localhost:5151
+2023-02-16 07:33:09.725 +02:00 [DBG] Loaded hosting startup assembly Kidpaor
+2023-02-16 07:33:09.727 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-16 07:33:09.729 +02:00 [INF] Hosting environment: Development
+2023-02-16 07:33:09.731 +02:00 [INF] Content root path: D:\JTOM\kidpaor\KidpaorBE\Kidpaor\
+2023-02-16 07:33:09.732 +02:00 [DBG] Hosting started
+2023-02-16 07:37:34.894 +02:00 [INF] Application is shutting down...
+2023-02-16 07:37:34.896 +02:00 [DBG] Hosting stopping
+2023-02-16 07:37:34.911 +02:00 [DBG] Hosting stopped
+2023-02-16 07:37:40.753 +02:00 [INF] Starting web application
+2023-02-16 07:37:41.536 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-02-16 07:37:41.544 +02:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2023-02-16 07:37:42.392 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-02-16 07:37:42.396 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-02-16 07:37:42.815 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'AppIdentityDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:37:42.881 +02:00 [DBG] Migrating using database 'identity-db' on server ''.
+2023-02-16 07:37:42.900 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.251 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.259 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.269 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.292 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:37:43.309 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (13ms).
+2023-02-16 07:37:43.319 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.430 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.446 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:43.592 +02:00 [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:43.599 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.607 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.617 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.700 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.703 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.706 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.708 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:37:43.710 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 07:37:43.713 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.716 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.718 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:43.726 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:43.732 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.734 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.758 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:37:43.760 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-02-16 07:37:43.763 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.765 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.768 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:37:43.778 +02:00 [INF] Executed DbCommand (10ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:37:43.793 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:37:43.794 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.797 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:43.819 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:37:43.880 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:37:43.884 +02:00 [DBG] Migrating using database 'kidpaor-db' on server ''.
+2023-02-16 07:37:43.887 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:43.989 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.991 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:43.993 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:43.995 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:37:43.998 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (3ms).
+2023-02-16 07:37:44.001 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.085 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.088 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:44.099 +02:00 [INF] Executed DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:44.102 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.105 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.109 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.188 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.190 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.193 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.195 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:37:44.197 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 07:37:44.200 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.202 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.205 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:44.209 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:37:44.212 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.214 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.220 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:37:44.222 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-02-16 07:37:44.224 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.227 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.229 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:37:44.237 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:37:44.241 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:37:44.242 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.245 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:37:44.251 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:37:44.300 +02:00 [DBG] Compiling query expression: 
+'DbSet<AppUser>()
+    .Any()'
+2023-02-16 07:37:44.525 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetUsers AS a)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Identity.AppIdentityDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-02-16 07:37:44.557 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:37:44.559 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-02-16 07:37:44.565 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:37:44.568 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.571 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:37:44.578 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:37:44.587 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:37:44.590 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:37:44.593 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:37:44.600 +02:00 [DBG] 'AppIdentityDbContext' disposed.
+2023-02-16 07:37:44.604 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:37:44.635 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-02-16 07:37:44.696 +02:00 [DBG] Hosting starting
+2023-02-16 07:37:44.720 +02:00 [INF] User profile is available. Using 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-16 07:37:44.726 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-2f49e022-c3ed-4a3b-8778-7197c134b3d1.xml'.
+2023-02-16 07:37:44.733 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-6553ee41-ca41-4ddf-a8dc-505dc652d171.xml'.
+2023-02-16 07:37:44.744 +02:00 [DBG] Found key {2f49e022-c3ed-4a3b-8778-7197c134b3d1}.
+2023-02-16 07:37:44.750 +02:00 [DBG] Found key {6553ee41-ca41-4ddf-a8dc-505dc652d171}.
+2023-02-16 07:37:44.763 +02:00 [DBG] Considering key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} with expiration date 2023-05-04 10:41:56Z as default key.
+2023-02-16 07:37:44.767 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:37:44.771 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-02-16 07:37:44.773 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:37:44.777 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-02-16 07:37:44.782 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-02-16 07:37:44.789 +02:00 [DBG] Using key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} as the default key.
+2023-02-16 07:37:44.792 +02:00 [DBG] Key ring with default key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} was loaded during application startup.
+2023-02-16 07:37:44.862 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 7F6462739130C51876E3AD75A098B0572C15D4D6)
+2023-02-16 07:37:44.904 +02:00 [INF] Now listening on: https://localhost:7275
+2023-02-16 07:37:44.906 +02:00 [INF] Now listening on: http://localhost:5151
+2023-02-16 07:37:44.908 +02:00 [DBG] Loaded hosting startup assembly Kidpaor
+2023-02-16 07:37:44.909 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-16 07:37:44.911 +02:00 [INF] Hosting environment: Development
+2023-02-16 07:37:44.912 +02:00 [INF] Content root path: D:\JTOM\kidpaor\KidpaorBE\Kidpaor\
+2023-02-16 07:37:44.914 +02:00 [DBG] Hosting started
+2023-02-16 07:38:06.110 +02:00 [DBG] Connection id "0HMOFRVTB161L" accepted.
+2023-02-16 07:38:06.116 +02:00 [DBG] Connection id "0HMOFRVTB161L" started.
+2023-02-16 07:38:06.216 +02:00 [DBG] Connection 0HMOFRVTB161L established using the following protocol: "Tls12"
+2023-02-16 07:38:06.286 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/swagger/index.html - -
+2023-02-16 07:38:06.294 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-02-16 07:38:06.408 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/swagger/index.html - - - 200 - text/html;charset=utf-8 126.4315ms
+2023-02-16 07:38:07.144 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - -
+2023-02-16 07:38:07.299 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 155.2879ms
+2023-02-16 07:38:54.562 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/api/Activities - -
+2023-02-16 07:38:54.569 +02:00 [DBG] The request path  does not match the path filter
+2023-02-16 07:38:54.606 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Activities'
+2023-02-16 07:38:54.610 +02:00 [DBG] Endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)' with route pattern 'api/Activities' is valid for the request path '/api/Activities'
+2023-02-16 07:38:54.613 +02:00 [DBG] Request matched endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:38:54.615 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-02-16 07:38:55.229 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-02-16 07:38:55.236 +02:00 [INF] Executing endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:38:55.255 +02:00 [INF] Route matched with {action = "GetActivities", controller = "Activities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Core.Entities.Activities]]] GetActivities() on controller Kidpaor.Controllers.ActivitiesController (Kidpaor).
+2023-02-16 07:38:55.263 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-02-16 07:38:55.265 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-02-16 07:38:55.269 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-02-16 07:38:55.272 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-02-16 07:38:55.277 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-02-16 07:38:55.279 +02:00 [DBG] Executing controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 07:38:55.282 +02:00 [DBG] Executed controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 07:38:55.288 +02:00 [INF] Getting activities
+2023-02-16 07:38:55.362 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:38:55.384 +02:00 [DBG] Compiling query expression: 
+'DbSet<Activities>()
+    .Include(p => p.Category)
+    .Include(p => p.Organizer)'
+2023-02-16 07:38:55.427 +02:00 [DBG] Including navigation: 'Activities.Category'.
+2023-02-16 07:38:55.433 +02:00 [DBG] Including navigation: 'Activities.Organizer'.
+2023-02-16 07:38:55.530 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Activities>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Activities.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Activities.ActivitiesCategoryId (int) Required FK Index, 1], [Property: Activities.ActivitiesOrganizerId (int) Required FK Index, 2], [Property: Activities.AgeRange (string) Required, 3], [Property: Activities.Cost (string) Required, 4], [Property: Activities.DateEnd (DateTime) Required, 5], [Property: Activities.DateStart (DateTime) Required, 6], [Property: Activities.Description (string) Required, 7], [Property: Activities.Location (string) Required, 8], [Property: Activities.Title (string) Required MaxLength(100), 9] }
+            1 -> Dictionary<IProperty, int> { [Property: ActivitiesCategories.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 10], [Property: ActivitiesCategories.Description (string), 11], [Property: ActivitiesCategories.Name (string), 12] }
+            2 -> Dictionary<IProperty, int> { [Property: Organizers.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 13], [Property: Organizers.Address (string), 14], [Property: Organizers.Email (string), 15], [Property: Organizers.Fullname (string), 16], [Property: Organizers.Phone (string), 17] }
+        SELECT a.Id, a.ActivitiesCategoryId, a.ActivitiesOrganizerId, a.AgeRange, a.Cost, a.DateEnd, a.DateStart, a.Description, a.Location, a.Title, a0.Id, a0.Description, a0.Name, o.Id, o.Address, o.Email, o.Fullname, o.Phone
+        FROM Activities AS a
+        INNER JOIN ActivitiesCategories AS a0 ON a.ActivitiesCategoryId == a0.Id
+        INNER JOIN Organizers AS o ON a.ActivitiesOrganizerId == o.Id), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Activities>, 
+    Infrastructure.Data.StoreContext, 
+    False, 
+    False, 
+    True
+)'
+2023-02-16 07:38:55.552 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:38:55.554 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-02-16 07:38:55.558 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:38:55.560 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:38:55.561 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 07:38:55.578 +02:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 07:38:55.620 +02:00 [DBG] Context 'StoreContext' started tracking 'Activities' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:38:55.670 +02:00 [DBG] Context 'StoreContext' started tracking 'ActivitiesCategories' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:38:55.693 +02:00 [DBG] Context 'StoreContext' started tracking 'Organizers' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:38:55.707 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:38:55.712 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:38:55.714 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:38:55.720 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-02-16 07:38:55.731 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2023-02-16 07:38:55.733 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2023-02-16 07:38:55.736 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-02-16 07:38:55.737 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-02-16 07:38:55.740 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-02-16 07:38:55.745 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Core.Entities.Activities, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-16 07:38:55.769 +02:00 [INF] Executed action Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor) in 483.9388ms
+2023-02-16 07:38:55.775 +02:00 [INF] Executed endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:38:55.782 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:38:55.787 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/api/Activities - - - 200 - application/json;+charset=utf-8 1224.8444ms
+2023-02-16 07:40:14.106 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/api/Activities - -
+2023-02-16 07:40:14.108 +02:00 [DBG] The request path  does not match the path filter
+2023-02-16 07:40:14.112 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Activities'
+2023-02-16 07:40:14.116 +02:00 [DBG] Endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)' with route pattern 'api/Activities' is valid for the request path '/api/Activities'
+2023-02-16 07:40:14.119 +02:00 [DBG] Request matched endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:40:14.121 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-02-16 07:40:14.123 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-02-16 07:40:14.125 +02:00 [INF] Executing endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:40:14.126 +02:00 [INF] Route matched with {action = "GetActivities", controller = "Activities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Core.Entities.Activities]]] GetActivities() on controller Kidpaor.Controllers.ActivitiesController (Kidpaor).
+2023-02-16 07:40:14.129 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-02-16 07:40:14.136 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-02-16 07:40:14.138 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-02-16 07:40:14.141 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-02-16 07:40:14.143 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-02-16 07:40:14.148 +02:00 [DBG] Executing controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 07:40:14.151 +02:00 [DBG] Executed controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 07:40:14.153 +02:00 [INF] Getting activities
+2023-02-16 07:40:14.154 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:40:14.162 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:40:14.165 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-02-16 07:40:14.168 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:14.171 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:14.173 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 07:40:14.179 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 07:40:14.183 +02:00 [DBG] Context 'StoreContext' started tracking 'Activities' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:40:14.185 +02:00 [DBG] Context 'StoreContext' started tracking 'ActivitiesCategories' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:40:14.187 +02:00 [DBG] Context 'StoreContext' started tracking 'Organizers' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 07:40:14.189 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:40:14.191 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:14.194 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:14.196 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-02-16 07:40:14.201 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2023-02-16 07:40:14.203 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2023-02-16 07:40:14.205 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-02-16 07:40:14.206 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-02-16 07:40:14.209 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-02-16 07:40:14.212 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Core.Entities.Activities, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-16 07:40:14.215 +02:00 [INF] Executed action Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor) in 67.0412ms
+2023-02-16 07:40:14.218 +02:00 [INF] Executed endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 07:40:14.220 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:40:14.227 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/api/Activities - - - 200 - application/json;+charset=utf-8 121.2114ms
+2023-02-16 07:40:41.247 +02:00 [INF] Application is shutting down...
+2023-02-16 07:40:41.252 +02:00 [DBG] Hosting stopping
+2023-02-16 07:40:41.267 +02:00 [DBG] Connection id "0HMOFRVTB161L" is closing.
+2023-02-16 07:40:41.269 +02:00 [DBG] Connection id "0HMOFRVTB161L" is closed. The last processed stream ID was 7.
+2023-02-16 07:40:41.272 +02:00 [DBG] Connection id "0HMOFRVTB161L" received FIN.
+2023-02-16 07:40:41.275 +02:00 [DBG] Connection id "0HMOFRVTB161L" sending FIN because: "The client closed the connection."
+2023-02-16 07:40:41.282 +02:00 [DBG] Connection id "0HMOFRVTB161L" stopped.
+2023-02-16 07:40:41.290 +02:00 [DBG] Hosting stopped
+2023-02-16 07:40:46.673 +02:00 [INF] Starting web application
+2023-02-16 07:40:47.524 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-02-16 07:40:47.532 +02:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2023-02-16 07:40:48.426 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-02-16 07:40:48.433 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-02-16 07:40:48.821 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'AppIdentityDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:40:48.887 +02:00 [DBG] Migrating using database 'identity-db' on server ''.
+2023-02-16 07:40:48.902 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.249 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.258 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.270 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.288 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:40:49.301 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (10ms).
+2023-02-16 07:40:49.310 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.418 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.433 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:49.551 +02:00 [INF] Executed DbCommand (117ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:49.558 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.564 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.572 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.649 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.653 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.656 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.658 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:40:49.660 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 07:40:49.662 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.664 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.666 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:49.673 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:49.678 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.680 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.697 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:40:49.702 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-02-16 07:40:49.704 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.706 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.709 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:40:49.718 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:40:49.734 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:40:49.737 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.739 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:49.756 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:40:49.825 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 07:40:49.831 +02:00 [DBG] Migrating using database 'kidpaor-db' on server ''.
+2023-02-16 07:40:49.834 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:49.935 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.938 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:49.941 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:49.944 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:40:49.946 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 07:40:49.948 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.135 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.139 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:50.148 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:50.152 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.154 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.156 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.232 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.236 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.238 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.241 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 07:40:50.244 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 07:40:50.246 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.248 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.251 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:50.255 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 07:40:50.261 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.265 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.270 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:40:50.272 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-02-16 07:40:50.276 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.278 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.281 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:40:50.287 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 07:40:50.293 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:40:50.295 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.299 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 07:40:50.302 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 07:40:50.350 +02:00 [DBG] Compiling query expression: 
+'DbSet<AppUser>()
+    .Any()'
+2023-02-16 07:40:50.554 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetUsers AS a)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Identity.AppIdentityDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-02-16 07:40:50.589 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 07:40:50.593 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (4ms).
+2023-02-16 07:40:50.597 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 07:40:50.599 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.602 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:40:50.609 +02:00 [INF] Executed DbCommand (7ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 07:40:50.618 +02:00 [DBG] A data reader was disposed.
+2023-02-16 07:40:50.622 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 07:40:50.625 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 07:40:50.629 +02:00 [DBG] 'AppIdentityDbContext' disposed.
+2023-02-16 07:40:50.632 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 07:40:50.662 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-02-16 07:40:50.732 +02:00 [DBG] Hosting starting
+2023-02-16 07:40:50.758 +02:00 [INF] User profile is available. Using 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-16 07:40:50.764 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-2f49e022-c3ed-4a3b-8778-7197c134b3d1.xml'.
+2023-02-16 07:40:50.773 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-6553ee41-ca41-4ddf-a8dc-505dc652d171.xml'.
+2023-02-16 07:40:50.784 +02:00 [DBG] Found key {2f49e022-c3ed-4a3b-8778-7197c134b3d1}.
+2023-02-16 07:40:50.789 +02:00 [DBG] Found key {6553ee41-ca41-4ddf-a8dc-505dc652d171}.
+2023-02-16 07:40:50.803 +02:00 [DBG] Considering key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} with expiration date 2023-05-04 10:41:56Z as default key.
+2023-02-16 07:40:50.807 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:40:50.810 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-02-16 07:40:50.813 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 07:40:50.819 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-02-16 07:40:50.823 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-02-16 07:40:50.830 +02:00 [DBG] Using key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} as the default key.
+2023-02-16 07:40:50.834 +02:00 [DBG] Key ring with default key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} was loaded during application startup.
+2023-02-16 07:40:50.895 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 7F6462739130C51876E3AD75A098B0572C15D4D6)
+2023-02-16 07:40:50.941 +02:00 [INF] Now listening on: https://localhost:7275
+2023-02-16 07:40:50.945 +02:00 [INF] Now listening on: http://localhost:5151
+2023-02-16 07:40:50.948 +02:00 [DBG] Loaded hosting startup assembly Kidpaor
+2023-02-16 07:40:50.950 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-16 07:40:50.952 +02:00 [INF] Hosting environment: Development
+2023-02-16 07:40:50.956 +02:00 [INF] Content root path: D:\JTOM\kidpaor\KidpaorBE\Kidpaor\
+2023-02-16 07:40:50.958 +02:00 [DBG] Hosting started
+2023-02-16 08:07:29.229 +02:00 [INF] Application is shutting down...
+2023-02-16 08:07:29.237 +02:00 [DBG] Hosting stopping
+2023-02-16 08:07:29.281 +02:00 [DBG] Hosting stopped
+2023-02-16 08:07:48.200 +02:00 [INF] Starting web application
+2023-02-16 08:07:50.009 +02:00 [DBG] An 'IServiceProvider' was created for internal use by Entity Framework.
+2023-02-16 08:07:50.015 +02:00 [WRN] 'AddEntityFramework*' was called on the service provider, but 'UseInternalServiceProvider' wasn't called in the DbContext options configuration. Consider removing the 'AddEntityFramework*' call, as in most cases it's not needed and may cause conflicts with other products and services registered in the same service provider.
+2023-02-16 08:07:51.038 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserRole<string>' as the properties are already covered by the index {'UserId', 'RoleId'}.
+2023-02-16 08:07:51.044 +02:00 [DBG] The index {'UserId'} was not created on entity type 'IdentityUserToken<string>' as the properties are already covered by the index {'UserId', 'LoginProvider', 'Name'}.
+2023-02-16 08:07:51.646 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'AppIdentityDbContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 08:07:51.703 +02:00 [DBG] Migrating using database 'identity-db' on server ''.
+2023-02-16 08:07:51.722 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.264 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.276 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.286 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.306 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 08:07:52.323 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (12ms).
+2023-02-16 08:07:52.335 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.482 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.512 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:52.758 +02:00 [INF] Executed DbCommand (245ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:52.777 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.793 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.818 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.956 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.964 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.968 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.971 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 08:07:52.973 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 08:07:52.975 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:52.978 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:52.980 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:52.989 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:52.997 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.001 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:53.019 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:07:53.022 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (2ms).
+2023-02-16 08:07:53.024 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:53.026 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.029 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 08:07:53.042 +02:00 [INF] Executed DbCommand (13ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 08:07:53.060 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:07:53.064 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.068 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:53.086 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 08:07:53.176 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 08:07:53.190 +02:00 [DBG] Migrating using database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.199 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.392 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.399 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.401 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.404 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 08:07:53.407 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (2ms).
+2023-02-16 08:07:53.411 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.488 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.491 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:53.500 +02:00 [INF] Executed DbCommand (9ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:53.505 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.507 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.510 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.586 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.590 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.593 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.596 +02:00 [DBG] Creating DbCommand for 'ExecuteScalar'.
+2023-02-16 08:07:53.598 +02:00 [DBG] Created DbCommand for 'ExecuteScalar' (1ms).
+2023-02-16 08:07:53.601 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.603 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.605 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:53.609 +02:00 [INF] Executed DbCommand (4ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (SELECT 1 FROM pg_catalog.pg_class c JOIN pg_catalog.pg_namespace n ON n.oid=c.relnamespace WHERE c.relname='__EFMigrationsHistory');
+2023-02-16 08:07:53.614 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.617 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.621 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:07:53.623 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (1ms).
+2023-02-16 08:07:53.628 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.631 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.634 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 08:07:53.641 +02:00 [INF] Executed DbCommand (6ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "MigrationId", "ProductVersion"
+FROM "__EFMigrationsHistory"
+ORDER BY "MigrationId";
+2023-02-16 08:07:53.645 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:07:53.647 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:53.649 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:07:53.652 +02:00 [INF] No migrations were applied. The database is already up to date.
+2023-02-16 08:07:53.722 +02:00 [DBG] Compiling query expression: 
+'DbSet<AppUser>()
+    .Any()'
+2023-02-16 08:07:54.095 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<bool>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Projection Mapping:
+            EmptyProjectionMember -> 0
+        SELECT EXISTS (
+            SELECT 1
+            FROM AspNetUsers AS a)), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, bool>, 
+    Infrastructure.Identity.AppIdentityDbContext, 
+    False, 
+    False, 
+    True
+)
+    .Single()'
+2023-02-16 08:07:54.161 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:07:54.167 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2023-02-16 08:07:54.174 +02:00 [DBG] Opening connection to database 'identity-db' on server ''.
+2023-02-16 08:07:54.177 +02:00 [DBG] Opened connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:54.181 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 08:07:54.189 +02:00 [INF] Executed DbCommand (8ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT EXISTS (
+    SELECT 1
+    FROM "AspNetUsers" AS a)
+2023-02-16 08:07:54.203 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:07:54.206 +02:00 [DBG] Closing connection to database 'identity-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:07:54.209 +02:00 [DBG] Closed connection to database 'identity-db' on server ''.
+2023-02-16 08:07:54.214 +02:00 [DBG] 'AppIdentityDbContext' disposed.
+2023-02-16 08:07:54.219 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 08:07:54.246 +02:00 [DBG] Registered model binder providers, in the following order: ["Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BinderTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ServicesModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.BodyModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.HeaderModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FloatingPointTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.EnumTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DateTimeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.SimpleTypeModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CancellationTokenModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ByteArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormFileModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.FormCollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.KeyValuePairModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.DictionaryModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ArrayModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.CollectionModelBinderProvider","Microsoft.AspNetCore.Mvc.ModelBinding.Binders.ComplexObjectModelBinderProvider"]
+2023-02-16 08:07:54.317 +02:00 [DBG] Hosting starting
+2023-02-16 08:07:54.351 +02:00 [INF] User profile is available. Using 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2023-02-16 08:07:54.363 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-2f49e022-c3ed-4a3b-8778-7197c134b3d1.xml'.
+2023-02-16 08:07:54.398 +02:00 [DBG] Reading data from file 'C:\Users\ncalincov\AppData\Local\ASP.NET\DataProtection-Keys\key-6553ee41-ca41-4ddf-a8dc-505dc652d171.xml'.
+2023-02-16 08:07:54.436 +02:00 [DBG] Found key {2f49e022-c3ed-4a3b-8778-7197c134b3d1}.
+2023-02-16 08:07:54.450 +02:00 [DBG] Found key {6553ee41-ca41-4ddf-a8dc-505dc652d171}.
+2023-02-16 08:07:54.475 +02:00 [DBG] Considering key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} with expiration date 2023-05-04 10:41:56Z as default key.
+2023-02-16 08:07:54.487 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.XmlEncryption.DpapiXmlDecryptor, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 08:07:54.498 +02:00 [DBG] Decrypting secret element using Windows DPAPI.
+2023-02-16 08:07:54.506 +02:00 [DBG] Forwarded activator type request from Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Version=6.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60 to Microsoft.AspNetCore.DataProtection.AuthenticatedEncryption.ConfigurationModel.AuthenticatedEncryptorDescriptorDeserializer, Microsoft.AspNetCore.DataProtection, Culture=neutral, PublicKeyToken=adb9793829ddae60
+2023-02-16 08:07:54.518 +02:00 [DBG] Opening CNG algorithm 'AES' from provider 'null' with chaining mode CBC.
+2023-02-16 08:07:54.532 +02:00 [DBG] Opening CNG algorithm 'SHA256' from provider 'null' with HMAC.
+2023-02-16 08:07:54.541 +02:00 [DBG] Using key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} as the default key.
+2023-02-16 08:07:54.543 +02:00 [DBG] Key ring with default key {2f49e022-c3ed-4a3b-8778-7197c134b3d1} was loaded during application startup.
+2023-02-16 08:07:54.718 +02:00 [DBG] Using development certificate: CN=localhost (Thumbprint: 7F6462739130C51876E3AD75A098B0572C15D4D6)
+2023-02-16 08:07:54.815 +02:00 [INF] Now listening on: https://localhost:7275
+2023-02-16 08:07:54.821 +02:00 [INF] Now listening on: http://localhost:5151
+2023-02-16 08:07:54.829 +02:00 [DBG] Loaded hosting startup assembly Kidpaor
+2023-02-16 08:07:54.836 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-02-16 08:07:54.843 +02:00 [INF] Hosting environment: Development
+2023-02-16 08:07:54.850 +02:00 [INF] Content root path: D:\JTOM\kidpaor\KidpaorBE\Kidpaor\
+2023-02-16 08:07:54.858 +02:00 [DBG] Hosting started
+2023-02-16 08:08:32.667 +02:00 [DBG] Connection id "0HMOFSGTMB991" accepted.
+2023-02-16 08:08:32.676 +02:00 [DBG] Connection id "0HMOFSGTMB991" started.
+2023-02-16 08:08:32.910 +02:00 [DBG] Connection 0HMOFSGTMB991 established using the following protocol: "Tls12"
+2023-02-16 08:08:33.065 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/swagger/index.html - -
+2023-02-16 08:08:33.077 +02:00 [DBG] Wildcard detected, all requests with hosts will be allowed.
+2023-02-16 08:08:33.365 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/swagger/index.html - - - 200 - text/html;charset=utf-8 311.6581ms
+2023-02-16 08:08:34.994 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - -
+2023-02-16 08:08:35.421 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/swagger/v1/swagger.json - - - 200 - application/json;charset=utf-8 427.1617ms
+2023-02-16 08:10:47.480 +02:00 [DBG] Connection id "0HMOFSGTMB991" is closing.
+2023-02-16 08:10:47.487 +02:00 [DBG] Connection id "0HMOFSGTMB991" is closed. The last processed stream ID was 3.
+2023-02-16 08:10:47.498 +02:00 [DBG] Connection id "0HMOFSGTMB991" received FIN.
+2023-02-16 08:10:47.515 +02:00 [DBG] Connection id "0HMOFSGTMB991" stopped.
+2023-02-16 08:10:47.522 +02:00 [DBG] Connection id "0HMOFSGTMB991" sending FIN because: "The Socket transport's send loop completed gracefully."
+2023-02-16 08:11:14.854 +02:00 [DBG] Connection id "0HMOFSGTMB992" accepted.
+2023-02-16 08:11:14.861 +02:00 [DBG] Connection id "0HMOFSGTMB992" started.
+2023-02-16 08:11:14.875 +02:00 [DBG] Connection 0HMOFSGTMB992 established using the following protocol: "Tls12"
+2023-02-16 08:11:14.891 +02:00 [INF] Request starting HTTP/2 POST https://localhost:7275/api/Activities application/json 544
+2023-02-16 08:11:14.903 +02:00 [DBG] POST requests are not supported
+2023-02-16 08:11:15.027 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Activities'
+2023-02-16 08:11:15.037 +02:00 [DBG] Endpoint 'Kidpaor.Controllers.ActivitiesController.CreateActivity (Kidpaor)' with route pattern 'api/Activities' is valid for the request path '/api/Activities'
+2023-02-16 08:11:15.047 +02:00 [DBG] Request matched endpoint 'Kidpaor.Controllers.ActivitiesController.CreateActivity (Kidpaor)'
+2023-02-16 08:11:15.059 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-02-16 08:11:15.066 +02:00 [DBG] The request has an origin header: 'https://localhost:7275'.
+2023-02-16 08:11:15.077 +02:00 [INF] CORS policy execution failed.
+2023-02-16 08:11:15.083 +02:00 [INF] Request origin https://localhost:7275 does not have permission to access the resource.
+2023-02-16 08:11:16.816 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-02-16 08:11:16.828 +02:00 [INF] Executing endpoint 'Kidpaor.Controllers.ActivitiesController.CreateActivity (Kidpaor)'
+2023-02-16 08:11:16.913 +02:00 [INF] Route matched with {action = "CreateActivity", controller = "Activities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[Core.Entities.Activities]] CreateActivity(Core.Entities.Activities) on controller Kidpaor.Controllers.ActivitiesController (Kidpaor).
+2023-02-16 08:11:16.926 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-02-16 08:11:16.940 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-02-16 08:11:16.953 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-02-16 08:11:16.966 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-02-16 08:11:16.976 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-02-16 08:11:16.990 +02:00 [DBG] Executing controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 08:11:17.007 +02:00 [DBG] Executed controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 08:11:17.028 +02:00 [DBG] Attempting to bind parameter 'activities' of type 'Core.Entities.Activities' ...
+2023-02-16 08:11:17.047 +02:00 [DBG] Attempting to bind parameter 'activities' of type 'Core.Entities.Activities' using the name '' in request data ...
+2023-02-16 08:11:17.059 +02:00 [DBG] Selected input formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter' for content type 'application/json'.
+2023-02-16 08:11:17.083 +02:00 [DBG] Connection id "0HMOFSGTMB992", Request id "0HMOFSGTMB992:00000001": started reading request body.
+2023-02-16 08:11:17.091 +02:00 [DBG] Connection id "0HMOFSGTMB992", Request id "0HMOFSGTMB992:00000001": done reading request body.
+2023-02-16 08:11:17.141 +02:00 [DBG] JSON input formatter succeeded, deserializing to type 'Core.Entities.Activities'
+2023-02-16 08:11:17.148 +02:00 [DBG] Done attempting to bind parameter 'activities' of type 'Core.Entities.Activities'.
+2023-02-16 08:11:17.157 +02:00 [DBG] Done attempting to bind parameter 'activities' of type 'Core.Entities.Activities'.
+2023-02-16 08:11:17.166 +02:00 [DBG] Attempting to validate the bound parameter 'activities' of type 'Core.Entities.Activities' ...
+2023-02-16 08:11:17.222 +02:00 [DBG] Done attempting to validate the bound parameter 'activities' of type 'Core.Entities.Activities'.
+2023-02-16 08:11:17.478 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 08:11:17.840 +02:00 [DBG] Context 'StoreContext' started tracking 'Activities' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:17.921 +02:00 [DBG] Context 'StoreContext' started tracking 'ActivitiesCategories' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:17.975 +02:00 [DBG] Context 'StoreContext' started tracking 'Organizers' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:17.997 +02:00 [DBG] SaveChanges starting for 'StoreContext'.
+2023-02-16 08:11:18.017 +02:00 [DBG] DetectChanges starting for 'StoreContext'.
+2023-02-16 08:11:18.098 +02:00 [DBG] DetectChanges completed for 'StoreContext'.
+2023-02-16 08:11:18.199 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:11:18.206 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:11:18.220 +02:00 [DBG] Beginning transaction with isolation level 'Unspecified'.
+2023-02-16 08:11:18.265 +02:00 [DBG] Began transaction with isolation level 'ReadCommitted'.
+2023-02-16 08:11:18.463 +02:00 [DBG] Executing 2 update commands as a batch.
+2023-02-16 08:11:18.504 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:11:18.511 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (6ms).
+2023-02-16 08:11:18.543 +02:00 [DBG] Executing DbCommand [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?', @p5='?', @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ActivitiesCategories" ("Id", "Description", "Name")
+VALUES (@p0, @p1, @p2);
+INSERT INTO "Organizers" ("Id", "Address", "Email", "Fullname", "Phone")
+VALUES (@p3, @p4, @p5, @p6, @p7);
+2023-02-16 08:11:18.629 +02:00 [INF] Executed DbCommand (98ms) [Parameters=[@p0='?' (DbType = Int32), @p1='?', @p2='?', @p3='?' (DbType = Int32), @p4='?', @p5='?', @p6='?', @p7='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "ActivitiesCategories" ("Id", "Description", "Name")
+VALUES (@p0, @p1, @p2);
+INSERT INTO "Organizers" ("Id", "Address", "Email", "Fullname", "Phone")
+VALUES (@p3, @p4, @p5, @p6, @p7);
+2023-02-16 08:11:18.662 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:11:18.672 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:11:18.677 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (5ms).
+2023-02-16 08:11:18.690 +02:00 [DBG] Executing DbCommand [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?' (DbType = DateTime), @p14='?' (DbType = DateTime), @p15='?', @p16='?', @p17='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Activities" ("Id", "ActivitiesCategoryId", "ActivitiesOrganizerId", "AgeRange", "Cost", "DateEnd", "DateStart", "Description", "Location", "Title")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2023-02-16 08:11:18.735 +02:00 [INF] Executed DbCommand (45ms) [Parameters=[@p8='?' (DbType = Int32), @p9='?' (DbType = Int32), @p10='?' (DbType = Int32), @p11='?', @p12='?', @p13='?' (DbType = DateTime), @p14='?' (DbType = DateTime), @p15='?', @p16='?', @p17='?'], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Activities" ("Id", "ActivitiesCategoryId", "ActivitiesOrganizerId", "AgeRange", "Cost", "DateEnd", "DateStart", "Description", "Location", "Title")
+VALUES (@p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16, @p17);
+2023-02-16 08:11:18.753 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:11:18.772 +02:00 [DBG] Committing transaction.
+2023-02-16 08:11:18.809 +02:00 [DBG] Committed transaction.
+2023-02-16 08:11:18.822 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:11:18.832 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:11:18.850 +02:00 [DBG] Disposing transaction.
+2023-02-16 08:11:18.904 +02:00 [DBG] An entity of type 'Activities' tracked by 'StoreContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:18.917 +02:00 [DBG] An entity of type 'ActivitiesCategories' tracked by 'StoreContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:18.928 +02:00 [DBG] An entity of type 'Organizers' tracked by 'StoreContext' changed state from '"Added"' to '"Unchanged"'. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:18.955 +02:00 [DBG] SaveChanges completed for 'StoreContext' with 3 entities written to the database.
+2023-02-16 08:11:18.982 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-02-16 08:11:19.003 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2023-02-16 08:11:19.015 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2023-02-16 08:11:19.030 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-02-16 08:11:19.034 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-02-16 08:11:19.044 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-02-16 08:11:19.053 +02:00 [INF] Executing CreatedAtActionResult, writing value of type 'Core.Entities.Activities'.
+2023-02-16 08:11:19.144 +02:00 [DBG] Found the endpoints ["Kidpaor.Controllers.ActivitiesController.GetActivity (Kidpaor)"] for address Microsoft.AspNetCore.Routing.RouteValuesAddress
+2023-02-16 08:11:19.182 +02:00 [DBG] Successfully processed template api/Activities/{id} for Kidpaor.Controllers.ActivitiesController.GetActivity (Kidpaor) resulting in /api/Activities/2 and 
+2023-02-16 08:11:19.195 +02:00 [DBG] Link generation succeeded for endpoints ["Kidpaor.Controllers.ActivitiesController.GetActivity (Kidpaor)"] with result /api/Activities/2
+2023-02-16 08:11:19.255 +02:00 [INF] Executed action Kidpaor.Controllers.ActivitiesController.CreateActivity (Kidpaor) in 2244.6842ms
+2023-02-16 08:11:19.267 +02:00 [INF] Executed endpoint 'Kidpaor.Controllers.ActivitiesController.CreateActivity (Kidpaor)'
+2023-02-16 08:11:19.292 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 08:11:19.305 +02:00 [INF] Request finished HTTP/2 POST https://localhost:7275/api/Activities application/json 544 - 201 - application/json;+charset=utf-8 4414.4249ms
+2023-02-16 08:11:30.396 +02:00 [INF] Request starting HTTP/2 GET https://localhost:7275/api/Activities - -
+2023-02-16 08:11:30.399 +02:00 [DBG] The request path  does not match the path filter
+2023-02-16 08:11:30.406 +02:00 [DBG] 1 candidate(s) found for the request path '/api/Activities'
+2023-02-16 08:11:30.409 +02:00 [DBG] Endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)' with route pattern 'api/Activities' is valid for the request path '/api/Activities'
+2023-02-16 08:11:30.417 +02:00 [DBG] Request matched endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 08:11:30.420 +02:00 [DBG] Static files was skipped as the request already matched an endpoint.
+2023-02-16 08:11:30.423 +02:00 [DBG] AuthenticationScheme: Bearer was not authenticated.
+2023-02-16 08:11:30.426 +02:00 [INF] Executing endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 08:11:30.439 +02:00 [INF] Route matched with {action = "GetActivities", controller = "Activities"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.ActionResult`1[System.Collections.Generic.List`1[Core.Entities.Activities]]] GetActivities() on controller Kidpaor.Controllers.ActivitiesController (Kidpaor).
+2023-02-16 08:11:30.449 +02:00 [DBG] Execution plan of authorization filters (in the following order): ["None"]
+2023-02-16 08:11:30.454 +02:00 [DBG] Execution plan of resource filters (in the following order): ["None"]
+2023-02-16 08:11:30.464 +02:00 [DBG] Execution plan of action filters (in the following order): ["Microsoft.AspNetCore.Mvc.ModelBinding.UnsupportedContentTypeFilter (Order: -3000)","Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter (Order: -2000)"]
+2023-02-16 08:11:30.473 +02:00 [DBG] Execution plan of exception filters (in the following order): ["None"]
+2023-02-16 08:11:30.483 +02:00 [DBG] Execution plan of result filters (in the following order): ["Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter (Order: -2000)"]
+2023-02-16 08:11:30.488 +02:00 [DBG] Executing controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 08:11:30.498 +02:00 [DBG] Executed controller factory for controller Kidpaor.Controllers.ActivitiesController (Kidpaor)
+2023-02-16 08:11:30.510 +02:00 [INF] Entity Framework Core 6.0.4 initialized 'StoreContext' using provider 'Npgsql.EntityFrameworkCore.PostgreSQL:6.0.4+6cb649128e3e7aa8eddd77dfa75b34bad51e6e94' with options: None
+2023-02-16 08:11:30.557 +02:00 [DBG] Compiling query expression: 
+'DbSet<Activities>()
+    .Include(p => p.Category)
+    .Include(p => p.Organizer)'
+2023-02-16 08:11:30.652 +02:00 [DBG] Including navigation: 'Activities.Category'.
+2023-02-16 08:11:30.660 +02:00 [DBG] Including navigation: 'Activities.Organizer'.
+2023-02-16 08:11:30.853 +02:00 [DBG] Generated query execution expression: 
+'queryContext => new SingleQueryingEnumerable<Activities>(
+    (RelationalQueryContext)queryContext, 
+    RelationalCommandCache.SelectExpression(
+        Client Projections:
+            0 -> Dictionary<IProperty, int> { [Property: Activities.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 0], [Property: Activities.ActivitiesCategoryId (int) Required FK Index, 1], [Property: Activities.ActivitiesOrganizerId (int) Required FK Index, 2], [Property: Activities.AgeRange (string) Required, 3], [Property: Activities.Cost (string) Required, 4], [Property: Activities.DateEnd (DateTime) Required, 5], [Property: Activities.DateStart (DateTime) Required, 6], [Property: Activities.Description (string) Required, 7], [Property: Activities.Location (string) Required, 8], [Property: Activities.Title (string) Required MaxLength(100), 9] }
+            1 -> Dictionary<IProperty, int> { [Property: ActivitiesCategories.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 10], [Property: ActivitiesCategories.Description (string), 11], [Property: ActivitiesCategories.Name (string), 12] }
+            2 -> Dictionary<IProperty, int> { [Property: Organizers.Id (int) Required PK AfterSave:Throw ValueGenerated.OnAdd, 13], [Property: Organizers.Address (string), 14], [Property: Organizers.Email (string), 15], [Property: Organizers.Fullname (string), 16], [Property: Organizers.Phone (string), 17] }
+        SELECT a.Id, a.ActivitiesCategoryId, a.ActivitiesOrganizerId, a.AgeRange, a.Cost, a.DateEnd, a.DateStart, a.Description, a.Location, a.Title, a0.Id, a0.Description, a0.Name, o.Id, o.Address, o.Email, o.Fullname, o.Phone
+        FROM Activities AS a
+        INNER JOIN ActivitiesCategories AS a0 ON a.ActivitiesCategoryId == a0.Id
+        INNER JOIN Organizers AS o ON a.ActivitiesOrganizerId == o.Id), 
+    Func<QueryContext, DbDataReader, ResultContext, SingleQueryResultCoordinator, Activities>, 
+    Infrastructure.Data.StoreContext, 
+    False, 
+    False, 
+    True
+)'
+2023-02-16 08:11:30.885 +02:00 [DBG] Creating DbCommand for 'ExecuteReader'.
+2023-02-16 08:11:30.889 +02:00 [DBG] Created DbCommand for 'ExecuteReader' (3ms).
+2023-02-16 08:11:30.892 +02:00 [DBG] Opening connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:11:30.900 +02:00 [DBG] Opened connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:11:30.906 +02:00 [DBG] Executing DbCommand [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 08:11:30.931 +02:00 [INF] Executed DbCommand (24ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT a."Id", a."ActivitiesCategoryId", a."ActivitiesOrganizerId", a."AgeRange", a."Cost", a."DateEnd", a."DateStart", a."Description", a."Location", a."Title", a0."Id", a0."Description", a0."Name", o."Id", o."Address", o."Email", o."Fullname", o."Phone"
+FROM "Activities" AS a
+INNER JOIN "ActivitiesCategories" AS a0 ON a."ActivitiesCategoryId" = a0."Id"
+INNER JOIN "Organizers" AS o ON a."ActivitiesOrganizerId" = o."Id"
+2023-02-16 08:11:30.965 +02:00 [DBG] Context 'StoreContext' started tracking 'Activities' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:30.971 +02:00 [DBG] Context 'StoreContext' started tracking 'ActivitiesCategories' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:30.983 +02:00 [DBG] Context 'StoreContext' started tracking 'Organizers' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:30.992 +02:00 [DBG] Context 'StoreContext' started tracking 'Activities' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:30.998 +02:00 [DBG] Context 'StoreContext' started tracking 'ActivitiesCategories' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:31.008 +02:00 [DBG] Context 'StoreContext' started tracking 'Organizers' entity. Consider using 'DbContextOptionsBuilder.EnableSensitiveDataLogging' to see key values.
+2023-02-16 08:11:31.016 +02:00 [DBG] A data reader was disposed.
+2023-02-16 08:11:31.020 +02:00 [DBG] Closing connection to database 'kidpaor-db' on server 'tcp://localhost:5432'.
+2023-02-16 08:11:31.034 +02:00 [DBG] Closed connection to database 'kidpaor-db' on server ''.
+2023-02-16 08:11:31.043 +02:00 [DBG] List of registered output formatters, in the following order: ["Microsoft.AspNetCore.Mvc.Formatters.HttpNoContentOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StringOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.StreamOutputFormatter","Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter"]
+2023-02-16 08:11:31.057 +02:00 [DBG] Attempting to select an output formatter based on Accept header '["text/plain"]'.
+2023-02-16 08:11:31.064 +02:00 [DBG] Could not find an output formatter based on content negotiation. Accepted types were (["text/plain"])
+2023-02-16 08:11:31.075 +02:00 [DBG] Attempting to select an output formatter without using a content type as no explicit content types were specified for the response.
+2023-02-16 08:11:31.078 +02:00 [DBG] Attempting to select the first formatter in the output formatters list which can write the result.
+2023-02-16 08:11:31.083 +02:00 [DBG] Selected output formatter 'Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonOutputFormatter' and content type 'application/json' to write the response.
+2023-02-16 08:11:31.092 +02:00 [INF] Executing OkObjectResult, writing value of type 'System.Collections.Generic.List`1[[Core.Entities.Activities, Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+2023-02-16 08:11:31.106 +02:00 [INF] Executed action Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor) in 618.0135ms
+2023-02-16 08:11:31.122 +02:00 [INF] Executed endpoint 'Kidpaor.Controllers.ActivitiesController.GetActivities (Kidpaor)'
+2023-02-16 08:11:31.129 +02:00 [DBG] 'StoreContext' disposed.
+2023-02-16 08:11:31.140 +02:00 [INF] Request finished HTTP/2 GET https://localhost:7275/api/Activities - - - 200 - application/json;+charset=utf-8 744.8126ms

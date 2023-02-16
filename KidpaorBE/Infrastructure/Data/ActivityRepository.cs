@@ -21,12 +21,60 @@ public class ActivityRepository : IActivityRepository
             .FirstOrDefaultAsync(p => p.Id == id);
     }
 
+    public async Task<Activities> DeleteActivityAsync(int id)
+    {
+        var result = await _context.Activities
+            .FirstOrDefaultAsync(p => p.Id == id);
+        if (result != null)
+        {
+            _context.Activities.Remove(result);
+            await _context.SaveChangesAsync();
+            return result;
+        }
+
+        return null;
+    }
+
     public async Task<IReadOnlyList<Activities>> GetActivitiesAsync()
     {
         return await _context.Activities
             .Include(p => p.Category)
             .Include(p => p.Organizer)
             .ToListAsync();
+    }
+
+    public async Task<Activities> AddActivityAsync(Activities activity)
+    {
+        var result = await _context.Activities.AddAsync(activity);
+        await _context.SaveChangesAsync();
+        return result.Entity;
+    }
+    
+    public async Task<Activities> UpdateActivityAsync(Activities activity)
+    {
+        var result = await _context.Activities
+            .FirstOrDefaultAsync(p => p.Id == activity.Id);
+
+        if (result != null)
+        {
+            result.Title = activity.Title;
+            result.Description = activity.Description;
+            result.DateStart = activity.DateStart;
+            result.DateEnd = activity.DateEnd;
+            result.ActivitiesCategoryId = activity.ActivitiesCategoryId;
+            result.ActivitiesOrganizerId = activity.ActivitiesOrganizerId;
+            result.Cost = activity.Cost;
+            result.AgeRange = activity.AgeRange;
+            result.Location = activity.Location;
+            result.Organizer = activity.Organizer;
+            result.Category = activity.Category;
+
+            await _context.SaveChangesAsync();
+
+            return result;
+        }
+
+        return null;
     }
 
     public async Task<IReadOnlyList<ActivitiesCategories>> GetActivitiesCategoriesAsync()

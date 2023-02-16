@@ -1,6 +1,7 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 
 namespace Kidpaor.Controllers;
 
@@ -26,6 +27,76 @@ public class ActivitiesController : BaseApiController
     public async Task<ActionResult<Activities>> GetActivity(int id)
     {
         return await _activityRepository.GetActivityByIdAsync(id);
+    }
+    
+    [HttpPost]
+    public async Task<ActionResult<Activities>> CreateActivity(Activities activities)
+    {
+        try
+        {
+            if (activities == null)
+            {
+                return BadRequest();
+            }
+
+            var createdActivity = await _activityRepository.AddActivityAsync(activities);
+
+            return CreatedAtAction(nameof(GetActivity), new { id = createdActivity.Id },
+                createdActivity);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error creating new activity record");
+        }
+    }
+    
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult<Activities>> UpdateActivity(int id, Activities activity)
+    {
+        try
+        {
+            if(id != activity.Id)
+            {
+                return BadRequest("Activity ID mismatch");
+            }
+            
+            var activityToUpdate = await _activityRepository.GetActivityByIdAsync(id);
+
+            
+            if(activityToUpdate == null)
+            {
+                return NotFound($"Activity with Id = {id} not found");
+            }
+
+            return await _activityRepository.UpdateActivityAsync(activity);
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error updating data");
+        }
+    }
+
+    [HttpDelete("{id}")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    public async Task<ActionResult<Activities>> DeleteActivity(int id)
+    {
+        try
+        {
+            var activityToDelete = await _activityRepository.GetActivityByIdAsync(id);
+
+            if (activityToDelete == null)
+            {
+                return NotFound($"Employee with Id = {id} not found");
+            }
+            return await _activityRepository.DeleteActivityAsync(id);
+        }
+        catch (Exception e)
+        {
+            return StatusCode(StatusCodes.Status500InternalServerError,
+                "Error deleting data");
+        }
     }
     
     [HttpGet("categories")]
