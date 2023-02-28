@@ -12,21 +12,18 @@ public static class IdentityServiceExtensions
 {
     public static IServiceCollection AddIdentityService(this IServiceCollection services, IConfiguration config)
     {
-        services.AddDbContext<AppIdentityDbContext>(opt =>
+        var builder = services.AddIdentityCore<AppUser>(opt =>
         {
-            opt.UseNpgsql(config.GetConnectionString("IdentityConnection"));
+            opt.Password.RequireDigit = false;
+            opt.Password.RequireNonAlphanumeric = false;
+            opt.Password.RequireUppercase = false;
+            opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
         });
-
-        services.AddIdentityCore<AppUser>(opt =>
-            {
-                opt.Password.RequireDigit = false;
-                opt.Password.RequireNonAlphanumeric = false;
-                opt.Password.RequireUppercase = false;
-                opt.User.AllowedUserNameCharacters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789-._@+";
-            })
-            .AddEntityFrameworkStores<AppIdentityDbContext>()
-            .AddSignInManager<SignInManager<AppUser>>();
         
+        var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+        identityBuilder.AddEntityFrameworkStores<AppIdentityDbContext>();
+        identityBuilder.AddSignInManager<SignInManager<AppUser>>();
+
         services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             .AddJwtBearer(opt =>
             {
@@ -39,9 +36,7 @@ public static class IdentityServiceExtensions
                     ValidateAudience = false
                 };
             });
-        
-        
-        
+
         services.AddAuthorization();
         
         return services;
