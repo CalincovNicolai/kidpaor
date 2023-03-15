@@ -13,7 +13,6 @@ public class ParentConfiguration : IEntityTypeConfiguration<Parents>
         builder.Property(p => p.Email).IsRequired();
         builder.Property(p => p.Fullname).IsRequired();
         builder.Property(p => p.Phone).IsRequired();
-        builder.HasMany(p => p.Kids).WithOne(e => e.Parents)
-            .HasForeignKey(p => p.KidsParentId);
+        builder.HasMany(p => p.Kids).WithOne(c => c.Parent).HasForeignKey(c => c.ParentId);
     }
 }

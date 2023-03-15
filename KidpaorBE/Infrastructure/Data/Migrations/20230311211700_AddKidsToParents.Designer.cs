@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Infrastructure.Data.Migrations
 {
     [DbContext(typeof(StoreContext))]
-    [Migration("20230216033928_AddActivities")]
-    partial class AddActivities
+    [Migration("20230311211700_AddKidsToParents")]
+    partial class AddKidsToParents
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -93,6 +93,32 @@ namespace Infrastructure.Data.Migrations
                     b.ToTable("ActivitiesCategories");
                 });
 
+            modelBuilder.Entity("Core.Entities.Kids", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Age")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<int>("ParentId")
+                        .HasColumnType("integer");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("ParentId");
+
+                    b.ToTable("Kids");
+                });
+
             modelBuilder.Entity("Core.Entities.Organizers", b =>
                 {
                     b.Property<int>("Id")
@@ -116,6 +142,35 @@ namespace Infrastructure.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Organizers");
+                });
+
+            modelBuilder.Entity("Core.Entities.Parents", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("integer");
+
+                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Fullname")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Phone")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Parents");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>
@@ -208,6 +263,17 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("Organizer");
                 });
 
+            modelBuilder.Entity("Core.Entities.Kids", b =>
+                {
+                    b.HasOne("Core.Entities.Parents", "Parent")
+                        .WithMany("Kids")
+                        .HasForeignKey("ParentId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Parent");
+                });
+
             modelBuilder.Entity("Core.Entities.Product", b =>
                 {
                     b.HasOne("Core.Entities.ProductBrand", "ProductBrand")
@@ -225,6 +291,11 @@ namespace Infrastructure.Data.Migrations
                     b.Navigation("ProductBrand");
 
                     b.Navigation("ProductType");
+                });
+
+            modelBuilder.Entity("Core.Entities.Parents", b =>
+                {
+                    b.Navigation("Kids");
                 });
 #pragma warning restore 612, 618
         }

@@ -6,7 +6,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
 namespace Infrastructure.Data.Migrations
 {
-    public partial class AddActivities : Migration
+    public partial class AddKidsToParents : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -38,6 +38,22 @@ namespace Infrastructure.Data.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Organizers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Parents",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Fullname = table.Column<string>(type: "text", nullable: false),
+                    Email = table.Column<string>(type: "text", nullable: false),
+                    Address = table.Column<string>(type: "text", nullable: false),
+                    Phone = table.Column<string>(type: "text", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Parents", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -73,6 +89,27 @@ namespace Infrastructure.Data.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "Kids",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "integer", nullable: false)
+                        .Annotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.IdentityByDefaultColumn),
+                    Fullname = table.Column<string>(type: "text", nullable: false),
+                    Age = table.Column<string>(type: "text", nullable: false),
+                    ParentId = table.Column<int>(type: "integer", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Kids", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Kids_Parents_ParentId",
+                        column: x => x.ParentId,
+                        principalTable: "Parents",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
             migrationBuilder.CreateIndex(
                 name: "IX_Activities_ActivitiesCategoryId",
                 table: "Activities",
@@ -82,6 +119,11 @@ namespace Infrastructure.Data.Migrations
                 name: "IX_Activities_ActivitiesOrganizerId",
                 table: "Activities",
                 column: "ActivitiesOrganizerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Kids_ParentId",
+                table: "Kids",
+                column: "ParentId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -90,10 +132,16 @@ namespace Infrastructure.Data.Migrations
                 name: "Activities");
 
             migrationBuilder.DropTable(
+                name: "Kids");
+
+            migrationBuilder.DropTable(
                 name: "ActivitiesCategories");
 
             migrationBuilder.DropTable(
                 name: "Organizers");
+
+            migrationBuilder.DropTable(
+                name: "Parents");
         }
     }
 }

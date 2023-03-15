@@ -31,7 +31,7 @@ public class AccountController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<UserDto>> GetCurrentUser()
     {
-        var user = await _userManager.FindByEmailFromClaimsPrincipal(User);
+        var user = await _userManager.FindByEmailFromClaimsPrinciple(User);
         
         return new UserDto
         {
@@ -51,21 +51,21 @@ public class AccountController : BaseApiController
     [HttpGet("address")]
     public async Task<ActionResult<AddressDto>> GetUserAddress()
     {
-        var user = await _userManager.FindUserByClaimsPrincipleWithAddress(User);
+        var user = await _userManager.FindByEmailWithAddressAsync(User);
         
-        return _mapper.Map<Address, AddressDto>(user.Address);
+        return _mapper.Map<AddressDto>(user.Address);
     }
     
     [HttpPut("address")]
     public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto address)
     {
-        var user = await _userManager.FindUserByClaimsPrincipleWithAddress(User);
+        var user = await _userManager.FindByEmailWithAddressAsync(User);
         
-        user.Address = _mapper.Map<AddressDto, Address>(address);
+        user.Address = _mapper.Map<Address>(address);
         
         var result = await _userManager.UpdateAsync(user);
         
-        if (result.Succeeded) return Ok(_mapper.Map<Address, AddressDto>(user.Address));
+        if (result.Succeeded) return Ok(_mapper.Map<AddressDto>(user.Address));
         
         return BadRequest("Problem updating the user");
     }

@@ -26,7 +26,6 @@ public class ParentRepository : IParentRepository
     public async Task<Parents> GetParentByIdAsync(int id)
     {
         return await _context.Parents
-            .Include(p => p.Kids)
             .FirstOrDefaultAsync(p => p.Id == id);
     }
 }

@@ -107,12 +107,12 @@ namespace Infrastructure.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("KidsParentId")
+                    b.Property<int>("ParentId")
                         .HasColumnType("integer");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("KidsParentId");
+                    b.HasIndex("ParentId");
 
                     b.ToTable("Kids");
                 });
@@ -263,13 +263,13 @@ namespace Infrastructure.Data.Migrations
 
             modelBuilder.Entity("Core.Entities.Kids", b =>
                 {
-                    b.HasOne("Core.Entities.Parents", "Parents")
+                    b.HasOne("Core.Entities.Parents", "Parent")
                         .WithMany("Kids")
-                        .HasForeignKey("KidsParentId")
+                        .HasForeignKey("ParentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Parents");
+                    b.Navigation("Parent");
                 });
 
             modelBuilder.Entity("Core.Entities.Product", b =>
