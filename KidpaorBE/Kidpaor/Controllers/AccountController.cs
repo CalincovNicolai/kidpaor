@@ -1,5 +1,4 @@
-﻿using System.Security.Claims;
-using AutoMapper;
+﻿using AutoMapper;
 using Core.Entities.Identity;
 using Core.Interfaces;
 using Kidpaor.Dtos;

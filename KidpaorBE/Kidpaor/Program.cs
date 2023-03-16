@@ -27,7 +27,6 @@ try
     builder.Services.AddApplicationServices(builder.Configuration);
     builder.Services.AddIdentityService(builder.Configuration);
     var app = builder.Build();
-
     using (var scope = app.Services.CreateScope())
     {
         var services = scope.ServiceProvider;
@@ -49,6 +48,7 @@ try
     }
 
 // Configure the HTTP request pipeline.
+    app.UseMiddleware<IpFilterMiddleware>(new string[] { "192.168.0.1", "10.0.0.1", "172.16.0.1" });
     app.UseMiddleware<ExceptionMiddleware>();
 
     app.UseStatusCodePagesWithReExecute("errors/{0}");

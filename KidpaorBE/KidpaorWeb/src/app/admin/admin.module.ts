@@ -6,6 +6,7 @@ import { AdminOrganizersComponent } from "./admin-organizers/admin-organizers.co
 import { AdminParentsComponent } from "./admin-parents/admin-parents.component";
 import { AdminViewComponent } from './admin-view/admin-view.component';
 import { RouterOutlet } from "@angular/router";
+import { TuiButtonModule } from "@taiga-ui/core";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { RouterOutlet } from "@angular/router";
   ],
   imports: [
     CommonModule,
-    RouterOutlet
+    RouterOutlet,
+    TuiButtonModule
   ],
   exports: []
 })

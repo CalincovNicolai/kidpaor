@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from "../admin.service";
 
 @Component({
   selector: 'app-admin-view',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./admin-view.component.scss']
 })
 export class AdminViewComponent {
+  requests = this.adminService.data.requestsAll$;
 
+  constructor(private adminService: AdminService) {
+  }
+
+  deleteActivity() {
+    console.log(this.requests);
+  }
 }

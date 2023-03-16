@@ -1,1 +1,20 @@
-<p>admin-activities works!</p>
+<div class="activities-container">
+  <div class="activities-container__list">
+    <div class="activities-container__list__activity">
+      Activity
+      {{activities | async}}
+    </div>
+    <div class="activities-container__list__category">
+      Category
+    </div>
+    <div class="activities-container__list__date">
+      Date
+    </div>
+    <div class="activities-container__list__organizer">
+      Organizer
+    </div>
+    <button tuiButton (click)="deleteActivity()" class="activities-container__list__action">
+      Delete
+    </button>
+  </div>
+</div>
