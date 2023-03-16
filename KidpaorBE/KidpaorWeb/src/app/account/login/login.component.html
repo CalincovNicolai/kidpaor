@@ -1,0 +1,48 @@
+<div class="login-container">
+  <form (ngSubmit)="submit()" [formGroup]="formGroup">
+    <label>
+      <tui-input
+        [tuiTextfieldCleaner]="true"
+        [tuiTextfieldSize]="'m'"
+        [tuiTextfieldLabelOutside]="true"
+        formControlName="email"
+      >Email
+        <input tuiTextfield type="email"/>
+      </tui-input>
+      <tui-error
+        [error]="[] | tuiFieldError | async"
+        formControlName="email"
+      ></tui-error>
+    </label>
+    <label>
+      <tui-input
+        [tuiTextfieldCleaner]="true"
+        [tuiTextfieldSize]="'m'"
+        [tuiTextfieldLabelOutside]="true"
+        formControlName="password"
+      >Password
+        <input tuiTextfield type="password"/>
+      </tui-input>
+      <tui-error
+        [error]="[] | tuiFieldError | async"
+        formControlName="password"
+      ></tui-error>
+    </label>
+    <!--    <label>-->
+    <!--      <tui-checkbox-labeled size="m">-->
+    <!--        Remember me-->
+    <!--      </tui-checkbox-labeled>-->
+    <!--    </label>-->
+    <label>
+      <tui-loader
+        [inheritColor]="true"
+        [overlay]="true"
+        [showLoader]="loading"
+      >
+        <button size="m" tuiButton type="submit" [disabled]="formGroup.invalid">
+          LOG IN
+        </button>
+      </tui-loader>
+    </label>
+  </form>
+</div>
