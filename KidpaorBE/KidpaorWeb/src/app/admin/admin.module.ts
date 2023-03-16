@@ -1,15 +1,25 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { AdminPanelComponent } from './admin-panel/admin-panel.component';
-
-
+import { AdminDashboardComponent } from "./admin-dashboard/admin-dashboard.component";
+import { CommonModule } from "@angular/common";
+import { AdminActivitiesComponent } from "./admin-activities/admin-activities.component";
+import { AdminOrganizersComponent } from "./admin-organizers/admin-organizers.component";
+import { AdminParentsComponent } from "./admin-parents/admin-parents.component";
+import { AdminViewComponent } from './admin-view/admin-view.component';
+import { RouterOutlet } from "@angular/router";
 
 @NgModule({
   declarations: [
-    AdminPanelComponent
+    AdminDashboardComponent,
+    AdminActivitiesComponent,
+    AdminOrganizersComponent,
+    AdminParentsComponent,
+    AdminViewComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    RouterOutlet
+  ],
+  exports: []
 })
-export class AdminModule { }
+export class AdminModule {
+}
