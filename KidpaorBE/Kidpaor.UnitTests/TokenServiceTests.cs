@@ -17,10 +17,9 @@ namespace Kidpaor.UnitTests
 
         public TokenServiceTests()
         {
-            // Create a mock configuration object with the necessary settings
             var config = new Mock<IConfiguration>();
             config.Setup(x => x["Token:Key"]).Returns("my-very-strong-secret");
-            config.Setup(x => x["Token:Issuer"]).Returns("my-app");
+            config.Setup(x => x["Token:Issuer"]).Returns("kidpaor");
 
             _config = config.Object;
             _key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Token:Key"]));
@@ -29,16 +28,13 @@ namespace Kidpaor.UnitTests
         [Fact]
         public void CreateToken_Returns_Valid_JWT()
         {
-            // Arrange
             var user = new AppUser { Email = "test@example.com", DisplayName = "Test User" };
             var service = new TokenService(_config);
 
-            // Act
             var token = service.CreateToken(user);
             var tokenHandler = new JwtSecurityTokenHandler();
             var decodedToken = tokenHandler.ReadJwtToken(token);
 
-            // Assert
             Assert.NotNull(token);
             Assert.NotEmpty(token);
             Assert.Equal("kidpaor", decodedToken.Issuer);
@@ -49,10 +45,8 @@ namespace Kidpaor.UnitTests
         [Fact]
         public void CreateToken_Throws_Exception_When_User_Null()
         {
-            // Arrange
             var service = new TokenService(_config);
 
-            // Act and Assert
             Assert.Throws<ArgumentNullException>(() => service.CreateToken(null));
         }
     }
