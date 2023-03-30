@@ -1,4 +1,4 @@
-﻿using System;
+﻿/*using System;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
@@ -34,4 +34,4 @@ public class IpFilterMiddleware
             await context.Response.WriteAsync("Access denied.");
         }
     }
-}
+}*/

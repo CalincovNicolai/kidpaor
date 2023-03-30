@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿/*
+using Microsoft.EntityFrameworkCore;
 
 namespace Kidpaor.Middleware;
 
@@ -30,3 +31,4 @@ public class RequestLoggingMiddleware
         await _next(context);
     }
 }
+*/

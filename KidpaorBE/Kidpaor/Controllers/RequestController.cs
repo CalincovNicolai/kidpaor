@@ -1,4 +1,4 @@
-﻿using Infrastructure.Data;
+﻿/*using Infrastructure.Data;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -24,4 +24,4 @@ public class RequestController : BaseApiController
         return count;
     }
 
-}
+}*/
