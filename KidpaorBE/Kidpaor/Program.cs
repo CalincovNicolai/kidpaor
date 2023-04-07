@@ -72,7 +72,7 @@ public class Program
 
             app.UseStaticFiles();
 
-            app.UseCors("CorsPolicy");
+            app.UseCors(x => x.AllowAnyOrigin());
 
             app.UseAuthentication();
 
