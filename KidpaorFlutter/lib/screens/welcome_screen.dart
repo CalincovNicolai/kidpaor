@@ -19,12 +19,13 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             Row(
               children: <Widget>[
                 Container(
-                  child: Image.asset('images/logo.png'),
+                  child: Image.asset('images/kidpaor-logo.png'),
                   height: 60.0,
                 ),
                 Text(
-                  'Flash Chat',
+                  'Kidpaor Chat',
                   style: TextStyle(
+                    color: Colors.black54,
                     fontSize: 45.0,
                     fontWeight: FontWeight.w900,
                   ),
