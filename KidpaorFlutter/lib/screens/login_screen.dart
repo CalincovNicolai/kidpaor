@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_app/screens/chat_screen.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../components/rounded_button.dart';
 import '../constants.dart';
@@ -16,8 +17,33 @@ class LoginScreen extends StatefulWidget {
 class _LoginScreenState extends State<LoginScreen> {
   final _auth = FirebaseAuth.instance;
   bool showSpinner = false;
-  late String email;
-  late String password;
+  late String email = '';
+  late String password = '';
+  late SharedPreferences preferences;
+  var emailTextController = TextEditingController();
+  var passwordTextController = TextEditingController();
+
+  @override
+  void initState() {
+    super.initState();
+    emailTextController.text = email;
+    passwordTextController.text = password;
+    init();
+  }
+
+  Future init() async {
+    preferences = await SharedPreferences.getInstance();
+
+    String? email = preferences.getString('email');
+    String? password = preferences.getString('password');
+    if (email == null) return;
+    if (password == null) return;
+
+    setState(() {
+      this.email = email;
+      this.password = password;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -44,10 +70,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 48.0,
               ),
               TextField(
+                controller: emailTextController,
                 keyboardType: TextInputType.emailAddress,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
                   email = value;
+                  preferences.setString(email, value);
                 },
                 decoration:
                     kTextFieldDecoration.copyWith(hintText: 'Enter your email'),
@@ -56,10 +84,12 @@ class _LoginScreenState extends State<LoginScreen> {
                 height: 8.0,
               ),
               TextField(
+                controller: passwordTextController,
                 obscureText: true,
                 textAlign: TextAlign.center,
                 onChanged: (value) {
                   password = value;
+                  preferences.setString(password, value);
                 },
                 decoration: kTextFieldDecoration.copyWith(
                     hintText: 'Enter your password'),
