@@ -3,11 +3,12 @@ import { TUI_SANITIZER, TuiAlertModule, TuiRootModule } from "@taiga-ui/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from "@angular/common/http";
 import { CoreModule } from "./core/core.module";
 import { LayoutModule } from "./layout/layout.module";
+import { RoutesModule } from "./routes/routes.module";
+import { RouterModule } from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -16,12 +17,13 @@ import { LayoutModule } from "./layout/layout.module";
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
+    RouterModule,
     BrowserAnimationsModule,
     TuiRootModule,
     TuiAlertModule,
     CoreModule,
-    LayoutModule
+    LayoutModule,
+    RoutesModule
   ],
   providers: [{ provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
   bootstrap: [AppComponent]
