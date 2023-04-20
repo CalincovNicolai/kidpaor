@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "613207319209",
+    "project_id": "kidpaor-flutter",
+    "storage_bucket": "kidpaor-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:613207319209:android:38a9173f5e31311e1a3fb8",
+        "android_client_info": {
+          "package_name": "ncalincov.com.flutter_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "613207319209-6uqdcb4ug47bvlv8amjk7dkovppjps4b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD4PtaSjgtzCXG-skyTbef5ktMR8FXDq7I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "613207319209-6uqdcb4ug47bvlv8amjk7dkovppjps4b.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
