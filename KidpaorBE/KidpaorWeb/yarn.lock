@@ -208,6 +208,15 @@
   dependencies:
     tslib "^2.3.0"
 
+"@angular/localize@^16.0.1":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@angular/localize/-/localize-16.0.1.tgz#c0d451bdfc034b24dd1cd43214447dc0cb5ef2d1"
+  integrity sha512-2zC7KE/JUA/JCHP+kEDSF8iZ9cyvd6OAPFE74yH8FjixQsaq9WhXiPtGkHC0bg9hWH858bRcCmA9BZr+zjntvA==
+  dependencies:
+    "@babel/core" "7.19.3"
+    glob "8.1.0"
+    yargs "^17.2.1"
+
 "@angular/platform-browser-dynamic@^15.2.0":
   version "15.2.6"
   resolved "https://registry.yarnpkg.com/@angular/platform-browser-dynamic/-/platform-browser-dynamic-15.2.6.tgz#e3b347524b547385e90aad9bed59b5f14e6716cb"

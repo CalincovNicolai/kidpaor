@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="5698750661517594703" datatype="html">
+        <source>KIDPAOR</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/start-window/start-window.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="6671260651115808218" datatype="html">
+        <source>WELCOME TO KIDPAOR, THE ULTIMATE DESTINATION FOR KIDS&apos; ACTIVITIES. ALL THE ACTIVITIES ARE REVIEWED ON OUR SITE TO ENSURE THEY ARE AGE-APPROPRIATE AND SAFE.</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/layout/start-window/start-window.component.html</context>
+          <context context-type="linenumber">4</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

@@ -4,6 +4,12 @@
   "newProjectRoot": "projects",
   "projects": {
     "KidpaorWeb": {
+      "i18n": {
+        "sourceLocale": "en-US",
+        "locales": {
+          "ro-MD": "src/locale/messages.ro.xlf"
+        }
+      },
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,6 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
+            "localize": ["ro-MD"],
             "outputPath": "dist/kidpaor-web",
             "index": "src/index.html",
             "main": "src/main.ts",
