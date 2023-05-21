@@ -1,41 +1,33 @@
 ﻿using System.Net;
 using System.Text.Json;
-using Kidpaor.Errors;
+using Microsoft.AspNetCore.Diagnostics;
+using Microsoft.EntityFrameworkCore;
 
 namespace Kidpaor.Middleware;
 
-public class ExceptionMiddleware
+public static class ExceptionMiddleware
 {
-    private readonly RequestDelegate _next;
-    private readonly ILogger<ExceptionMiddleware> _logger;
-    private readonly IHostEnvironment _env;
+    public static Action<IApplicationBuilder> DefaultExceptionHandler =>
+        builder =>
+        {
+            builder.Run(
+                async httpContext =>
+                {
+                    var context = httpContext.Features.Get<IExceptionHandlerFeature>();
+                    var exception = context.Error;
+                    
+                    (string Message, HttpStatusCode StatusCode) error = exception switch
+                    {
+                        DbUpdateException => ("Failed updating data in database", HttpStatusCode.InternalServerError),
+                        ArgumentNullException => ("Parameter cannot be empty", HttpStatusCode.BadRequest),
+                        ArgumentException => (exception.Message, HttpStatusCode.BadRequest),
+                        InvalidOperationException => (exception.Message, HttpStatusCode.BadRequest),
+                        _ => ($"Unhandled exception type: {exception.GetType().Name}, with message: {exception.Message}", HttpStatusCode.InternalServerError)
+                    };
 
-    public ExceptionMiddleware(RequestDelegate next, ILogger<ExceptionMiddleware> logger, IHostEnvironment env)
-    {
-        _next = next;
-        _logger = logger;
-        _env = env;
-    }
-    
-    public async Task InvokeAsync(HttpContext context)
-    {
-        try
-        {
-            await _next(context);
-        }
-        catch (Exception ex)
-        {
-            _logger.LogError(ex, ex.Message);
-            context.Response.ContentType = "application/json";
-            context.Response.StatusCode = (int) HttpStatusCode.InternalServerError;
-            
-            var response = _env.IsDevelopment()
-                ? new ApiException((int) HttpStatusCode.InternalServerError, ex.Message, ex.StackTrace?.ToString())
-                : new ApiException((int) HttpStatusCode.InternalServerError);
-            
-            var options = new JsonSerializerOptions {PropertyNamingPolicy = JsonNamingPolicy.CamelCase};
-            var json = JsonSerializer.Serialize(response, options);
-            await context.Response.WriteAsync(json);
-        }
-    }
+                    httpContext.Response.ContentType = "application/json";
+                    httpContext.Response.StatusCode = (int)error.StatusCode;
+                    await httpContext.Response.WriteAsync(JsonSerializer.Serialize(error.Message));
+                });
+        };
 }

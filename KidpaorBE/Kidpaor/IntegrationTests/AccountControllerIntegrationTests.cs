@@ -31,7 +31,7 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
         var user = new AppUser { Email = "test@test.com", UserName = "test@test.com" };
         await userManager.CreateAsync(user, "Pa$$w0rd");
         client.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user));
+            new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user, ""));
         var response = await client.GetAsync("/account");
         var content = await response.Content.ReadAsStringAsync();
         var result = JsonConvert.DeserializeObject<UserDto>(content);
@@ -84,7 +84,7 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
         user.Address = new Address { City = "Test City" };
         await userManager.UpdateAsync(user);
         client.DefaultRequestHeaders.Authorization =
-            new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user));
+            new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user, ""));
         var response = await client.GetAsync("/account/address");
         var content = await response.Content.ReadAsStringAsync();
         var result = JsonConvert.DeserializeObject<AddressDto>(content);
@@ -105,7 +105,7 @@ public class AccountControllerIntegrationTests : IClassFixture<WebApplicationFac
             City = "New City",
             ZipCode = "12345"
         };
-        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user));
+        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", _tokenService.CreateToken(user, ""));
         var content = new StringContent(JsonConvert.SerializeObject(newAddress), Encoding.UTF8, "application/json");
         var response = await client.PutAsync("/account/address", content);
         var responseContent = await response.Content.ReadAsStringAsync();

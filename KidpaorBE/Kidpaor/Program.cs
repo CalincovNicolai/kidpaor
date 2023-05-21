@@ -33,6 +33,7 @@ public class Program
             builder.Services.AddControllers();
             builder.Services.AddApplicationServices(builder.Configuration);
             builder.Services.AddIdentityService(builder.Configuration);
+            builder.Services.AddScoped<IUserClaimsPrincipalFactory<AppUser>, UserClaimsPrincipalFactory<AppUser, IdentityRole>>();
             var app = builder.Build();
             using (var scope = app.Services.CreateScope())
             {
@@ -56,9 +57,10 @@ public class Program
 
 // Configure the HTTP request pipeline.
             // app.UseMiddleware<IpFilterMiddleware>(new string[] { "192.168.0.1", "10.0.0.1", "172.16.0.1" });
-            app.UseMiddleware<ExceptionMiddleware>();
+            //app.UseMiddleware<ExceptionMiddleware>();
+            app.UseExceptionHandler(ExceptionMiddleware.DefaultExceptionHandler);
 
-            app.UseStatusCodePagesWithReExecute("errors/{0}");
+            //app.UseStatusCodePagesWithReExecute("errors/{0}");
 
             if (app.Environment.IsDevelopment())
             {

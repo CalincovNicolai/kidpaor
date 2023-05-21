@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-basic',
@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./basic.component.scss']
 })
 export class BasicComponent {
-
+  @Input() image: string = '';
 }

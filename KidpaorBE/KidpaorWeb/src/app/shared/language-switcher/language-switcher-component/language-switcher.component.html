@@ -1,0 +1,37 @@
+<tui-hosted-dropdown
+  tuiDropdownAlign="right"
+  tuiDropdownDirection="bottom"
+  [sided]="true"
+  [content]="dropdown"
+  [(open)]="open"
+>
+  <div class="language-wrapper">
+    <img *ngIf="language === 'EN'" class="language-wrapper__icon" src="assets/en-lang.png" alt="english language">
+    <img *ngIf="language === 'RO'" class="language-wrapper__icon" src="assets/ro-lang.png" alt="romanian language">
+    <button
+      tuiButton
+      class="language-select"
+      appearance="mono"
+      type="button"
+      size="m"
+    >
+      {{language}}
+    </button>
+  </div>
+</tui-hosted-dropdown>
+<ng-template
+  #dropdown
+>
+  <tui-data-list>
+    <tui-opt-group>
+      <button
+        class="language-select-items"
+        *ngFor="let item of ['EN', 'RO']"
+        tuiOption
+        (click)="setLanguage(item)"
+      >
+        {{ item }}
+      </button>
+    </tui-opt-group>
+  </tui-data-list>
+</ng-template>

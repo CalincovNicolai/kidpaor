@@ -1,0 +1,128 @@
+.login-page {
+  &__content {
+    position: absolute;
+    top: 15%;
+    left: 15%;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5rem;
+
+    &__top-part {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    &__bottom-part {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 3.5rem;
+    }
+
+    &__button-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 4.6rem;
+    }
+  }
+}
+
+::ng-deep .return-link .t-wrapper {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2em;
+  color: #FEF0CD;
+  background: transparent;
+  padding: 0 !important;
+  transition: all .2s ease-in-out;
+}
+
+::ng-deep .return-link .t-wrapper:active {
+  background: transparent;
+  color: #fdebbb !important;
+}
+
+::ng-deep .return-link .t-wrapper:hover {
+  background: transparent;
+  color: #FFF4DF !important;
+  transform: scale(1.05);
+}
+
+.kidpaor-title {
+  font-weight: 500;
+  font-size: 7.2rem;
+  line-height: 6.3rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #FEF0CD;
+}
+
+.complete-form {
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.1rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.2em;
+  color: #FEF0CD;
+}
+
+.kidpaor-title:hover {
+  color: #FFF4DF;
+}
+
+.complete-form-details {
+  font-weight: 500;
+  font-size: 1.2rem;
+  line-height: 1.9rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.2em;
+  color: #FEF0CD;
+}
+
+.link-page {
+  display: flex;
+  background: #D29432;
+  box-shadow: inset 0px -1rem 3rem rgba(0, 0, 0, 0.2);
+  border-radius: 3rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.2rem 4rem;
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.1rem;
+  letter-spacing: 0.03em;
+  color: #F7D289;
+  transition: all .2s ease-in-out;
+}
+
+.link-page:hover {
+  transform: scale(1.05);
+  background: #F7D289;
+  color: #D29432;
+}
+
+.choose-option {
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.6rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  padding: 1.2rem;
+  border: 2px solid #7D8176;
+  box-shadow: inset 0px -10px 30px rgba(0, 0, 0, 0.2);
+  border-radius: 16px;
+  color: #DDDDDD;
+}

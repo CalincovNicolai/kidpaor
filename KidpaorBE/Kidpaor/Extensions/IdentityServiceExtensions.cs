@@ -21,6 +21,7 @@ public static class IdentityServiceExtensions
         });
         
         var identityBuilder = new IdentityBuilder(builder.UserType, builder.Services);
+        identityBuilder.AddRoles<IdentityRole>();
         identityBuilder.AddEntityFrameworkStores<AppIdentityDbContext>();
         identityBuilder.AddSignInManager<SignInManager<AppUser>>();
 

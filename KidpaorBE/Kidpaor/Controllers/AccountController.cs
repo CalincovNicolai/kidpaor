@@ -16,28 +16,16 @@ public class AccountController : BaseApiController
     private readonly SignInManager<AppUser> _signInManager;
     private readonly ITokenService _tokenService;
     private readonly IMapper _mapper;
+    private readonly RoleManager<IdentityRole> _roleManager;
 
     public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, 
-        ITokenService tokenService, IMapper mapper)
+        ITokenService tokenService, IMapper mapper, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenService = tokenService;
         _mapper = mapper;
-    }
-    
-    [Authorize]
-    [HttpGet]
-    public async Task<ActionResult<UserDto>> GetCurrentUser()
-    {
-        var user = await _userManager.FindByEmailFromClaimsPrinciple(User);
-        
-        return new UserDto
-        {
-            DisplayName = user.DisplayName,
-            Email = user.Email,
-            Token = _tokenService.CreateToken(user)
-        };
+        _roleManager = roleManager;
     }
 
     [HttpGet("emailexists")]
@@ -83,7 +71,7 @@ public class AccountController : BaseApiController
         return new UserDto
         {
             Email = user.Email,
-            Token = _tokenService.CreateToken(user),
+            Token = _tokenService.CreateToken(user, (await _userManager.GetRolesAsync(user))[0]),
             DisplayName = user.UserName
         };
     }
@@ -102,11 +90,17 @@ public class AccountController : BaseApiController
         
         if (!result.Succeeded) return BadRequest(new ApiResponse(400));
 
+        if (!await _roleManager.RoleExistsAsync(registerDto.Role))
+        {
+            await _roleManager.CreateAsync(new IdentityRole(registerDto.Role));
+        }
+        await _userManager.AddToRoleAsync(user, registerDto.Role);
+
         return new UserDto
         {
             DisplayName = user.DisplayName,
             Email = user.Email,
-            Token = _tokenService.CreateToken(user)
+            Token = _tokenService.CreateToken(user, registerDto.Role)
         };
     }
 }

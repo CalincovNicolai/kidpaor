@@ -1,5 +1,6 @@
 ﻿using Core.Entities;
 using Core.Interfaces;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kidpaor.Controllers;
@@ -13,6 +14,7 @@ public class ParentsController : BaseApiController
         _parentRepository = parentRepository;
     }
 
+    [Authorize]
     [HttpGet]
     public async Task<ActionResult<List<Parents>>> GetParents()
     {

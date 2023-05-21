@@ -2,10 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
-import { AccountRoutingModule } from "./account-routing.module";
 import { ReactiveFormsModule } from "@angular/forms";
 import { TuiCheckboxLabeledModule, TuiFieldErrorPipeModule, TuiInputModule } from "@taiga-ui/kit";
 import { TuiButtonModule, TuiErrorModule, TuiLoaderModule, TuiTextfieldControllerModule } from "@taiga-ui/core";
+import { TranslateModule } from '@ngx-translate/core';
+import { RouterLink } from '@angular/router';
+import { LayoutModule } from '../layout/layout.module';
 
 @NgModule({
   declarations: [
@@ -14,7 +16,6 @@ import { TuiButtonModule, TuiErrorModule, TuiLoaderModule, TuiTextfieldControlle
   ],
   imports: [
     CommonModule,
-    AccountRoutingModule,
     ReactiveFormsModule,
     TuiInputModule,
     TuiTextfieldControllerModule,
@@ -22,7 +23,10 @@ import { TuiButtonModule, TuiErrorModule, TuiLoaderModule, TuiTextfieldControlle
     TuiFieldErrorPipeModule,
     TuiCheckboxLabeledModule,
     TuiLoaderModule,
-    TuiButtonModule
+    TuiButtonModule,
+    TranslateModule,
+    RouterLink,
+    LayoutModule
   ]
 })
 export class AccountModule {
