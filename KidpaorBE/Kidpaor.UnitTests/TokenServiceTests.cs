@@ -31,7 +31,7 @@ namespace Kidpaor.UnitTests
             var user = new AppUser { Email = "test@example.com", DisplayName = "Test User" };
             var service = new TokenService(_config);
 
-            var token = service.CreateToken(user);
+            var token = service.CreateToken(user, "");
             var tokenHandler = new JwtSecurityTokenHandler();
             var decodedToken = tokenHandler.ReadJwtToken(token);
 
@@ -47,7 +47,7 @@ namespace Kidpaor.UnitTests
         {
             var service = new TokenService(_config);
 
-            Assert.Throws<ArgumentNullException>(() => service.CreateToken(null));
+            Assert.Throws<ArgumentNullException>(() => service.CreateToken(null, ""));
         }
     }
 }

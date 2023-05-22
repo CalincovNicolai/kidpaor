@@ -17,6 +17,57 @@
     </div>
     <div class="login-page__content__bottom-part">
       <p class="complete-form-details">{{ 'CompleteFormDetails' | translate}}</p>
+      <form (ngSubmit)="submit()" class="login-form" [formGroup]=formGroup>
+        <div class="login-form__input">
+          <tui-input
+            formControlName="email"
+          >
+            <p class="login-form__input__label">EMAIL</p>
+            <input
+              tuiTextfield
+              type="email"
+            />
+          </tui-input>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="email"
+          ></tui-error>
+        </div>
+        <div class="login-form__input">
+          <tui-input-password
+            formControlName="password"
+          >
+            <p class="login-form__input__label">PASSWORD</p>
+            <input
+              tuiTextfield
+              type="password"
+            />
+          </tui-input-password>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="password"
+          ></tui-error>
+        </div>
+        <div class="login-form__input__button">
+          <tui-loader
+            class="w-full"
+            [showLoader]="loading"
+            [inheritColor]="loading"
+            [overlay]="loading"
+          >
+            <button
+              tuiButton
+              class="login-button"
+              appearance="mono"
+              type="submit"
+              size="m"
+              [disabled]="formGroup.invalid"
+            >
+              {{'SignIn' | translate}}
+            </button>
+          </tui-loader>
+        </div>
+      </form>
     </div>
   </div>
 </app-basic>

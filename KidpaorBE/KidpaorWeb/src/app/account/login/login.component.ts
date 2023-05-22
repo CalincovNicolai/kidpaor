@@ -3,7 +3,6 @@ import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
 import { AccountService } from "../account.service";
 import { catchError, of } from "rxjs";
 import { Location } from '@angular/common';
-import { TranslateService } from "@ngx-translate/core";
 
 @Component({
   selector: 'app-login',
@@ -18,10 +17,7 @@ export class LoginComponent implements OnInit {
     private fb: FormBuilder,
     private accountService: AccountService,
     private location: Location,
-    private translate: TranslateService
   ) {
-    const language = localStorage.getItem('language')
-    translate.use('en');
   }
 
   returnToPreviousPage(): void {

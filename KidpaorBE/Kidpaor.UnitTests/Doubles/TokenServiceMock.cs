@@ -33,7 +33,7 @@ namespace Kidpaor.UnitTests.Doubles
 
             var tokenService = new TokenService(mockConfiguration.Object);
 
-            var token = tokenService.CreateToken(mockUser.Object);
+            var token = tokenService.CreateToken(mockUser.Object, "");
 
             Assert.NotNull(token);
         }
