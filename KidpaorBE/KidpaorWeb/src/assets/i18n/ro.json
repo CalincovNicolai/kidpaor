@@ -6,6 +6,8 @@
   "SignUp": "REGISTRARE",
   "ChooseOption": "SELECTAȚI OPȚIUNEA",
   "Return": "ÎNAPOI",
-  "CompleteForm": "COMPLETAȚI FORMA DE LOGARE",
-  "CompleteFormDetails": "VĂ RUGĂM SĂ COMPLETAȚI CÂMPURILE PENTRU AUTENTIFICARE"
+  "CompleteSignInForm": "COMPLETAȚI FORMA DE LOGARE",
+  "CompleteSignUpForm": "COMPLETAȚI FORMA DE REGISTRARE",
+  "CompleteSignInFormDetails": "VĂ RUGĂM SĂ COMPLETAȚI CÂMPURILE PENTRU AUTENTIFICARE",
+  "CompleteSignUpFormDetails": "VĂ RUGĂM SĂ COMPLETAȚI CÂMPURILE PENTRU REGISTRARE"
 }

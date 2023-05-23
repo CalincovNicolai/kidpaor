@@ -9,14 +9,17 @@ import { Router } from "@angular/router";
   providedIn: 'root'
 })
 export class AccountService {
-  baseUrl = environment.apiUrl;
+  baseUrl = environment.api.baseUrl;
   private _currentUserSource$ = new BehaviorSubject<IUserModel | null>(null);
 
   public data = {
     currentUser$: this._currentUserSource$.asObservable()
   }
 
-  constructor(private http: HttpClient, private router: Router) {
+  constructor(
+    private http: HttpClient,
+    private router: Router,
+  ) {
   }
 
   loadCurrentUser(token: string) {
@@ -38,16 +41,16 @@ export class AccountService {
     )
   }
 
-  login(values: any) {
-    return this.http.post(this.baseUrl + 'account/login', values).pipe(
-      map((user: any) => {
-        if (user) {
-          localStorage.setItem('token', user.token);
-          this._currentUserSource$.next(user);
-        }
-      })
-    )
-  }
+  // login(values: any) {
+  //   this.apiService.login(values).pipe(
+  //     map((user: any) => {
+  //       if (user) {
+  //         localStorage.setItem('token', user.token);
+  //         this._currentUserSource$.next(user);
+  //       }
+  //     })
+  //   ).subscribe();
+  // }
 
   register(values: any) {
     return this.http.post(this.baseUrl + 'account/register', values).pipe(

@@ -12,11 +12,11 @@
       >
         {{ 'Return' | translate}}
       </button>
-      <h1 class="kidpaor-title">{{ 'WelcomePage1' | translate}}</h1>
-      <p class="complete-form">{{ 'CompleteForm' | translate}}</p>
+      <h1 class="kidpaor-title">{{ 'KidpaorTitle' | translate}}</h1>
+      <p class="complete-form">{{ 'CompleteSignInForm' | translate}}</p>
     </div>
     <div class="login-page__content__bottom-part">
-      <p class="complete-form-details">{{ 'CompleteFormDetails' | translate}}</p>
+      <p class="complete-form-details">{{ 'CompleteSignInFormDetails' | translate}}</p>
       <form (ngSubmit)="submit()" class="login-form" [formGroup]=formGroup>
         <div class="login-form__input">
           <tui-input
@@ -71,52 +71,3 @@
     </div>
   </div>
 </app-basic>
-
-<!--<div class="login-container">-->
-<!--  <form (ngSubmit)="submit()" [formGroup]="formGroup">-->
-<!--    <label>-->
-<!--      <tui-input-->
-<!--        [tuiTextfieldCleaner]="true"-->
-<!--        [tuiTextfieldSize]="'m'"-->
-<!--        [tuiTextfieldLabelOutside]="true"-->
-<!--        formControlName="email"-->
-<!--      >Email-->
-<!--        <input tuiTextfield type="email"/>-->
-<!--      </tui-input>-->
-<!--      <tui-error-->
-<!--        [error]="[] | tuiFieldError | async"-->
-<!--        formControlName="email"-->
-<!--      ></tui-error>-->
-<!--    </label>-->
-<!--    <label>-->
-<!--      <tui-input-->
-<!--        [tuiTextfieldCleaner]="true"-->
-<!--        [tuiTextfieldSize]="'m'"-->
-<!--        [tuiTextfieldLabelOutside]="true"-->
-<!--        formControlName="password"-->
-<!--      >Password-->
-<!--        <input tuiTextfield type="password"/>-->
-<!--      </tui-input>-->
-<!--      <tui-error-->
-<!--        [error]="[] | tuiFieldError | async"-->
-<!--        formControlName="password"-->
-<!--      ></tui-error>-->
-<!--    </label>-->
-<!--    &lt;!&ndash;    <label>&ndash;&gt;-->
-<!--    &lt;!&ndash;      <tui-checkbox-labeled size="m">&ndash;&gt;-->
-<!--    &lt;!&ndash;        Remember me&ndash;&gt;-->
-<!--    &lt;!&ndash;      </tui-checkbox-labeled>&ndash;&gt;-->
-<!--    &lt;!&ndash;    </label>&ndash;&gt;-->
-<!--    <label>-->
-<!--      <tui-loader-->
-<!--        [inheritColor]="true"-->
-<!--        [overlay]="true"-->
-<!--        [showLoader]="loading"-->
-<!--      >-->
-<!--        <button size="m" tuiButton type="submit" [disabled]="formGroup.invalid">-->
-<!--          LOG IN-->
-<!--        </button>-->
-<!--      </tui-loader>-->
-<!--    </label>-->
-<!--  </form>-->
-<!--</div>-->

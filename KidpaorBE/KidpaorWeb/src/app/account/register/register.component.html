@@ -1,1 +1,105 @@
-<p>register works!</p>
+<app-basic image="../../../assets/kidpaor-signup.png">
+  <div class="register-page__content">
+    <div class="register-page__content__top-part">
+      <button
+        tuiButton
+        class="return-link"
+        appearance="mono"
+        type="button"
+        size="m"
+        icon="tuiIconChevronLeft"
+        (click)="returnToPreviousPage()"
+      >
+        {{ 'Return' | translate}}
+      </button>
+      <h1 class="kidpaor-title">{{ 'KidpaorTitle' | translate}}</h1>
+      <p class="complete-form">{{ 'CompleteSignUpForm' | translate}}</p>
+    </div>
+    <div class="register-page__content__bottom-part">
+      <p class="complete-form-details">{{ 'CompleteSignUpFormDetails' | translate}}</p>
+      <form (ngSubmit)="submit()" class="register-form" [formGroup]=formGroup>
+        <div class="register-form__input">
+          <tui-input
+            formControlName="fullName"
+          >
+            <p class="register-form__input__label">FULLNAME</p>
+            <input
+              tuiTextfield
+              type="text"
+            />
+          </tui-input>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="fullName"
+          ></tui-error>
+        </div>
+        <div class="register-form__input">
+          <tui-input
+            formControlName="email"
+          >
+            <p class="register-form__input__label">EMAIL</p>
+            <input
+              tuiTextfield
+              type="email"
+            />
+          </tui-input>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="email"
+          ></tui-error>
+        </div>
+        <div class="register-form__input">
+          <tui-input-password
+            formControlName="password"
+          >
+            <p class="register-form__input__label">PASSWORD</p>
+            <input
+              tuiTextfield
+              type="password"
+            />
+          </tui-input-password>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="password"
+          ></tui-error>
+        </div>
+        <div class="register-form__input">
+          <tui-input-password
+            formControlName="confirmPassword"
+          >
+            <p class="register-form__input__label">CONFIRM PASSWORD</p>
+            <input
+              tuiTextfield
+              type="password"
+            />
+          </tui-input-password>
+          <tui-error
+            [error]="[] | tuiFieldError | async"
+            formControlName="confirmPassword"
+          ></tui-error>
+          <div [@slideInOut]="formGroup.hasError('validatePassword')" class="field-error" *ngIf="formGroup.hasError('validatePassword')">
+            {{ formGroup.errors!['validatePassword'].error }}
+          </div>
+        </div>
+        <div class="register-form__input__button">
+          <tui-loader
+            class="w-full"
+            [showLoader]="loading"
+            [inheritColor]="loading"
+            [overlay]="loading"
+          >
+            <button
+              tuiButton
+              class="register-button"
+              appearance="mono"
+              type="submit"
+              [disabled]="formGroup.invalid"
+            >
+              {{'SignUp' | translate}}
+            </button>
+          </tui-loader>
+        </div>
+      </form>
+    </div>
+  </div>
+</app-basic>

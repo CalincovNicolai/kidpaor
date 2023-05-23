@@ -68,12 +68,13 @@ public class AccountController : BaseApiController
         
         if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
 
-        return new UserDto
-        {
-            Email = user.Email,
-            Token = _tokenService.CreateToken(user, (await _userManager.GetRolesAsync(user))[0]),
-            DisplayName = user.UserName
-        };
+        return Ok(new UserDto
+            {
+                Email = user.Email,
+                Token = _tokenService.CreateToken(user, (await _userManager.GetRolesAsync(user))[0]),
+                DisplayName = user.UserName
+            }
+        );
     }
 
     [HttpPost("register")]

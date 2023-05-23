@@ -66,6 +66,10 @@
   color: #FEF0CD;
 }
 
+.kidpaor-title:hover {
+  color: #FFF4DF;
+}
+
 .complete-form {
   font-weight: 500;
   font-size: 2rem;
@@ -75,10 +79,6 @@
   text-align: center;
   letter-spacing: 0.2em;
   color: #FEF0CD;
-}
-
-.kidpaor-title:hover {
-  color: #FFF4DF;
 }
 
 .complete-form-details {
@@ -171,6 +171,7 @@
   color: #FEF0CD;
   background: #FDBF46;
   padding: 2rem 0 !important;
+  transition: all .2s ease-in-out;
 }
 
 ::ng-deep .login-button .t-wrapper:hover {
@@ -181,40 +182,5 @@
 ::ng-deep .login-button .t-wrapper:active {
   background: #75512F;
   color: #F7D289 !important;
-}
-
-.link-page {
-  display: flex;
-  background: #D29432;
-  box-shadow: inset 0px -1rem 3rem rgba(0, 0, 0, 0.2);
-  border-radius: 3rem;
-  align-items: center;
-  justify-content: center;
-  padding: 1.2rem 4rem;
-  font-weight: 400;
-  font-size: 2rem;
-  line-height: 3.1rem;
-  letter-spacing: 0.03em;
-  color: #F7D289;
-  transition: all .2s ease-in-out;
-}
-
-.link-page:hover {
-  transform: scale(1.05);
-  background: #F7D289;
-  color: #D29432;
-}
-
-.choose-option {
-  font-weight: 400;
-  font-size: 1rem;
-  line-height: 1.6rem;
-  display: flex;
-  align-items: center;
-  letter-spacing: 0.03em;
-  padding: 1.2rem;
-  border: 2px solid #7D8176;
-  box-shadow: inset 0px -10px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
-  color: #DDDDDD;
+  transform: scale(0.9);
 }

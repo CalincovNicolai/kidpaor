@@ -1,4 +1,11 @@
 export const environment = {
-  production: false,
-  apiUrl: 'https://localhost:7275/api/',
+  // @ts-ignore
+  production: window['env']?.['prod'] || false,
+  useHash: true,
+  api: {
+    // @ts-ignore
+    baseUrl: 'https://localhost:7275/api/',
+    refreshTokenEnabled: true,
+    refreshTokenType: 'auth-refresh'
+  },
 };
