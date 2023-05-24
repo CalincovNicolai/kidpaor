@@ -10,7 +10,7 @@ const routes: Routes = [
   {
     path: 'admin', component: AdminViewComponent, children: [
       { path: 'admin-dashboard', component: AdminDashboardComponent },
-      { path: 'admin-activities', component: AdminActivitiesComponent },
+      { path: 'admin-activities-list', component: AdminActivitiesComponent },
       { path: 'admin-parents', component: AdminParentsComponent },
       { path: 'admin-organizers', component: AdminOrganizersComponent }
     ]

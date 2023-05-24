@@ -4,7 +4,8 @@ import { StartWindowComponent } from "../layout/start-window/start-window.compon
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
 import { HomeComponent } from '../modules/home-feature/home/home.component';
-import { ActivitiesComponent } from '../modules/activities-feature/activities/activities.component';
+import { ActivitiesComponent } from '../modules/activities-feature/activities-list/activities.component';
+import { ActivityComponent } from '../modules/activities-feature/activity-detail/activity.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: "full" },
@@ -17,7 +18,6 @@ const routes: Routes = [
   },
   {
     path: 'login',
-    loadChildren: () => import('../account/account.module').then(x => x.AccountModule),
     data: {
       title: 'Login to Kidpaor'
     },
@@ -25,7 +25,6 @@ const routes: Routes = [
   },
   {
     path: 'register',
-    loadChildren: () => import('../account/account.module').then(x => x.AccountModule),
     data: {
       title: 'Register to Kidpaor'
     },
@@ -33,7 +32,6 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    loadChildren: () => import('../modules/home-feature/home.module').then(x => x.HomeModule),
     data: {
       title: 'Kidpaor Home'
     },
@@ -41,11 +39,14 @@ const routes: Routes = [
   },
   {
     path: 'activities',
-    loadChildren: () => import('../modules/activities-feature/activities.module').then(x => x.ActivitiesModule),
     data: {
       title: 'Activities'
     },
     component: ActivitiesComponent,
+  },
+  {
+    path: 'activities/:id',
+    component: ActivityComponent,
   },
   { path: '**', redirectTo: 'exception/404' }
 ];

@@ -3,6 +3,7 @@
   height: 300px;
   border-radius: 3rem;
   background: white;
+  transition: all .2s ease-in-out;
 
   .activity {
     display: flex;
@@ -88,4 +89,9 @@
       }
     }
   }
+}
+
+.wrapper:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }

@@ -3,7 +3,7 @@ import { CategoryViewModel } from '../../../models/activity.model';
 import { ActivitiesService } from '../activities.service';
 
 @Component({
-  selector: 'app-activities',
+  selector: 'app-activities-list',
   templateUrl: './activities.component.html',
   styleUrls: ['./activities.component.scss']
 })

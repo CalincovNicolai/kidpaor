@@ -16,6 +16,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { KidpaorApi } from './services/kidpaor-service';
 import { AccountModule } from './account/account.module';
 import { HomeModule } from './modules/home-feature/home.module';
+import { ActivitiesFeatureModule } from './modules/activities-feature/activities-feature.module';
+import { KidpaorDestroyService } from './services/kidpaor-destroy.service';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -37,6 +39,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     HomeModule,
     LayoutModule,
     RoutesModule,
+    ActivitiesFeatureModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -48,6 +51,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   ],
   providers: [
     KidpaorApi,
+    KidpaorDestroyService,
     {
       provide: TUI_SANITIZER,
       useClass: NgDompurifySanitizer

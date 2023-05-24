@@ -30,11 +30,13 @@
             </div>
           </div>
           <div class="divider"></div>
-          <div class="activities-list__activities">
-            <div *ngFor="let activity of (activities$ | async)" class="activities-list__activities__container">
-              <app-activity-item [activity]="activity"></app-activity-item>
+          <tui-scrollbar>
+            <div class="activities-list__activities">
+              <div *ngFor="let activity of (activities$ | async)" class="activities-list__activities__container">
+                <app-activity-item [activity]="activity"></app-activity-item>
+              </div>
             </div>
-          </div>
+          </tui-scrollbar>
         </div>
       </div>
     </div>

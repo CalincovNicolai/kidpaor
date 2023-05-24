@@ -42,7 +42,7 @@ describe('AdminService', () => {
     expect(service.data.parentsAll$).toBeTruthy();
   });
 
-  it('should retrieve activities from API', () => {
+  it('should retrieve activities-list from API', () => {
     const activities = [{ id: 1, name: 'Swimming' }];
     service.getActivities();
     const req = httpMock.expectOne(`${ service.baseUrl }Activities`);
@@ -51,7 +51,7 @@ describe('AdminService', () => {
     expect(service.data.activitiesAll$).toBeTruthy();
   });
 
-  it('should add new activity to API', () => {
+  it('should add new activity-detail to API', () => {
     const activity = { name: 'Running' };
     service.addActivity(activity);
     const req = httpMock.expectOne(`${ service.baseUrl }Activities`);
@@ -60,7 +60,7 @@ describe('AdminService', () => {
     expect(service.getActivities).toHaveBeenCalled();
   });
 
-  it('should update an activity', () => {
+  it('should update an activity-detail', () => {
     const dummyActivity = { id: '1', name: 'Activity 1' };
 
     service.updateActivity('1', dummyActivity);
@@ -74,7 +74,7 @@ describe('AdminService', () => {
     });
   });
 
-  it('should delete an activity', () => {
+  it('should delete an activity-detail', () => {
     const dummyActivity = { id: '1' };
 
     service.deleteActivity(dummyActivity.id);
