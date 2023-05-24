@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace Infrastructure.Data.Config;
 
-public class ActivityConfiguration : IEntityTypeConfiguration<Activities>
+public class ActivityConfiguration : IEntityTypeConfiguration<Activity>
 {
-    public void Configure(EntityTypeBuilder<Activities> builder)
+    public void Configure(EntityTypeBuilder<Activity> builder)
     {
         builder.Property(p => p.Id).IsRequired();
         builder.Property(p => p.Title).IsRequired().HasMaxLength(100);

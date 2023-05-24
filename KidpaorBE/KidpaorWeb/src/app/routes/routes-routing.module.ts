@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { StartWindowComponent } from "../layout/start-window/start-window.component";
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
+import { HomeComponent } from '../modules/home-feature/home/home.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: "full" },
@@ -28,6 +29,14 @@ const routes: Routes = [
       title: 'Register to Kidpaor'
     },
     component: RegisterComponent
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('../modules/home-feature/home.module').then(x => x.HomeModule),
+    data: {
+      title: 'Kidpaor Home'
+    },
+    component: HomeComponent
   },
   { path: '**', redirectTo: 'exception/404' }
 ];

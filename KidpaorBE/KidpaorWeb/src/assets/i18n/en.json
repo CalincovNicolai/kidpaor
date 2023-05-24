@@ -9,5 +9,8 @@
   "CompleteSignInForm": "COMPLETE LOGIN FORM",
   "CompleteSignUpForm": "COMPLETE SIGN UP FORM",
   "CompleteSignInFormDetails": "PLEASE ADD IN THE FORM YOUR EMAIL AND PASSWORD",
-  "CompleteSignUpFormDetails": "PLEASE ADD IN THE FORM YOUR FULLNAME, EMAIL AND PASSWORD"
+  "CompleteSignUpFormDetails": "PLEASE ADD IN THE FORM YOUR FULLNAME, EMAIL AND PASSWORD",
+  "SelectRole": "SELECT YOUR ROLE",
+  "Parent": "PARENT",
+  "Organizer": "ORGANIZER"
 }

@@ -5,6 +5,7 @@
     gap: 1rem;
 
     &__select {
+      font-family: Mitr, 'sans-serif';
       width: 100%;
       font-weight: 500;
       font-size: 1rem;
@@ -37,6 +38,7 @@
 }
 
 .kidpaor-title {
+  font-family: Mitr, 'sans-serif';
   font-size: 6.4rem;
   font-weight: 500;
   letter-spacing: 1rem;
@@ -50,6 +52,7 @@
 }
 
 .kidpaor-subtitle {
+  font-family: Mitr, 'sans-serif';
   width: 65%;
   font-weight: 500;
   font-size: 1.2rem;
@@ -63,6 +66,7 @@
 
 .link-page {
   display: flex;
+  font-family: Mitr, 'sans-serif';
   background: #D29432;
   box-shadow: inset 0px -1rem 3rem rgba(0, 0, 0, 0.2);
   border-radius: 3rem;
@@ -84,6 +88,7 @@
 }
 
 .choose-option {
+  font-family: Mitr, 'sans-serif';
   font-weight: 400;
   font-size: 1rem;
   line-height: 1.6rem;

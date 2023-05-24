@@ -57,6 +57,7 @@ public class AccountController : BaseApiController
         return BadRequest("Problem updating the user");
     }
     
+    [AllowAnonymous]
     [HttpPost("login")]
     public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
     {
@@ -71,6 +72,7 @@ public class AccountController : BaseApiController
         return Ok(new UserDto
             {
                 Email = user.Email,
+                Role = (await _userManager.GetRolesAsync(user))[0],
                 Token = _tokenService.CreateToken(user, (await _userManager.GetRolesAsync(user))[0]),
                 DisplayName = user.UserName
             }
@@ -97,11 +99,12 @@ public class AccountController : BaseApiController
         }
         await _userManager.AddToRoleAsync(user, registerDto.Role);
 
-        return new UserDto
+        return Ok(new UserDto
         {
             DisplayName = user.DisplayName,
             Email = user.Email,
+            Role = registerDto.Role,
             Token = _tokenService.CreateToken(user, registerDto.Role)
-        };
+        });
     }
 }

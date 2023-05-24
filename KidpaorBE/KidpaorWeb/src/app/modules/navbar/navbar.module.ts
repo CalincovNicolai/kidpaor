@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { RouterLink } from "@angular/router";
+import { RouterLink, RouterLinkActive } from "@angular/router";
+import { TuiButtonModule } from '@taiga-ui/core';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -12,7 +14,10 @@ import { RouterLink } from "@angular/router";
   ],
   imports: [
     CommonModule,
-    RouterLink
+    RouterLink,
+    RouterLinkActive,
+    TuiButtonModule,
+    TranslateModule
   ]
 })
 export class NavbarModule {

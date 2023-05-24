@@ -13,7 +13,7 @@ public class ActivityRepository : IActivityRepository
         _context = context;
     }
 
-    public async Task<Activities> GetActivityByIdAsync(int id)
+    public async Task<Activity> GetActivityByIdAsync(int id)
     {
         return await _context.Activities
             .Include(p => p.Category)
@@ -21,7 +21,7 @@ public class ActivityRepository : IActivityRepository
             .FirstOrDefaultAsync(p => p.Id == id);
     }
 
-    public async Task<Activities> DeleteActivityAsync(int id)
+    public async Task<Activity> DeleteActivityAsync(int id)
     {
         var result = await _context.Activities
             .FirstOrDefaultAsync(p => p.Id == id);
@@ -35,7 +35,7 @@ public class ActivityRepository : IActivityRepository
         return null;
     }
 
-    public async Task<IReadOnlyList<Activities>> GetActivitiesAsync()
+    public async Task<IReadOnlyList<Activity>> GetActivitiesAsync()
     {
         return await _context.Activities
             .Include(p => p.Category)
@@ -43,14 +43,14 @@ public class ActivityRepository : IActivityRepository
             .ToListAsync();
     }
 
-    public async Task<Activities> AddActivityAsync(Activities activity)
+    public async Task<Activity> AddActivityAsync(Activity activity)
     {
         var result = await _context.Activities.AddAsync(activity);
         await _context.SaveChangesAsync();
         return result.Entity;
     }
     
-    public async Task<Activities> UpdateActivityAsync(Activities activity)
+    public async Task<Activity> UpdateActivityAsync(Activity activity)
     {
         var result = await _context.Activities
             .FirstOrDefaultAsync(p => p.Id == activity.Id);

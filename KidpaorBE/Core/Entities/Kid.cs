@@ -1,6 +1,6 @@
 ﻿namespace Core.Entities;
 
-public class Kids : BaseEntity
+public class Kid : BaseEntity
 {
     public string Fullname { get; set; }
     public string Age { get; set; }

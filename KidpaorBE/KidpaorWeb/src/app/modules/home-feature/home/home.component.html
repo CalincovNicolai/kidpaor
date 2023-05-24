@@ -1,0 +1,24 @@
+<app-basic image="../../../assets/kidpaor-home-page.png">
+  <div class="home-page__navbar">
+    <app-nav-bar class="home-page__navbar__container"></app-nav-bar>
+  </div>
+  <div class="home-page__content">
+    <div class="home-page__content__top-part">
+      <button
+        tuiButton
+        class="return-link"
+        appearance="mono"
+        type="button"
+        size="m"
+        icon="tuiIconChevronLeft"
+      >
+        {{ 'Return' | translate}}
+      </button>
+      <h1 class="kidpaor-title">{{ 'KidpaorTitle' | translate}}</h1>
+      <p class="complete-form">{{ 'CompleteSignUpForm' | translate}}</p>
+    </div>
+    <div class="home-page__content__bottom-part">
+      <p class="complete-form-details">{{ 'CompleteSignUpFormDetails' | translate}}</p>
+    </div>
+  </div>
+</app-basic>

@@ -22,11 +22,11 @@ import { animate, style, transition, trigger } from '@angular/animations';
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
-        style({transform: 'translateY(-30%)', opacity: 0}),
-        animate('300ms ease-in', style({transform: 'translateY(0%)', opacity: 1}))
+        style({ transform: 'translateY(-30%)', opacity: 0 }),
+        animate('300ms ease-in', style({ transform: 'translateY(0%)', opacity: 1 }))
       ]),
       transition(':leave', [
-        animate('300ms ease-in', style({transform: 'translateY(-30%)', opacity: 0}))
+        animate('300ms ease-in', style({ transform: 'translateY(-30%)', opacity: 0 }))
       ])
     ])
   ]
@@ -52,10 +52,12 @@ export class RegisterComponent {
     this.formGroup = this.fb.group({
       fullName: new FormControl('', Validators.required),
       email: new FormControl('', Validators.required),
-      role: new FormControl('', Validators.required),
+      roleParent: new FormControl({ value: true, disabled: false }, Validators.required),
+      roleOrganizer: new FormControl({ value: false, disabled: true }, Validators.required),
       password: new FormControl('', Validators.required),
       confirmPassword: new FormControl('', Validators.required),
     }, { validator: this.validatePassword });
+    console.log(this.formGroup);
   }
 
   validatePassword(control: AbstractControl): { validatePassword: { valid: boolean; error: string } } | null {
@@ -73,6 +75,20 @@ export class RegisterComponent {
     return null;
   }
 
+  disableParentRole() {
+    this.formGroup.get('roleParent')?.disable();
+    this.formGroup.get('roleParent')?.setValue(false);
+    this.formGroup.get('roleOrganizer')?.enable();
+    this.formGroup.get('roleOrganizer')?.setValue(true);
+  }
+
+  disableOrganizerRole() {
+    this.formGroup.get('roleOrganizer')?.disable();
+    this.formGroup.get('roleOrganizer')?.setValue(false);
+    this.formGroup.get('roleParent')?.enable();
+    this.formGroup.get('roleParent')?.setValue(true);
+  }
+
   submit(): void {
     if (!this.formGroup.valid) return;
 
@@ -83,7 +99,7 @@ export class RegisterComponent {
       new RegisterDto({
         displayName: this.formGroup.value.fullName,
         email: this.formGroup.value.email,
-        role: this.formGroup.value.role,
+        role: this.formGroup.value.roleParent ? 'Parent' : 'Organizer',
         password: this.formGroup.value.password
       })
     )
@@ -95,6 +111,9 @@ export class RegisterComponent {
       )
       .subscribe((user: any) => {
         this.loading = false;
+        localStorage.setItem('token', user.token);
+        localStorage.setItem('role', user.role);
+        localStorage.setItem('user', user.displayName);
         console.log(user);
         this.redirectAfterLogin();
       })
@@ -102,7 +121,7 @@ export class RegisterComponent {
 
   private redirectAfterLogin(): void {
     let url = this.router.url;
-    if (url.includes('/login')) {
+    if (url.includes('/register')) {
       url = '/home';
     }
     this.router.navigateByUrl(url).then();

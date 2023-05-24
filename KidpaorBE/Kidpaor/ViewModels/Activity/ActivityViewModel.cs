@@ -1,6 +1,8 @@
-﻿namespace Core.Entities;
+﻿using Core.Entities;
 
-public class Activities : BaseEntity
+namespace Kidpaor.Controllers;
+
+public class ActivityViewModel
 {
     public int Id { get; set; }
     public string Title { get; set; }

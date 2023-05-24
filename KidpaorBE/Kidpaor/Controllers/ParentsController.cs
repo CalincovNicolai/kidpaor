@@ -31,7 +31,7 @@ public class ParentsController : BaseApiController
     }
     
     [HttpGet("kids")]
-    public async Task<ActionResult<IReadOnlyList<Kids>>> GetKids()
+    public async Task<ActionResult<IReadOnlyList<Kid>>> GetKids()
     {
         var kids = await _parentRepository.GetKidsAsync();
 

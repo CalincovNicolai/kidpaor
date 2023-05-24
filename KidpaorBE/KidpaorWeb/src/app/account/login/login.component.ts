@@ -66,6 +66,8 @@ export class LoginComponent implements OnInit {
       .subscribe((user: any) => {
         this.loading = false;
         localStorage.setItem('token', user.token);
+        localStorage.setItem('role', user.role);
+        localStorage.setItem('user', user.displayName);
         console.log(user);
         this.redirectAfterLogin();
       })

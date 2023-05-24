@@ -4,11 +4,11 @@ namespace Core.Interfaces;
 
 public interface IActivityRepository
 {
-    Task<Activities> GetActivityByIdAsync(int id);
-    Task<Activities> AddActivityAsync(Activities activity);
-    Task<Activities> UpdateActivityAsync(Activities activity);
-    Task<Activities> DeleteActivityAsync(int id);
-    Task<IReadOnlyList<Activities>> GetActivitiesAsync();
+    Task<Activity> GetActivityByIdAsync(int id);
+    Task<Activity> AddActivityAsync(Activity activity);
+    Task<Activity> UpdateActivityAsync(Activity activity);
+    Task<Activity> DeleteActivityAsync(int id);
+    Task<IReadOnlyList<Activity>> GetActivitiesAsync();
     Task<IReadOnlyList<ActivitiesCategories>> GetActivitiesCategoriesAsync();
     Task<IReadOnlyList<Organizers>> GetOrganizersAsync();
 }

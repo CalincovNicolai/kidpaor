@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  width: 100%;
+
+  &__logo {
+    display: flex;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    width: 95px;
+  }
+
+  &__links {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+
+    ::ng-deep &__button .t-wrapper{
+      font-family: 'Merriweather', sans-serif !important;
+      font-style: normal;
+      font-weight: 400;
+      font-size: 1.6rem;
+      line-height: 1.8rem;
+      display: flex;
+      align-items: center;
+      letter-spacing: 0.03em;
+      background: transparent;
+      padding: 0 !important;
+      color: #F7D289;
+    }
+
+    &__button:first-child {
+      margin-right: auto;
+    }
+  }
+}

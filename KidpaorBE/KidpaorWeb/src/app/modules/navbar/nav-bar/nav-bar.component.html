@@ -1,3 +1,25 @@
+<div class="navbar">
+  <div class="navbar__logo">
+    <img src="./assets/kidpaor-logo.png" alt="kidpaor-logo">
+  </div>
+  <div class="navbar__links">
+    <button
+      *ngFor="let nav of menu"
+      #rta="routerLinkActive"
+      appearance="mono"
+      type="button"
+      size="m"
+      [routerLink]="nav.url"
+      class="navbar__links__button nav-items"
+      routerLinkActive
+      tuiButton
+    >
+      {{ nav.name | translate }}
+    </button>
+  </div>
+</div>
+
+
 <!--<nav class="bg-gray-800">-->
 <!--  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">-->
 <!--    <div class="relative flex h-16 items-center justify-between">-->

@@ -44,4 +44,13 @@ public class TokenService : ITokenService
         
         return tokenHandler.WriteToken(token);
     }
+
+    public List<Claim> DecodeToken(string token)
+    {
+        var handler = new JwtSecurityTokenHandler();
+        var jsonToken = handler.ReadToken(token);
+        var tokenS = jsonToken as JwtSecurityToken;
+
+        return tokenS?.Claims.ToList() ?? throw new InvalidOperationException("No claims found in jwt!");
+    }
 }

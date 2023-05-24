@@ -18,7 +18,7 @@ public class ParentRepository : IParentRepository
         return await _context.Parents.ToListAsync();
     }
 
-    public async Task<IReadOnlyList<Kids>> GetKidsAsync()
+    public async Task<IReadOnlyList<Kid>> GetKidsAsync()
     {
         return await _context.Kids.ToListAsync();
     }

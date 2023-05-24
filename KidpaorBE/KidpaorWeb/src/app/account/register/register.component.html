@@ -77,8 +77,32 @@
             [error]="[] | tuiFieldError | async"
             formControlName="confirmPassword"
           ></tui-error>
-          <div [@slideInOut]="formGroup.hasError('validatePassword')" class="field-error" *ngIf="formGroup.hasError('validatePassword')">
+          <div [@slideInOut]="formGroup.hasError('validatePassword')" class="field-error"
+               *ngIf="formGroup.hasError('validatePassword')">
             {{ formGroup.errors!['validatePassword'].error }}
+          </div>
+        </div>
+        <div class="register-form__checkboxes">
+          <p class="register-form__checkboxes__select">{{ 'SelectRole' | translate }}</p>
+          <div class="register-form__checkboxes__roles">
+            <div class="register-form__checkboxes__roles__role">
+              <tui-checkbox-labeled
+                formControlName="roleParent"
+                size="l"
+                (change)="disableParentRole()"
+              >
+                <p class="register-form__checkboxes__roles__role__label">{{ 'Parent' | translate }}</p>
+              </tui-checkbox-labeled>
+            </div>
+            <div class="register-form__checkboxes__roles__role">
+              <tui-checkbox-labeled
+                formControlName="roleOrganizer"
+                size="l"
+                (change)="disableOrganizerRole()"
+              >
+                <p class="register-form__checkboxes__roles__role__label">{{ 'Organizer' | translate }}</p>
+              </tui-checkbox-labeled>
+            </div>
           </div>
         </div>
         <div class="register-form__input__button">

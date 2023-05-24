@@ -1,5 +1,5 @@
 import { NgDompurifySanitizer } from "@tinkoff/ng-dompurify";
-import { TUI_SANITIZER, TuiAlertModule, TuiRootModule } from "@taiga-ui/core";
+import { TUI_SANITIZER, TuiAlertModule, TuiDialogModule, TuiRootModule } from "@taiga-ui/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -14,6 +14,8 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { KidpaorApi } from './services/kidpaor-service';
+import { AccountModule } from './account/account.module';
+import { HomeModule } from './modules/home-feature/home.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -31,6 +33,8 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     TuiRootModule,
     TuiAlertModule,
     CoreModule,
+    AccountModule,
+    HomeModule,
     LayoutModule,
     RoutesModule,
     TranslateModule.forRoot({
@@ -39,9 +43,16 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    TuiDialogModule
   ],
-  providers: [KidpaorApi, { provide: TUI_SANITIZER, useClass: NgDompurifySanitizer }],
+  providers: [
+    KidpaorApi,
+    {
+      provide: TUI_SANITIZER,
+      useClass: NgDompurifySanitizer
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {
