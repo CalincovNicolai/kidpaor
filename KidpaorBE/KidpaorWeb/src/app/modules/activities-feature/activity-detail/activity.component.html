@@ -1,9 +1,32 @@
 <app-kidpaor-layout image="../../../assets/kidpaor-activities.png">
   <div class="activity-page__content">
     <div class="activity-page__content__wrapper" *tuiLet="(activity$ | async) as activity">
-      <div class="activity-page__content__wrapper__top-section">
-        <img class="activity__image" src="assets/kidpaor-start-page.png" alt="activity-image">
-      </div>
+      <tui-scrollbar>
+        <div class="top-section">
+          <img class="top-section__image" src="assets/kidpaor-start-page.png" alt="activity-image">
+          <div @slideInOut class="top-section__details">
+            <p class="top-section__details__title">{{ activity?.title }}</p>
+            <p class="top-section__details__category">{{ activity?.category!.name | translate }}</p>
+            <div class="top-section__details__location">
+              <tui-svg src="tuiIconMapPinLarge" class="top-section__details__location__icon"></tui-svg>
+              <p class="top-section__details__location__name">{{ activity?.location }}</p>
+            </div>
+            <div class="top-section__details__dates">
+              <p class="top-section__details__dates__label">{{ 'DateStart' | translate }}</p>
+              <p class="top-section__details__dates__date">{{ activity?.dateStart | date: 'dd/MM/YYYY' }}</p>
+            </div>
+            <div class="top-section__details__dates">
+              <p class="top-section__details__dates__label">{{ 'DateEnd' | translate }}</p>
+              <p class="top-section__details__dates__date">{{ activity?.dateEnd | date: 'dd/MM/YYYY' }}</p>
+            </div>
+          </div>
+        </div>
+        <p class="section-header">{{ 'ActivityDescription' | translate }}</p>
+        <div class="divider"></div>
+        <div class="middle-section">
+          <p class="middle-section__details__description">{{ activity?.description }}</p>
+        </div>
+      </tui-scrollbar>
     </div>
   </div>
 </app-kidpaor-layout>

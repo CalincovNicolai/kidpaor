@@ -28,6 +28,7 @@
   "SiteUse2": "ELIBERAȚI CREATIVITATEA ȘI JUCĂUȘENIA ÎN COPILUL DUMNEAVOASTRĂ",
   "BrowseActivities": "ACCESAȚI ACTIVITĂȚI",
   "SearchLabel": "CAUTĂ...",
+  "Categories": "CATEGORII",
   "SummerCamp": "TABĂRĂ DE VARĂ",
   "Games": "JOCURI",
   "Music": "MUZICĂ",
@@ -37,5 +38,9 @@
   "Science": "ȘTIINȚĂ",
   "Economy": "ECONOMIE",
   "Social": "SOCIALE",
-  "Art": "ARTĂ"
+  "Art": "ARTĂ",
+  "DateStart": "DATA DE ÎNCEPUT:",
+  "DateEnd": "DATA DE ÎNCHEIERE:",
+  "ActivityDetails": "DETALII DESPRE ACTIVITATE",
+  "ActivityDescription": "DESCRIEREA ACTIVITĂȚII"
 }

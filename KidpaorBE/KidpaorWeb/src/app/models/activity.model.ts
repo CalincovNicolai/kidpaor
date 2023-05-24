@@ -1,7 +1,7 @@
 export interface ActivityViewModel {
   id: number;
   title: string;
-  category: string;
+  category: ActivityCategoryViewModel;
   description: string;
   ageRange: string;
   location: string;
@@ -16,6 +16,12 @@ export interface ActivityBriefViewModel {
   category: string;
   location: string;
   dateStart: Date;
+}
+
+export interface ActivityCategoryViewModel {
+  id: number;
+  name: string;
+  description: string;
 }
 
 export interface CategoryViewModel {
