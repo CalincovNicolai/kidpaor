@@ -4,6 +4,7 @@ import { StartWindowComponent } from "../layout/start-window/start-window.compon
 import { LoginComponent } from '../account/login/login.component';
 import { RegisterComponent } from '../account/register/register.component';
 import { HomeComponent } from '../modules/home-feature/home/home.component';
+import { ActivitiesComponent } from '../modules/activities-feature/activities/activities.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: "full" },
@@ -36,7 +37,15 @@ const routes: Routes = [
     data: {
       title: 'Kidpaor Home'
     },
-    component: HomeComponent
+    component: HomeComponent,
+  },
+  {
+    path: 'activities',
+    loadChildren: () => import('../modules/activities-feature/activities.module').then(x => x.ActivitiesModule),
+    data: {
+      title: 'Activities'
+    },
+    component: ActivitiesComponent,
   },
   { path: '**', redirectTo: 'exception/404' }
 ];

@@ -5,6 +5,7 @@ import { TranslateModule } from '@ngx-translate/core';
 import { TuiButtonModule } from '@taiga-ui/core';
 import { LayoutModule } from '../../layout/layout.module';
 import { NavbarModule } from '../navbar/navbar.module';
+import { RouterLink } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { NavbarModule } from '../navbar/navbar.module';
     TranslateModule,
     TuiButtonModule,
     LayoutModule,
-    NavbarModule
+    NavbarModule,
+    RouterLink
   ]
 })
 export class HomeModule {

@@ -1,6 +1,8 @@
 <div class="navbar">
   <div class="navbar__logo">
-    <img src="./assets/kidpaor-logo.png" alt="kidpaor-logo">
+    <a routerLink="/home">
+      <img src="./assets/kidpaor-logo.png" alt="kidpaor-logo">
+    </a>
   </div>
   <div class="navbar__links">
     <button
@@ -9,13 +11,41 @@
       appearance="mono"
       type="button"
       size="m"
+      [ngClass]="{'active-nav-margin': rta.isActive}"
       [routerLink]="nav.url"
       class="navbar__links__button nav-items"
       routerLinkActive
       tuiButton
     >
       {{ nav.name | translate }}
+      <tui-svg src="tuiIconCircle" @slideInOut *ngIf="rta.isActive" class="active-nav"></tui-svg>
     </button>
+    <app-language-switcher-component></app-language-switcher-component>
+    <tui-hosted-dropdown
+      tuiDropdownAlign="left"
+      tuiDropdownDirection="bottom"
+      [sided]="true"
+      [content]="dropdown"
+      [(open)]="open"
+    >
+      <tui-svg class="navbar__links__user" src="tuiIconUserLarge"></tui-svg>
+    </tui-hosted-dropdown>
+    <ng-template
+      #dropdown
+    >
+      <div class="user-options">
+        <tui-opt-group>
+          <div class="admin-container">
+            <tui-svg class="admin-container__icon" src="tuiIconMonitorLarge"></tui-svg>
+            <p class="admin-container__text">ADMIN</p>
+          </div>
+        </tui-opt-group>
+        <tui-opt-group>
+          <app-user-logout-component></app-user-logout-component>
+        </tui-opt-group>
+      </div>
+    </ng-template>
+
   </div>
 </div>
 

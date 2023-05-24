@@ -17,7 +17,7 @@
 }
 
 ::ng-deep .language-select .t-wrapper {
-  font-family: Mitr, 'sans-serif';
+  font-family: Merriweather, 'sans-serif';
   font-weight: 400;
   font-size: 1.6rem;
   line-height: 1.8rem;
@@ -25,13 +25,13 @@
   align-items: center;
   text-align: center;
   letter-spacing: 0.03em;
-  color: #D29432;
+  color: #F7D289;
   background: transparent;
   padding: 0 !important;
 }
 
 ::ng-deep .language-select-items {
-  font-family: Mitr, 'sans-serif' !important;
+  font-family: Merriweather, 'sans-serif' !important;
   font-size: 1rem !important;
   line-height: 1.4rem !important;
   letter-spacing: 0.03em;
@@ -44,5 +44,5 @@
 
 ::ng-deep .language-select .t-wrapper:hover {
   background: transparent;
-  color: #F7D289 !important;
+  color: #D29432 !important;
 }

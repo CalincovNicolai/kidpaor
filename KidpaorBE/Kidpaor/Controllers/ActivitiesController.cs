@@ -9,7 +9,6 @@ using Activity = Core.Entities.Activity;
 
 namespace Kidpaor.Controllers;
 
-[Authorize]
 public class ActivitiesController : BaseApiController
 {
     private readonly IActivityRepository _activityRepository;
@@ -28,10 +27,10 @@ public class ActivitiesController : BaseApiController
     [HttpGet]
     public async Task<ActionResult<List<ActivityItemViewModel>>> GetActivities()
     {
-        if (!User.IsInRole("Parent"))
+        /*if (!User.IsInRole("Parent"))
         {
             throw new UnauthorizedAccessException("Only parents can access this information.");
-        }
+        }*/
 
         var allActivities = await _activityRepository.GetActivitiesAsync();
 

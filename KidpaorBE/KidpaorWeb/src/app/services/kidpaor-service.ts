@@ -18,7 +18,7 @@ export const API_BASE_URL = new InjectionToken<string>('API_BASE_URL');
 @Injectable()
 export class KidpaorApi {
   private http: HttpClient;
-  private baseUrl: string = 'https://localhost:7275';
+  private baseUrl: string = 'http://localhost:5151';
   protected jsonParseReviver: ((key: string, value: any) => any) | undefined = undefined;
 
   constructor(@Inject(HttpClient) http: HttpClient, @Optional() @Inject(API_BASE_URL) baseUrl?: string) {

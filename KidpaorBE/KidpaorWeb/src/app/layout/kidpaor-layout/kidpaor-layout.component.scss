@@ -1,0 +1,33 @@
+.background-image {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+}
+
+@media only screen and (max-width: 767px) {
+  .background-image {
+    background-attachment: scroll;
+  }
+}
+
+.kidpaor {
+  &__navbar {
+    position: absolute;
+    top: 3%;
+    left: 10%;
+    display: flex;
+    align-items: flex-start;
+    width: 90%;
+
+    &__container {
+      position: relative;
+      width: 93%;
+    }
+  }
+}

@@ -4,7 +4,7 @@ export const environment = {
   useHash: true,
   api: {
     // @ts-ignore
-    baseUrl: 'https://localhost:7275/api/',
+    baseUrl: 'http://localhost:5151/api/',
     refreshTokenEnabled: true,
     refreshTokenType: 'auth-refresh'
   },

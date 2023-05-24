@@ -1,0 +1,68 @@
+.logout-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all .2s ease-in-out;
+
+  &__icon {
+    width: 1.6rem;
+    height: 1.6rem;
+  }
+}
+
+.logout-wrapper:hover {
+  transform: scale(1.05);
+}
+
+::ng-deep .user-logout .t-wrapper {
+  font-family: Mitr, 'sans-serif';
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.5rem;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 0.03em;
+  color: #D29432;
+  background: transparent;
+  padding: 0 !important;
+}
+
+::ng-deep .user-logout .t-wrapper:active {
+  background: transparent;
+  color: #F7D289 !important;
+}
+
+::ng-deep .user-logout .t-wrapper:hover {
+  background: transparent;
+  color: #F7D289 !important;
+}
+
+.title {
+  font-family: Mitr, 'sans-serif';
+  font-weight: 400;
+  font-size: 3.2rem;
+  line-height: 5rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: #111F24;
+}
+
+.subtitle {
+  font-family: Mitr, 'sans-serif';
+  font-weight: 400;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: 0.03em;
+  color: rgba(17, 31, 36, 0.5);
+  margin-bottom: 5rem;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}

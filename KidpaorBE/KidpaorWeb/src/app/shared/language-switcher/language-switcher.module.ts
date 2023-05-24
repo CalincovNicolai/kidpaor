@@ -3,8 +3,6 @@ import { CommonModule } from '@angular/common';
 import { LanguageSwitcherComponent } from './language-switcher-component/language-switcher.component';
 import { TuiButtonModule, TuiDataListModule, TuiHostedDropdownModule } from '@taiga-ui/core';
 
-
-
 @NgModule({
   declarations: [
     LanguageSwitcherComponent
@@ -19,4 +17,5 @@ import { TuiButtonModule, TuiDataListModule, TuiHostedDropdownModule } from '@ta
     TuiDataListModule
   ]
 })
-export class LanguageSwitcherModule { }
+export class LanguageSwitcherModule {
+}

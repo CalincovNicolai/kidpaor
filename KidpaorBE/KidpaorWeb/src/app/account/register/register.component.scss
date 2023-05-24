@@ -111,7 +111,7 @@
 
     &__select {
       font-family: Mitr, 'sans-serif';
-      font-size: 1rem;
+      font-size: 1.4rem;
       color: #75512F;
     }
 
@@ -159,10 +159,12 @@
       border-radius: 1rem;
 
       ::ng-deep .t-placeholder_raised {
-        transform: translateY(-0.9rem) !important;
+        transform: translateY(-1.2rem) !important;
       }
 
       input {
+        font-family: Mitr, 'sans-serif';
+        font-size: 1.4rem;
         background: #FEF0CD;
       }
     }
@@ -178,7 +180,7 @@
       }
 
       ::ng-deep .t-placeholder_raised {
-        transform: translateY(-0.9rem) !important;
+        transform: translateY(-1.2rem) !important;
       }
 
       ::ng-deep .t-icon tui-svg {
@@ -186,6 +188,8 @@
       }
 
       input {
+        font-family: Mitr, 'sans-serif';
+        font-size: 1.4rem;
         background: #FEF0CD;
       }
     }
