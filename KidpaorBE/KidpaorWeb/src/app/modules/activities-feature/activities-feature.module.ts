@@ -4,12 +4,20 @@ import { ActivitiesComponent } from './activities-list/activities.component';
 import { LayoutModule } from '../../layout/layout.module';
 import { TranslateModule } from '@ngx-translate/core';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { TuiInputModule } from '@taiga-ui/kit';
-import { TuiScrollbarModule, TuiSvgModule, TuiTextfieldControllerModule } from '@taiga-ui/core';
+import { TuiAvatarModule, TuiInputModule } from '@taiga-ui/kit';
+import {
+  TuiButtonModule,
+  TuiDataListModule,
+  TuiHostedDropdownModule,
+  TuiScrollbarModule,
+  TuiSvgModule,
+  TuiTextfieldControllerModule
+} from '@taiga-ui/core';
 import { ActivityItemComponent } from './activity-item/activity-item.component';
 import { SharedModule } from '../../shared/shared.module';
 import { ActivityComponent } from './activity-detail/activity.component';
 import { TuiLetModule } from '@taiga-ui/cdk';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,7 +36,12 @@ import { TuiLetModule } from '@taiga-ui/cdk';
     SharedModule,
     TuiScrollbarModule,
     RouterOutlet,
-    TuiLetModule
+    TuiLetModule,
+    TuiAvatarModule,
+    TuiHostedDropdownModule,
+    TuiDataListModule,
+    TuiButtonModule,
+    ReactiveFormsModule
   ]
 })
 export class ActivitiesFeatureModule {

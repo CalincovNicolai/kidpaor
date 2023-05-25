@@ -4,7 +4,8 @@
       <div class="activities-page__content__wrapper__search">
         <tui-input
           tuiTextfieldIconLeft="tuiIconSearchLarge"
-          class="input"
+          #filter
+          [formControl]="searchControl"
           [tuiTextfieldCleaner]="true"
           [tuiTextfieldLabelOutside]="true"
         >
@@ -31,8 +32,8 @@
           </div>
           <div class="divider"></div>
           <tui-scrollbar>
-            <div class="activities-list__activities">
-              <div *ngFor="let activity of (activities$ | async)" class="activities-list__activities__container">
+            <div class="activities-list__activities" *tuiLet="(activities$ | async) as activities">
+              <div *ngFor="let activity of activities! | customFilter : filter.value : filterBy" class="activities-list__activities__container">
                 <app-activity-item [activity]="activity"></app-activity-item>
               </div>
             </div>

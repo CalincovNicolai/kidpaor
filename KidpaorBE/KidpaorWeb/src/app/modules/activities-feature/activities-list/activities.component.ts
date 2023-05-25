@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CategoryViewModel } from '../../../models/activity.model';
+import { FormControl } from '@angular/forms';
+import { ActivityBriefViewModel, CategoryViewModel } from '../../../models/activity.model';
 import { ActivitiesService } from '../activities.service';
 
 @Component({
@@ -9,6 +10,7 @@ import { ActivitiesService } from '../activities.service';
 })
 export class ActivitiesComponent implements OnInit {
   activities$ = this.activitiesService.data.activitiesAll$;
+  searchControl = new FormControl();
   categories: CategoryViewModel[] = [
     {
       name: 'SummerCamp'
@@ -49,5 +51,9 @@ export class ActivitiesComponent implements OnInit {
 
   ngOnInit(): void {
     this.activitiesService.fetchAllActivities();
+  }
+
+  filterBy(activities: any[], str: string) {
+    return activities!.filter(u => u.title.toLowerCase().includes(str.toLowerCase()));
   }
 }

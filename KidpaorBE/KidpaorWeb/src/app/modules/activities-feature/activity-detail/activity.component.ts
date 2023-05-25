@@ -1,14 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Inject, OnInit, ViewChild } from '@angular/core';
 import { distinctUntilChanged, takeUntil } from 'rxjs';
 import { ActivatedRoute, Router } from '@angular/router';
 import { KidpaorDestroyService } from '../../../services/kidpaor-destroy.service';
 import { ActivitiesService } from '../activities.service';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { TuiDialogContext, TuiDialogService, TuiHostedDropdownComponent } from '@taiga-ui/core';
+import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
 
 @Component({
   selector: 'app-activity',
   templateUrl: './activity.component.html',
   styleUrls: ['./activity.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('slideInOut', [
       transition(':enter', [
@@ -23,9 +26,14 @@ import { animate, style, transition, trigger } from '@angular/animations';
   ]
 })
 export class ActivityComponent implements OnInit {
+  @ViewChild(TuiHostedDropdownComponent)
+  component?: TuiHostedDropdownComponent;
   activity$ = this.activitiesService.data.activityData$;
+  activityKids$ = this.activitiesService.data.activityKidsData$;
+  id: string = '';
 
   constructor(
+    @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
     private activitiesService: ActivitiesService,
     private route: ActivatedRoute,
     private router: Router,
@@ -34,13 +42,23 @@ export class ActivityComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.component?.nativeFocusableElement?.focus();
     this.route.params
       .pipe(
         takeUntil(this.destroy$),
         distinctUntilChanged()
       ).subscribe((params) => {
-      const id = params['id'];
-      this.activitiesService.fetchActivityById(id);
+      this.id = params['id'];
+      this.activitiesService.fetchActivityById(Number(this.id));
+      this.activitiesService.fetchActivityKidsById(Number(this.id));
     });
+  }
+
+  editKid(id: number) {
+    console.log();
+  }
+
+  deleteKid(id: number) {
+    this.activitiesService.deleteActivityKidsById(Number(this.id), id);
   }
 }

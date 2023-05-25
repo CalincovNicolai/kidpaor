@@ -40,7 +40,12 @@
   "Social": "SOCIAL",
   "Art": "ART",
   "DateStart": "START DATE:",
-  "DateEnd": "END DATE:,",
+  "DateEnd": "END DATE:",
   "ActivityDetails": "ACTIVITY DETAILS",
-  "ActivityDescription": "ACTIVITY DESCRIPTION"
+  "ActivityDescription": "ACTIVITY DESCRIPTION",
+  "KidsRegistered": "KIDS REGISTERED",
+  "Age": "Age:",
+  "Edit": "EDIT",
+  "Delete": "DELETE",
+  "DeleteKid": "THIS CHANGE IS IRREVERSIBLE."
 }

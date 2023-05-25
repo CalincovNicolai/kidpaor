@@ -18,6 +18,12 @@ export interface ActivityBriefViewModel {
   dateStart: Date;
 }
 
+export interface KidBriefViewModel {
+  id: number;
+  fullname: string;
+  age: string;
+}
+
 export interface ActivityCategoryViewModel {
   id: number;
   name: string;

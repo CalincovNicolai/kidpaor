@@ -42,5 +42,10 @@
   "DateStart": "DATA DE ÎNCEPUT:",
   "DateEnd": "DATA DE ÎNCHEIERE:",
   "ActivityDetails": "DETALII DESPRE ACTIVITATE",
-  "ActivityDescription": "DESCRIEREA ACTIVITĂȚII"
+  "ActivityDescription": "DESCRIEREA ACTIVITĂȚII",
+  "KidsRegistered": "COPII ÎNREGISTRAȚI",
+  "Age": "Vârsta:",
+  "Edit": "EDITARE",
+  "Delete": "ȘTERGERE",
+  "DeleteKid": "ACEASTĂ SCHIMBARE ESTE IREVERSIBILĂ."
 }

@@ -329,7 +329,7 @@ export class KidpaorApi {
   /**
    * @return Success
    */
-  activitiesAll(): Observable<Activities[]> {
+  activitiesAll(): Observable<ActivityItemViewModel[]> {
     let url_ = this.baseUrl + "/api/Activities";
     url_ = url_.replace(/[?&]$/, "");
 
@@ -348,14 +348,14 @@ export class KidpaorApi {
         try {
           return this.processActivitiesAll(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Activities[]>;
+          return _observableThrow(e) as any as Observable<ActivityItemViewModel[]>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Activities[]>;
+        return _observableThrow(response_) as any as Observable<ActivityItemViewModel[]>;
     }));
   }
 
-  protected processActivitiesAll(response: HttpResponseBase): Observable<Activities[]> {
+  protected processActivitiesAll(response: HttpResponseBase): Observable<ActivityItemViewModel[]> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -374,7 +374,7 @@ export class KidpaorApi {
         if (Array.isArray(resultData200)) {
           result200 = [] as any;
           for (let item of resultData200)
-            result200!.push(Activities.fromJS(item));
+            result200!.push(ActivityItemViewModel.fromJS(item));
         } else {
           result200 = <any>null;
         }
@@ -392,7 +392,7 @@ export class KidpaorApi {
    * @param body (optional)
    * @return Success
    */
-  activitiesPOST(body: Activities | undefined): Observable<Activities> {
+  activitiesPOST(body: Activity | undefined): Observable<Activity> {
     let url_ = this.baseUrl + "/api/Activities";
     url_ = url_.replace(/[?&]$/, "");
 
@@ -415,14 +415,14 @@ export class KidpaorApi {
         try {
           return this.processActivitiesPOST(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Activities>;
+          return _observableThrow(e) as any as Observable<Activity>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Activities>;
+        return _observableThrow(response_) as any as Observable<Activity>;
     }));
   }
 
-  protected processActivitiesPOST(response: HttpResponseBase): Observable<Activities> {
+  protected processActivitiesPOST(response: HttpResponseBase): Observable<Activity> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -438,7 +438,7 @@ export class KidpaorApi {
       return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
         let result200: any = null;
         let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-        result200 = Activities.fromJS(resultData200);
+        result200 = Activity.fromJS(resultData200);
         return _observableOf(result200);
       }));
     } else if (status !== 200 && status !== 204) {
@@ -452,7 +452,7 @@ export class KidpaorApi {
   /**
    * @return Success
    */
-  activitiesGET(id: number): Observable<Activities> {
+  activitiesGET(id: number): Observable<ActivityViewModel> {
     let url_ = this.baseUrl + "/api/Activities/{id}";
     if (id === undefined || id === null)
       throw new Error("The parameter 'id' must be defined.");
@@ -474,14 +474,14 @@ export class KidpaorApi {
         try {
           return this.processActivitiesGET(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Activities>;
+          return _observableThrow(e) as any as Observable<ActivityViewModel>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Activities>;
+        return _observableThrow(response_) as any as Observable<ActivityViewModel>;
     }));
   }
 
-  protected processActivitiesGET(response: HttpResponseBase): Observable<Activities> {
+  protected processActivitiesGET(response: HttpResponseBase): Observable<ActivityViewModel> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -497,7 +497,7 @@ export class KidpaorApi {
       return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
         let result200: any = null;
         let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-        result200 = Activities.fromJS(resultData200);
+        result200 = ActivityViewModel.fromJS(resultData200);
         return _observableOf(result200);
       }));
     } else if (status !== 200 && status !== 204) {
@@ -512,7 +512,7 @@ export class KidpaorApi {
    * @param body (optional)
    * @return Success
    */
-  activitiesPUT(id: number, body: Activities | undefined): Observable<Activities> {
+  activitiesPUT(id: number, body: Activity | undefined): Observable<Activity> {
     let url_ = this.baseUrl + "/api/Activities/{id}";
     if (id === undefined || id === null)
       throw new Error("The parameter 'id' must be defined.");
@@ -538,14 +538,14 @@ export class KidpaorApi {
         try {
           return this.processActivitiesPUT(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Activities>;
+          return _observableThrow(e) as any as Observable<Activity>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Activities>;
+        return _observableThrow(response_) as any as Observable<Activity>;
     }));
   }
 
-  protected processActivitiesPUT(response: HttpResponseBase): Observable<Activities> {
+  protected processActivitiesPUT(response: HttpResponseBase): Observable<Activity> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -561,7 +561,7 @@ export class KidpaorApi {
       return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
         let result200: any = null;
         let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-        result200 = Activities.fromJS(resultData200);
+        result200 = Activity.fromJS(resultData200);
         return _observableOf(result200);
       }));
     } else if (status !== 200 && status !== 204) {
@@ -575,7 +575,7 @@ export class KidpaorApi {
   /**
    * @return Success
    */
-  activitiesDELETE(id: number): Observable<Activities> {
+  activitiesDELETE(id: number): Observable<Activity> {
     let url_ = this.baseUrl + "/api/Activities/{id}";
     if (id === undefined || id === null)
       throw new Error("The parameter 'id' must be defined.");
@@ -597,14 +597,14 @@ export class KidpaorApi {
         try {
           return this.processActivitiesDELETE(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Activities>;
+          return _observableThrow(e) as any as Observable<Activity>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Activities>;
+        return _observableThrow(response_) as any as Observable<Activity>;
     }));
   }
 
-  protected processActivitiesDELETE(response: HttpResponseBase): Observable<Activities> {
+  protected processActivitiesDELETE(response: HttpResponseBase): Observable<Activity> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -620,7 +620,7 @@ export class KidpaorApi {
       return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
         let result200: any = null;
         let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
-        result200 = Activities.fromJS(resultData200);
+        result200 = Activity.fromJS(resultData200);
         return _observableOf(result200);
       }));
     } else if (status !== 200 && status !== 204) {
@@ -1022,6 +1022,128 @@ export class KidpaorApi {
   /**
    * @return Success
    */
+  byActivity(activityId: number): Observable<KidBriefViewModel[]> {
+    let url_ = this.baseUrl + "/api/Kids/ByActivity/{activityId}";
+    if (activityId === undefined || activityId === null)
+      throw new Error("The parameter 'activityId' must be defined.");
+    url_ = url_.replace("{activityId}", encodeURIComponent("" + activityId));
+    url_ = url_.replace(/[?&]$/, "");
+
+    let options_: any = {
+      observe: "response",
+      responseType: "blob",
+      headers: new HttpHeaders({
+        "Accept": "text/plain"
+      })
+    };
+
+    return this.http.request("get", url_, options_).pipe(_observableMergeMap((response_: any) => {
+      return this.processByActivity(response_);
+    })).pipe(_observableCatch((response_: any) => {
+      if (response_ instanceof HttpResponseBase) {
+        try {
+          return this.processByActivity(response_ as any);
+        } catch (e) {
+          return _observableThrow(e) as any as Observable<KidBriefViewModel[]>;
+        }
+      } else
+        return _observableThrow(response_) as any as Observable<KidBriefViewModel[]>;
+    }));
+  }
+
+  protected processByActivity(response: HttpResponseBase): Observable<KidBriefViewModel[]> {
+    const status = response.status;
+    const responseBlob =
+      response instanceof HttpResponse ? response.body :
+        (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+    let _headers: any = {};
+    if (response.headers) {
+      for (let key of response.headers.keys()) {
+        _headers[key] = response.headers.get(key);
+      }
+    }
+    if (status === 200) {
+      return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+        let result200: any = null;
+        let resultData200 = _responseText === "" ? null : JSON.parse(_responseText, this.jsonParseReviver);
+        if (Array.isArray(resultData200)) {
+          result200 = [] as any;
+          for (let item of resultData200)
+            result200!.push(KidBriefViewModel.fromJS(item));
+        } else {
+          result200 = <any>null;
+        }
+        return _observableOf(result200);
+      }));
+    } else if (status !== 200 && status !== 204) {
+      return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+        return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+      }));
+    }
+    return _observableOf(null as any);
+  }
+
+  /**
+   * @return Success
+   */
+  deleteFromActivity(activityId: number, kidId: number): Observable<void> {
+    let url_ = this.baseUrl + "/api/Kids/DeleteFromActivity/{activityId}/{kidId}";
+    if (activityId === undefined || activityId === null)
+      throw new Error("The parameter 'activityId' must be defined.");
+    url_ = url_.replace("{activityId}", encodeURIComponent("" + activityId));
+    if (kidId === undefined || kidId === null)
+      throw new Error("The parameter 'kidId' must be defined.");
+    url_ = url_.replace("{kidId}", encodeURIComponent("" + kidId));
+    url_ = url_.replace(/[?&]$/, "");
+
+    let options_: any = {
+      observe: "response",
+      responseType: "blob",
+      headers: new HttpHeaders({})
+    };
+
+    return this.http.request("delete", url_, options_).pipe(_observableMergeMap((response_: any) => {
+      return this.processDeleteFromActivity(response_);
+    })).pipe(_observableCatch((response_: any) => {
+      if (response_ instanceof HttpResponseBase) {
+        try {
+          return this.processDeleteFromActivity(response_ as any);
+        } catch (e) {
+          return _observableThrow(e) as any as Observable<void>;
+        }
+      } else
+        return _observableThrow(response_) as any as Observable<void>;
+    }));
+  }
+
+  protected processDeleteFromActivity(response: HttpResponseBase): Observable<void> {
+    const status = response.status;
+    const responseBlob =
+      response instanceof HttpResponse ? response.body :
+        (response as any).error instanceof Blob ? (response as any).error : undefined;
+
+    let _headers: any = {};
+    if (response.headers) {
+      for (let key of response.headers.keys()) {
+        _headers[key] = response.headers.get(key);
+      }
+    }
+    if (status === 200) {
+      return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+        return _observableOf(null as any);
+      }));
+    } else if (status !== 200 && status !== 204) {
+      return blobToText(responseBlob).pipe(_observableMergeMap((_responseText: string) => {
+        return throwException("An unexpected server error occurred.", status, _responseText, _headers);
+      }));
+    }
+    return _observableOf(null as any);
+  }
+
+  /**
+   * @return Success
+   */
   parentsAll(): Observable<Parents[]> {
     let url_ = this.baseUrl + "/api/Parents";
     url_ = url_.replace(/[?&]$/, "");
@@ -1143,7 +1265,7 @@ export class KidpaorApi {
   /**
    * @return Success
    */
-  kids(): Observable<Kids[]> {
+  kids(): Observable<Kid[]> {
     let url_ = this.baseUrl + "/api/Parents/kids";
     url_ = url_.replace(/[?&]$/, "");
 
@@ -1162,14 +1284,14 @@ export class KidpaorApi {
         try {
           return this.processKids(response_ as any);
         } catch (e) {
-          return _observableThrow(e) as any as Observable<Kids[]>;
+          return _observableThrow(e) as any as Observable<Kid[]>;
         }
       } else
-        return _observableThrow(response_) as any as Observable<Kids[]>;
+        return _observableThrow(response_) as any as Observable<Kid[]>;
     }));
   }
 
-  protected processKids(response: HttpResponseBase): Observable<Kids[]> {
+  protected processKids(response: HttpResponseBase): Observable<Kid[]> {
     const status = response.status;
     const responseBlob =
       response instanceof HttpResponse ? response.body :
@@ -1188,7 +1310,7 @@ export class KidpaorApi {
         if (Array.isArray(resultData200)) {
           result200 = [] as any;
           for (let item of resultData200)
-            result200!.push(Kids.fromJS(item));
+            result200!.push(Kid.fromJS(item));
         } else {
           result200 = <any>null;
         }
@@ -1479,86 +1601,6 @@ export class KidpaorApi {
   }
 }
 
-export class Activities implements IActivities {
-  id?: number;
-  title?: string | undefined;
-  description?: string | undefined;
-  ageRange?: string | undefined;
-  location?: string | undefined;
-  cost?: string | undefined;
-  dateStart?: Date;
-  dateEnd?: Date;
-  category?: ActivitiesCategories;
-  activitiesCategoryId?: number;
-  organizer?: Organizers;
-  activitiesOrganizerId?: number;
-
-  constructor(data?: IActivities) {
-    if (data) {
-      for (var property in data) {
-        if (data.hasOwnProperty(property))
-          (<any>this)[property] = (<any>data)[property];
-      }
-    }
-  }
-
-  init(_data?: any) {
-    if (_data) {
-      this.id = _data["id"];
-      this.title = _data["title"];
-      this.description = _data["description"];
-      this.ageRange = _data["ageRange"];
-      this.location = _data["location"];
-      this.cost = _data["cost"];
-      this.dateStart = _data["dateStart"] ? new Date(_data["dateStart"].toString()) : <any>undefined;
-      this.dateEnd = _data["dateEnd"] ? new Date(_data["dateEnd"].toString()) : <any>undefined;
-      this.category = _data["category"] ? ActivitiesCategories.fromJS(_data["category"]) : <any>undefined;
-      this.activitiesCategoryId = _data["activitiesCategoryId"];
-      this.organizer = _data["organizer"] ? Organizers.fromJS(_data["organizer"]) : <any>undefined;
-      this.activitiesOrganizerId = _data["activitiesOrganizerId"];
-    }
-  }
-
-  static fromJS(data: any): Activities {
-    data = typeof data === 'object' ? data : {};
-    let result = new Activities();
-    result.init(data);
-    return result;
-  }
-
-  toJSON(data?: any) {
-    data = typeof data === 'object' ? data : {};
-    data["id"] = this.id;
-    data["title"] = this.title;
-    data["description"] = this.description;
-    data["ageRange"] = this.ageRange;
-    data["location"] = this.location;
-    data["cost"] = this.cost;
-    data["dateStart"] = this.dateStart ? this.dateStart.toISOString() : <any>undefined;
-    data["dateEnd"] = this.dateEnd ? this.dateEnd.toISOString() : <any>undefined;
-    data["category"] = this.category ? this.category.toJSON() : <any>undefined;
-    data["activitiesCategoryId"] = this.activitiesCategoryId;
-    data["organizer"] = this.organizer ? this.organizer.toJSON() : <any>undefined;
-    data["activitiesOrganizerId"] = this.activitiesOrganizerId;
-    return data;
-  }
-}
-
-export interface IActivities {
-  id?: number;
-  title?: string | undefined;
-  description?: string | undefined;
-  ageRange?: string | undefined;
-  location?: string | undefined;
-  cost?: string | undefined;
-  dateStart?: Date;
-  dateEnd?: Date;
-  category?: ActivitiesCategories;
-  activitiesCategoryId?: number;
-  organizer?: Organizers;
-  activitiesOrganizerId?: number;
-}
-
 export class ActivitiesCategories implements IActivitiesCategories {
   id?: number;
   name?: string | undefined;
@@ -1601,6 +1643,214 @@ export interface IActivitiesCategories {
   id?: number;
   name?: string | undefined;
   description?: string | undefined;
+}
+
+export class Activity implements IActivity {
+  id?: number;
+  title?: string | undefined;
+  description?: string | undefined;
+  ageRange?: string | undefined;
+  location?: string | undefined;
+  cost?: string | undefined;
+  dateStart?: Date;
+  dateEnd?: Date;
+  category?: ActivitiesCategories;
+  activitiesCategoryId?: number;
+  organizer?: Organizers;
+  activitiesOrganizerId?: number;
+
+  constructor(data?: IActivity) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      this.id = _data["id"];
+      this.title = _data["title"];
+      this.description = _data["description"];
+      this.ageRange = _data["ageRange"];
+      this.location = _data["location"];
+      this.cost = _data["cost"];
+      this.dateStart = _data["dateStart"] ? new Date(_data["dateStart"].toString()) : <any>undefined;
+      this.dateEnd = _data["dateEnd"] ? new Date(_data["dateEnd"].toString()) : <any>undefined;
+      this.category = _data["category"] ? ActivitiesCategories.fromJS(_data["category"]) : <any>undefined;
+      this.activitiesCategoryId = _data["activitiesCategoryId"];
+      this.organizer = _data["organizer"] ? Organizers.fromJS(_data["organizer"]) : <any>undefined;
+      this.activitiesOrganizerId = _data["activitiesOrganizerId"];
+    }
+  }
+
+  static fromJS(data: any): Activity {
+    data = typeof data === 'object' ? data : {};
+    let result = new Activity();
+    result.init(data);
+    return result;
+  }
+
+  toJSON(data?: any) {
+    data = typeof data === 'object' ? data : {};
+    data["id"] = this.id;
+    data["title"] = this.title;
+    data["description"] = this.description;
+    data["ageRange"] = this.ageRange;
+    data["location"] = this.location;
+    data["cost"] = this.cost;
+    data["dateStart"] = this.dateStart ? this.dateStart.toISOString() : <any>undefined;
+    data["dateEnd"] = this.dateEnd ? this.dateEnd.toISOString() : <any>undefined;
+    data["category"] = this.category ? this.category.toJSON() : <any>undefined;
+    data["activitiesCategoryId"] = this.activitiesCategoryId;
+    data["organizer"] = this.organizer ? this.organizer.toJSON() : <any>undefined;
+    data["activitiesOrganizerId"] = this.activitiesOrganizerId;
+    return data;
+  }
+}
+
+export interface IActivity {
+  id?: number;
+  title?: string | undefined;
+  description?: string | undefined;
+  ageRange?: string | undefined;
+  location?: string | undefined;
+  cost?: string | undefined;
+  dateStart?: Date;
+  dateEnd?: Date;
+  category?: ActivitiesCategories;
+  activitiesCategoryId?: number;
+  organizer?: Organizers;
+  activitiesOrganizerId?: number;
+}
+
+export class ActivityItemViewModel implements IActivityItemViewModel {
+  id?: number;
+  title?: string | undefined;
+  location?: string | undefined;
+  dateStart?: Date;
+
+  constructor(data?: IActivityItemViewModel) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      this.id = _data["id"];
+      this.title = _data["title"];
+      this.location = _data["location"];
+      this.dateStart = _data["dateStart"] ? new Date(_data["dateStart"].toString()) : <any>undefined;
+    }
+  }
+
+  static fromJS(data: any): ActivityItemViewModel {
+    data = typeof data === 'object' ? data : {};
+    let result = new ActivityItemViewModel();
+    result.init(data);
+    return result;
+  }
+
+  toJSON(data?: any) {
+    data = typeof data === 'object' ? data : {};
+    data["id"] = this.id;
+    data["title"] = this.title;
+    data["location"] = this.location;
+    data["dateStart"] = this.dateStart ? this.dateStart.toISOString() : <any>undefined;
+    return data;
+  }
+}
+
+export interface IActivityItemViewModel {
+  id?: number;
+  title?: string | undefined;
+  location?: string | undefined;
+  dateStart?: Date;
+}
+
+export class ActivityViewModel implements IActivityViewModel {
+  id?: number;
+  title?: string | undefined;
+  description?: string | undefined;
+  ageRange?: string | undefined;
+  location?: string | undefined;
+  cost?: string | undefined;
+  dateStart?: Date;
+  dateEnd?: Date;
+  category?: ActivitiesCategories;
+  activitiesCategoryId?: number;
+  organizer?: Organizers;
+  activitiesOrganizerId?: number;
+
+  constructor(data?: IActivityViewModel) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      this.id = _data["id"];
+      this.title = _data["title"];
+      this.description = _data["description"];
+      this.ageRange = _data["ageRange"];
+      this.location = _data["location"];
+      this.cost = _data["cost"];
+      this.dateStart = _data["dateStart"] ? new Date(_data["dateStart"].toString()) : <any>undefined;
+      this.dateEnd = _data["dateEnd"] ? new Date(_data["dateEnd"].toString()) : <any>undefined;
+      this.category = _data["category"] ? ActivitiesCategories.fromJS(_data["category"]) : <any>undefined;
+      this.activitiesCategoryId = _data["activitiesCategoryId"];
+      this.organizer = _data["organizer"] ? Organizers.fromJS(_data["organizer"]) : <any>undefined;
+      this.activitiesOrganizerId = _data["activitiesOrganizerId"];
+    }
+  }
+
+  static fromJS(data: any): ActivityViewModel {
+    data = typeof data === 'object' ? data : {};
+    let result = new ActivityViewModel();
+    result.init(data);
+    return result;
+  }
+
+  toJSON(data?: any) {
+    data = typeof data === 'object' ? data : {};
+    data["id"] = this.id;
+    data["title"] = this.title;
+    data["description"] = this.description;
+    data["ageRange"] = this.ageRange;
+    data["location"] = this.location;
+    data["cost"] = this.cost;
+    data["dateStart"] = this.dateStart ? this.dateStart.toISOString() : <any>undefined;
+    data["dateEnd"] = this.dateEnd ? this.dateEnd.toISOString() : <any>undefined;
+    data["category"] = this.category ? this.category.toJSON() : <any>undefined;
+    data["activitiesCategoryId"] = this.activitiesCategoryId;
+    data["organizer"] = this.organizer ? this.organizer.toJSON() : <any>undefined;
+    data["activitiesOrganizerId"] = this.activitiesOrganizerId;
+    return data;
+  }
+}
+
+export interface IActivityViewModel {
+  id?: number;
+  title?: string | undefined;
+  description?: string | undefined;
+  ageRange?: string | undefined;
+  location?: string | undefined;
+  cost?: string | undefined;
+  dateStart?: Date;
+  dateEnd?: Date;
+  category?: ActivitiesCategories;
+  activitiesCategoryId?: number;
+  organizer?: Organizers;
+  activitiesOrganizerId?: number;
 }
 
 export class AddressDto implements IAddressDto {
@@ -1699,14 +1949,14 @@ export interface IApiResponse {
   message?: string | undefined;
 }
 
-export class Kids implements IKids {
+export class Kid implements IKid {
   id?: number;
   fullname?: string | undefined;
   age?: string | undefined;
   parentId?: number;
   parent?: Parents;
 
-  constructor(data?: IKids) {
+  constructor(data?: IKid) {
     if (data) {
       for (var property in data) {
         if (data.hasOwnProperty(property))
@@ -1725,9 +1975,9 @@ export class Kids implements IKids {
     }
   }
 
-  static fromJS(data: any): Kids {
+  static fromJS(data: any): Kid {
     data = typeof data === 'object' ? data : {};
-    let result = new Kids();
+    let result = new Kid();
     result.init(data);
     return result;
   }
@@ -1743,12 +1993,56 @@ export class Kids implements IKids {
   }
 }
 
-export interface IKids {
+export interface IKid {
   id?: number;
   fullname?: string | undefined;
   age?: string | undefined;
   parentId?: number;
   parent?: Parents;
+}
+
+export class KidBriefViewModel implements IKidBriefViewModel {
+  id?: number;
+  fullname?: string | undefined;
+  age?: string | undefined;
+
+  constructor(data?: IKidBriefViewModel) {
+    if (data) {
+      for (var property in data) {
+        if (data.hasOwnProperty(property))
+          (<any>this)[property] = (<any>data)[property];
+      }
+    }
+  }
+
+  init(_data?: any) {
+    if (_data) {
+      this.id = _data["id"];
+      this.fullname = _data["fullname"];
+      this.age = _data["age"];
+    }
+  }
+
+  static fromJS(data: any): KidBriefViewModel {
+    data = typeof data === 'object' ? data : {};
+    let result = new KidBriefViewModel();
+    result.init(data);
+    return result;
+  }
+
+  toJSON(data?: any) {
+    data = typeof data === 'object' ? data : {};
+    data["id"] = this.id;
+    data["fullname"] = this.fullname;
+    data["age"] = this.age;
+    return data;
+  }
+}
+
+export interface IKidBriefViewModel {
+  id?: number;
+  fullname?: string | undefined;
+  age?: string | undefined;
 }
 
 export class LoginDto implements ILoginDto {
@@ -1849,7 +2143,7 @@ export class Parents implements IParents {
   email?: string | undefined;
   address?: string | undefined;
   phone?: string | undefined;
-  kids?: Kids[] | undefined;
+  kids?: Kid[] | undefined;
 
   constructor(data?: IParents) {
     if (data) {
@@ -1870,7 +2164,7 @@ export class Parents implements IParents {
       if (Array.isArray(_data["kids"])) {
         this.kids = [] as any;
         for (let item of _data["kids"])
-          this.kids!.push(Kids.fromJS(item));
+          this.kids!.push(Kid.fromJS(item));
       }
     }
   }
@@ -1904,7 +2198,7 @@ export interface IParents {
   email?: string | undefined;
   address?: string | undefined;
   phone?: string | undefined;
-  kids?: Kids[] | undefined;
+  kids?: Kid[] | undefined;
 }
 
 export class ProductBrand implements IProductBrand {

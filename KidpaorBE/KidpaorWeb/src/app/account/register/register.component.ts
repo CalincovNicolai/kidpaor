@@ -122,7 +122,7 @@ export class RegisterComponent {
   private redirectAfterLogin(): void {
     let url = this.router.url;
     if (url.includes('/register')) {
-      url = '/home';
+      url = '/login';
     }
     this.router.navigateByUrl(url).then();
   }
