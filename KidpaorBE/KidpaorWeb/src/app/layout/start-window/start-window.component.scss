@@ -73,7 +73,6 @@
   font-weight: 400;
   font-size: 2rem;
   line-height: 3.1rem;
-  letter-spacing: 0.03em;
   color: #F7D289;
   transition: all .2s ease-in-out;
 }
@@ -91,10 +90,54 @@
   line-height: 1.6rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.03em;
   padding: 1.2rem;
   border: 2px solid #7D8176;
   box-shadow: inset 0px -10px 30px rgba(0, 0, 0, 0.2);
-  border-radius: 16px;
+  border-radius: 1.6rem;
   color: #DDDDDD;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+  .start-page {
+    &__language {
+      &__select {
+        font-weight: 400;
+        font-size: 1.2rem;
+        line-height: 1.2rem;
+      }
+    }
+
+    &__content {
+      top: 82%;
+      width: 100%;
+      gap: 1.4rem;
+
+      &__button-container {
+        gap: 2rem;
+      }
+    }
+  }
+  .kidpaor-title {
+    font-size: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .kidpaor-subtitle {
+    font-weight: 400;
+    width: 80%;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+  }
+
+  .link-page {
+    border-radius: 3rem;
+    padding: 1rem 2rem;
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+  }
+
+  .choose-option {
+    font-size: 1rem;
+    line-height: 1.2rem;
+  }
 }
