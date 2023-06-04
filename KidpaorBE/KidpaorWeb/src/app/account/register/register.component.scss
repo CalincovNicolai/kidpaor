@@ -1,8 +1,8 @@
 .register-page {
   &__content {
     position: absolute;
-    top: 17%;
-    left: 57%;
+    top: 15%;
+    right: 18%;
     display: flex;
     align-items: flex-start;
     flex-direction: column;
@@ -20,14 +20,6 @@
       align-items: flex-start;
       flex-direction: column;
       gap: 3rem;
-      width: 85%;
-    }
-
-    &__button-container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 4.6rem;
     }
   }
 }
@@ -39,7 +31,6 @@
   line-height: 1.9rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.2em;
   color: #75512F;
   background: transparent;
   padding: 0 !important;
@@ -65,7 +56,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.2em;
   color: #75512F;
 }
 
@@ -80,8 +70,6 @@
   line-height: 3.1rem;
   display: flex;
   align-items: center;
-  text-align: center;
-  letter-spacing: 0.2em;
   color: #75512F;
 }
 
@@ -93,7 +81,6 @@
   line-height: 1.9rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.2em;
   color: #75512F;
 }
 
@@ -140,7 +127,6 @@
       line-height: 1.6rem;
       display: flex;
       align-items: center;
-      letter-spacing: 0.2em;
       color: #FDBF46;
     }
 
@@ -213,7 +199,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  letter-spacing: 0.2em;
   color: #FEF0CD;
   background: #75512F;
   padding: 2rem 0 !important;
@@ -229,4 +214,60 @@
   background: #FDBF46;
   color: #75512F !important;
   transform: scale(0.9);
+}
+
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+  .register-page {
+    &__content {
+      right: 5%;
+      margin-left: 15px;
+
+      &__top-part {
+        gap: 1rem;
+      }
+
+      &__bottom-part {
+        gap: 2.5rem;
+      }
+    }
+  }
+
+  .kidpaor-title {
+    font-size: 6rem;
+    line-height: 6rem;
+  }
+
+  .complete-form {
+    font-size: 1.6rem;
+    line-height: 1.6rem;
+  }
+
+  .register-form {
+    gap: 2.5rem;
+
+    &__checkboxes {
+      gap: 1.5rem;
+      flex-wrap: wrap;
+
+      &__roles {
+        gap: 1.5rem;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .register-page {
+    &__content {
+      right: 10%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .register-page {
+    &__content {
+      right: 15%;
+    }
+  }
 }

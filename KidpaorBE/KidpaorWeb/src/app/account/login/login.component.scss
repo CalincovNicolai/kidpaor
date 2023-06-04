@@ -70,7 +70,6 @@
   line-height: 3.1rem;
   display: flex;
   align-items: center;
-  text-align: center;
   color: #FEF0CD;
 }
 
@@ -187,6 +186,7 @@
     &__content {
       top: 26%;
       left: 5%;
+      margin-right: 15px;
 
       &__top-part {
         gap: 1rem;
@@ -210,18 +210,6 @@
 
   .login-form {
     gap: 2.5rem;
-
-    &__input {
-      width: 95%;
-
-      &__button {
-        width: 95%;
-
-        button {
-          width: 100%;
-        }
-      }
-    }
   }
 }
 
