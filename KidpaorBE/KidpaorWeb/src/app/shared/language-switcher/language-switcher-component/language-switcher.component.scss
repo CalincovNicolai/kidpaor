@@ -46,3 +46,21 @@
   background: transparent;
   color: #D29432 !important;
 }
+
+@media only screen and (min-width: 300px) and (max-width: 1600px) {
+  .language-wrapper {
+    &__icon {
+      width: 1.4rem;
+      height: 1.4rem;
+    }
+  }
+
+  ::ng-deep .language-select .t-wrapper {
+    font-size: 1.4rem;
+    line-height: 1.6rem;
+  }
+
+  ::ng-deep .language-select-items {
+    font-size: 1.2rem !important;
+  }
+}
