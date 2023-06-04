@@ -3,6 +3,7 @@
   gap: 1rem;
   align-items: center;
   width: 100%;
+  justify-content: space-between;
 
   &__logo {
     display: flex;
@@ -13,56 +14,77 @@
     width: 95px;
   }
 
+  &__mobile {
+    display: flex;
+
+    ::ng-deep &__button .t-wrapper {
+      color: #F7D289;
+
+      ::ng-deep .t-icon {
+        font-size: 3rem;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    gap: 3rem;
+    padding: 0.6rem 0.8rem 0.6rem 2.1rem;
+    background: rgba(#75512F, 0.85);
+    border-radius: 3rem;
+  }
+
   &__links {
     display: flex;
     flex: 1;
     align-items: center;
     gap: 3rem;
+  }
 
-    ::ng-deep &__button .t-wrapper {
-      font-family: 'Merriweather', sans-serif !important;
-      font-style: normal;
-      font-weight: 400;
-      font-size: 1.6rem;
-      line-height: 1.8rem;
-      display: flex;
-      align-items: center;
-      letter-spacing: 0.03em;
-      background: transparent;
-      padding: 0 !important;
-      color: #F7D289;
-    }
+  ::ng-deep &__button .t-wrapper {
+    font-family: 'Merriweather', sans-serif !important;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 1.8rem;
+    display: flex;
+    align-items: center;
+    background: transparent;
+    padding: 0 !important;
+    color: #F7D289;
+  }
 
-    ::ng-deep &__button .t-wrapper .t-content {
-      flex-direction: column;
-      gap: 0.3rem;
-    }
+  ::ng-deep &__button .t-wrapper .t-content {
+    flex-direction: column;
+    gap: 0.3rem;
+  }
 
-    &__button:first-child {
-      margin-right: auto;
-    }
+  &__button:first-child {
+    margin-right: auto;
+  }
 
-    ::ng-deep &__button .t-wrapper:active {
-      background: transparent;
-      color: #F7D289 !important;
-    }
+  ::ng-deep &__button .t-wrapper:active {
+    background: transparent;
+    color: #F7D289 !important;
+  }
 
-    ::ng-deep &__button .t-wrapper:hover {
-      background: transparent;
-      color: #D29432 !important;
-    }
+  ::ng-deep &__button .t-wrapper:hover {
+    background: transparent;
+    color: #D29432 !important;
+  }
 
-    &__user {
-      cursor: pointer;
-      color: #F7D289;
-      width: 1.6rem;
-      height: 1.6rem;
-      font-size: 1.3rem;
-    }
+  &__user {
+    cursor: pointer;
+    color: #F7D289;
+    width: 1.6rem;
+    height: 1.6rem;
+    font-size: 1.3rem;
+  }
 
-    &__user:hover {
-      color: #D29432 !important;
-    }
+  &__user:hover {
+    color: #D29432 !important;
   }
 }
 
@@ -92,7 +114,6 @@
     display: flex;
     align-items: center;
     text-align: center;
-    letter-spacing: 0.03em;
     color: #D29432;
     background: transparent;
     padding: 0 !important;
@@ -120,4 +141,18 @@
 
 .active-nav-margin {
   margin-top: 1.8rem;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 1200px) {
+  .navbar {
+    &__menu {
+      justify-content: center;
+      flex-wrap: wrap;
+      padding: 0.6rem 0.8rem 1.5rem 2.1rem;
+    }
+
+    &__button:first-child {
+      margin-right: 0;
+    }
+  }
 }

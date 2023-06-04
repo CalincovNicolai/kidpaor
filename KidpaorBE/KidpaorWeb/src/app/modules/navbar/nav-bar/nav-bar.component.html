@@ -4,7 +4,29 @@
       <img src="./assets/kidpaor-logo.png" alt="kidpaor-logo">
     </a>
   </div>
-  <div class="navbar__links">
+
+  <ng-container [ngTemplateOutlet]="screenWidth >= 1200 ? desktopSize : mobileSize"></ng-container>
+
+  <ng-template #mobileSize>
+    <div class="navbar__mobile">
+      <button
+        tuiIconButton
+        type="button"
+        appearance="icon"
+        icon="tuiIconMenuLarge"
+        class="navbar__mobile__button"
+        (click)="toggleNavBar()"
+      ></button>
+    </div>
+  </ng-template>
+
+  <ng-template #desktopSize>
+    <div class="navbar__links">
+      <ng-container *ngTemplateOutlet="menuList"></ng-container>
+    </div>
+  </ng-template>
+
+  <ng-template #menuList>
     <button
       *ngFor="let nav of menu"
       #rta="routerLinkActive"
@@ -13,7 +35,7 @@
       size="m"
       [ngClass]="{'active-nav-margin': rta.isActive}"
       [routerLink]="nav.url"
-      class="navbar__links__button nav-items"
+      class="navbar__button nav-items"
       routerLinkActive
       tuiButton
     >
@@ -28,7 +50,7 @@
       [content]="dropdown"
       [(open)]="open"
     >
-      <tui-svg class="navbar__links__user" src="tuiIconUserLarge"></tui-svg>
+      <tui-svg class="navbar__user" src="tuiIconUserLarge"></tui-svg>
     </tui-hosted-dropdown>
     <ng-template
       #dropdown
@@ -45,6 +67,9 @@
         </tui-opt-group>
       </div>
     </ng-template>
-  </div>
+  </ng-template>
 </div>
 
+<div *ngIf="isMenuOpen" class="navbar__menu">
+  <ng-container *ngTemplateOutlet="menuList"></ng-container>
+</div>

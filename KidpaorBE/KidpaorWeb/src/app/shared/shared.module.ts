@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LanguageSwitcherModule } from './language-switcher/language-switcher.module';
-import { TruncatePipe } from './utils/truncate.pipe';
-import { CustomFilterPipe } from './utils/custom-filter.pipe';
+import { TruncatePipe } from './utils/pipes/truncate.pipe';
+import { CustomFilterPipe } from './utils/pipes/custom-filter.pipe';
 
 @NgModule({
   declarations: [
@@ -12,7 +12,6 @@ import { CustomFilterPipe } from './utils/custom-filter.pipe';
   exports: [
     TruncatePipe,
     CustomFilterPipe
-
   ],
   imports: [
     LanguageSwitcherModule,

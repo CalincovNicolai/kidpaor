@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MenuModel } from '../models';
 import { TuiHostedDropdownComponent } from '@taiga-ui/core';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { ScreenSizeService } from '../../../shared/utils/services/screen-size.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -24,6 +25,8 @@ export class NavBarComponent implements OnInit {
   @ViewChild(TuiHostedDropdownComponent)
   component?: TuiHostedDropdownComponent;
   open = false;
+  isMenuOpen = false;
+  screenWidth: number = 0;
   menu: MenuModel[] = [
     {
       name: 'Home',
@@ -47,11 +50,23 @@ export class NavBarComponent implements OnInit {
     }
   ];
 
-  constructor() {
+  constructor(
+    private screenSizeService: ScreenSizeService
+  ) {
   }
 
   ngOnInit(): void {
     this.open = false;
     this.component?.nativeFocusableElement?.focus();
+    this.screenSizeService.screenSize$.subscribe(screenWidth => {
+      this.screenWidth = screenWidth;
+      if (screenWidth >= 1200) {
+        this.isMenuOpen = false;
+      }
+    });
+  }
+
+  toggleNavBar() {
+    this.isMenuOpen = !this.isMenuOpen;
   }
 }

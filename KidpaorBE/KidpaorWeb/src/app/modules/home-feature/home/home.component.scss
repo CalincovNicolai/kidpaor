@@ -33,7 +33,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.2em;
   color: #FACE4D;
 }
 
@@ -51,7 +50,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.2em;
   color: rgba(255, 255, 255, 0.75);
 }
 
@@ -67,7 +65,6 @@
   font-weight: 400;
   font-size: 2rem;
   line-height: 3.1rem;
-  letter-spacing: 0.03em;
   color: #F7D289;
   text-align: center;
   transition: all .2s ease-in-out;
@@ -80,4 +77,136 @@
 
 .link-page:active {
   transform: scale(0.9);
+}
+
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+  .home-page {
+    &__content {
+      top: 25%;
+      right: 0;
+      width: 100%;
+
+      &__top-part {
+        gap: 5rem;
+      }
+    }
+  }
+
+  .welcome-kidpaor {
+    width: 100%;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+  }
+
+  .site-use {
+    width: 80%;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .link-page {
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+    line-height: 3.1rem;
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 768px) {
+  .home-page {
+    &__content {
+      top: 25%;
+      right: 0;
+      width: 100%;
+
+      &__top-part {
+        gap: 5rem;
+      }
+    }
+  }
+
+  .welcome-kidpaor {
+    width: 80%;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+  }
+
+  .site-use {
+    width: 65%;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .link-page {
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+    line-height: 3.1rem;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  .home-page {
+    &__content {
+      top: 25%;
+      right: 0;
+      width: 100%;
+
+      &__top-part {
+        gap: 5rem;
+      }
+    }
+  }
+
+  .welcome-kidpaor {
+    width: 70%;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+  }
+
+  .site-use {
+    width: 60%;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .link-page {
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+    line-height: 3.1rem;
+  }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+  .home-page {
+    &__content {
+      top: 25%;
+      right: 0;
+      width: 100%;
+
+      &__top-part {
+        gap: 5rem;
+      }
+    }
+  }
+
+  .welcome-kidpaor {
+    width: 65%;
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+  }
+
+  .site-use {
+    width: 55%;
+    font-weight: 400;
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .link-page {
+    padding: 2rem 5rem;
+    font-size: 2.5rem;
+    line-height: 3.1rem;
+  }
 }
