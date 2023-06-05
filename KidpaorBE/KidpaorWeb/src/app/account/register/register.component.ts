@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { KidpaorApi, RegisterDto } from '../../services/kidpaor-service';
@@ -6,6 +6,7 @@ import { Location } from '@angular/common';
 import { finalize } from 'rxjs';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-register',
@@ -41,6 +42,7 @@ export class RegisterComponent {
     private apiService: KidpaorApi,
     private cdr: ChangeDetectorRef,
     private location: Location,
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
   ) {
   }
 
@@ -114,7 +116,13 @@ export class RegisterComponent {
         localStorage.setItem('token', user.token);
         localStorage.setItem('role', user.role);
         localStorage.setItem('user', user.displayName);
-        console.log(user);
+        this.alerts
+          .open(`Welcome!`, {
+            label: 'Successfully registered!',
+            status: TuiNotification.Success,
+            autoClose: true
+          })
+          .subscribe();
         this.redirectAfterLogin();
       })
   }

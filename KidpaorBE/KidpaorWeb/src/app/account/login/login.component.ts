@@ -1,10 +1,11 @@
-import { ChangeDetectorRef, Component, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms";
 import { finalize, retry, take } from "rxjs";
 import { Location } from '@angular/common';
 import { KidpaorApi, LoginDto } from '../../services/kidpaor-service';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { Router } from '@angular/router';
+import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
 
 @Component({
   selector: 'app-login',
@@ -29,6 +30,7 @@ export class LoginComponent implements OnInit {
     private apiService: KidpaorApi,
     private cdr: ChangeDetectorRef,
     private location: Location,
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
   ) {
   }
 
@@ -68,7 +70,13 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', user.token);
         localStorage.setItem('role', user.role);
         localStorage.setItem('user', user.displayName);
-        console.log(user);
+        this.alerts
+          .open(`Welcome!`, {
+            label: 'Successfully logged in!',
+            status: TuiNotification.Success,
+            autoClose: true
+          })
+          .subscribe();
         this.redirectAfterLogin();
       })
   }
