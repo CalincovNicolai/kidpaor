@@ -19,8 +19,9 @@
     <div class="actions">
       <button
         tuiButton
-        appearance="primary"
+        appearance="mono"
         size="m"
+        class="actions__confirm"
         (click)="logOut(observer)">
         {{ 'LogOut' | translate }}
       </button>
@@ -28,6 +29,7 @@
         tuiButton
         appearance="mono"
         size="m"
+        class="actions__cancel"
         (click)="observer.complete()">
         {{ 'Cancel' | translate }}
       </button>

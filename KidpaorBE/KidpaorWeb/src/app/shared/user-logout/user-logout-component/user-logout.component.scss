@@ -22,7 +22,6 @@
   display: flex;
   align-items: center;
   text-align: center;
-  letter-spacing: 0.03em;
   color: #D29432;
   background: transparent;
   padding: 0 !important;
@@ -45,7 +44,6 @@
   line-height: 5rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.03em;
   color: #111F24;
 }
 
@@ -56,7 +54,6 @@
   line-height: 2rem;
   display: flex;
   align-items: center;
-  letter-spacing: 0.03em;
   color: rgba(17, 31, 36, 0.5);
   margin-bottom: 5rem;
 }
@@ -64,5 +61,35 @@
 .actions {
   display: flex;
   justify-content: flex-end;
-  gap: 1rem;
+  align-items: center;
+  gap: 2rem;
+  min-height: 4rem;
+
+  ::ng-deep &__confirm .t-wrapper {
+    background: #FDBF46;
+    border-radius: 3rem;
+    font-family: Mitr, 'sans-serif';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 2rem !important;
+    color: #FEF0CD;
+  }
+
+  ::ng-deep &__cancel .t-wrapper {
+    font-family: Mitr, 'sans-serif';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 2rem;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 2rem 0 !important;
+    color: #D29432;
+  }
 }
