@@ -50,5 +50,12 @@
   "Age": "Age:",
   "Edit": "EDIT",
   "Delete": "DELETE",
-  "DeleteKid": "THIS CHANGE IS IRREVERSIBLE."
+  "DeleteKid": "THIS CHANGE IS IRREVERSIBLE.",
+  "SuccessfullyLogOut": "Successfully logged out!",
+  "SuccessfullyLogOutContent": "Please sign in or sign up to continue",
+  "SuccessfullyDeleted": "Successfully deleted!",
+  "SuccessfullyKidRemoved": "Kid was removed from activity",
+  "SuccessfullyRegistered": "Successfully registered!",
+  "PleaseLogin": "Please sign in to continue",
+  "Welcome": "Welcome!"
 }

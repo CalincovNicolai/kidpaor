@@ -50,5 +50,13 @@
   "Age": "Vârsta:",
   "Edit": "EDITARE",
   "Delete": "ȘTERGERE",
-  "DeleteKid": "ACEASTĂ SCHIMBARE ESTE IREVERSIBILĂ."
+  "DeleteKid": "ACEASTĂ SCHIMBARE ESTE IREVERSIBILĂ.",
+  "SuccessfullyLogOut": "Delogare cu succes!",
+  "SuccessfullyLogOutContent": "Autorizați-vă pentru a continua",
+  "SuccessfullyDeleted": "Ștergere cu succes!",
+  "SuccessfullyKidRemoved": "Copilul a fost șters din lista participanților",
+  "SuccessfullyRegistered": "Înregistrare cu succes!",
+  "SuccessfullyLoggedIn": "Autentificare cu succes!",
+  "PleaseLogin": "Logați-vă pentru a continua",
+  "Welcome": "Bine ați venit!"
 }

@@ -7,6 +7,7 @@ import { finalize } from 'rxjs';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-register',
@@ -42,7 +43,8 @@ export class RegisterComponent {
     private apiService: KidpaorApi,
     private cdr: ChangeDetectorRef,
     private location: Location,
-    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService,
+    private translate: TranslateService
   ) {
   }
 
@@ -116,9 +118,17 @@ export class RegisterComponent {
         localStorage.setItem('token', user.token);
         localStorage.setItem('role', user.role);
         localStorage.setItem('user', user.displayName);
+        let label = '';
+        let content = '';
+        this.translate.get('SuccessfullyRegistered').subscribe(translation => {
+          label = translation;
+        });
+        this.translate.get('PleaseLogin').subscribe(translation => {
+          content = translation;
+        });
         this.alerts
-          .open(`Welcome!`, {
-            label: 'Successfully registered!',
+          .open(`${ content }`, {
+            label: `${ label }`,
             status: TuiNotification.Success,
             autoClose: true
           })

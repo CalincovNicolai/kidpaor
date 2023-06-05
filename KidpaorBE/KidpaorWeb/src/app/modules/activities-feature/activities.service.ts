@@ -3,6 +3,7 @@ import { BehaviorSubject, catchError, of } from "rxjs";
 import { KidpaorApi } from '../../services/kidpaor-service';
 import { ActivityBriefViewModel, ActivityViewModel, KidBriefViewModel } from '../../models/activity.model';
 import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Injectable({
   providedIn: 'root'
@@ -20,7 +21,8 @@ export class ActivitiesService {
 
   constructor(
     private apiService: KidpaorApi,
-    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService,
+    private translate: TranslateService
   ) {
   }
 
@@ -86,9 +88,17 @@ export class ActivitiesService {
       )
       .subscribe(() => {
         this.fetchActivityKidsById(activityId);
+        let label = '';
+        let content = '';
+        this.translate.get('SuccessfullyDeleted').subscribe(translation => {
+          label = translation;
+        });
+        this.translate.get('SuccessfullyKidRemoved').subscribe(translation => {
+          content = translation;
+        });
         this.alerts
-          .open('Kid was removed from activity', {
-            label: 'Successfully deleted!',
+          .open(`${content}`, {
+            label: `${label}`,
             status: TuiNotification.Success,
             autoClose: false
           })

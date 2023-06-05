@@ -6,6 +6,7 @@ import { KidpaorApi, LoginDto } from '../../services/kidpaor-service';
 import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { Router } from '@angular/router';
 import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
+import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-login',
@@ -30,7 +31,8 @@ export class LoginComponent implements OnInit {
     private apiService: KidpaorApi,
     private cdr: ChangeDetectorRef,
     private location: Location,
-    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService,
+    private translate: TranslateService
   ) {
   }
 
@@ -70,9 +72,17 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', user.token);
         localStorage.setItem('role', user.role);
         localStorage.setItem('user', user.displayName);
+        let label = '';
+        let content = '';
+        this.translate.get('SuccessfullyLoggedIn').subscribe(translation => {
+          label = translation;
+        });
+        this.translate.get('Welcome').subscribe(translation => {
+          content = translation;
+        });
         this.alerts
-          .open(`Welcome!`, {
-            label: 'Successfully logged in!',
+          .open(`${ content }`, {
+            label: `${ label }`,
             status: TuiNotification.Success,
             autoClose: true
           })
