@@ -60,5 +60,6 @@ export class ActivityComponent implements OnInit {
 
   deleteKid(id: number) {
     this.activitiesService.deleteActivityKidsById(Number(this.id), id);
+
   }
 }

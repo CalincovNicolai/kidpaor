@@ -5,10 +5,10 @@
       <tui-svg src="tuiIconCalendarLarge" class="activity__date__icon"></tui-svg>
       <p class="activity__date__text">{{ activity.dateStart | date: 'dd/MM/yyyy' }}</p>
     </div>
-    <p class="activity__title">{{ activity.title | truncate: [17, '...'] }}</p>
+    <p class="activity__title">{{ activity.title | truncate: [25, '...'] }}</p>
     <div class="activity__location">
       <tui-svg src="tuiIconMapPinLarge" class="activity__location__icon"></tui-svg>
-      <p class="activity__location__name">{{ activity.location | truncate: [20, '...'] }}</p>
+      <p class="activity__location__name">{{ activity.location | truncate: [25, '...'] }}</p>
     </div>
   </div>
 </div>

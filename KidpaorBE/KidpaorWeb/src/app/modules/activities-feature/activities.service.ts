@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Inject, Injectable } from '@angular/core';
 import { BehaviorSubject, catchError, of } from "rxjs";
 import { KidpaorApi } from '../../services/kidpaor-service';
 import { ActivityBriefViewModel, ActivityViewModel, KidBriefViewModel } from '../../models/activity.model';
+import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,8 @@ export class ActivitiesService {
   }
 
   constructor(
-    private apiService: KidpaorApi
+    private apiService: KidpaorApi,
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService
   ) {
   }
 
@@ -84,6 +86,13 @@ export class ActivitiesService {
       )
       .subscribe(() => {
         this.fetchActivityKidsById(activityId);
+        this.alerts
+          .open('Kid was removed from activity', {
+            label: 'Successfully deleted!',
+            status: TuiNotification.Success,
+            autoClose: false
+          })
+          .subscribe();
       });
   }
 }

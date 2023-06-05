@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { TuiDialogContext, TuiDialogService } from '@taiga-ui/core';
+import { TuiAlertService, TuiDialogContext, TuiDialogService, TuiNotification } from '@taiga-ui/core';
 import { Router } from '@angular/router';
 import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
 
@@ -11,6 +11,7 @@ import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
 export class UserLogoutComponent {
   constructor(
     @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
+    @Inject(TuiAlertService) private readonly alerts: TuiAlertService,
     protected router: Router,
   ) {
   }
@@ -25,6 +26,13 @@ export class UserLogoutComponent {
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     localStorage.removeItem('role');
+    this.alerts
+      .open(`To continue please sign in or sign up`, {
+        label: 'Successfully logged out!',
+        status: TuiNotification.Success,
+        autoClose: true
+      })
+      .subscribe();
     this.router.navigateByUrl('/welcome').then(x => observer.complete());
   }
 }
