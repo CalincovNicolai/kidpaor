@@ -89,20 +89,19 @@ public class ActivitiesController : BaseApiController
         var mockActivity = new Activity
         {
             Id = id,
-            Title = "Family Picnic",
-            DateStart = DateTime.Now.AddDays(7),
-            Location = "Central Park",
-            Category = new ActivitiesCategories { Id = 1, Name = "Outdoor Activities" },
+            Title = $"Family Picnic {id}",
+            DateStart = DateTime.Now.AddDays(id),
+            Location = $"Central Park {id}",
+            Category = new ActivitiesCategories { Id = id, Name = $"Outdoor Activities {id}" },
             Cost = "10.0",
             Description = "Enjoy a fun-filled day at Central Park with your family and friends. Pack a picnic basket and join us for various games and activities.",
-            Organizer = new Organizers { Id = 1, Fullname = "City Events & Recreation" },
+            Organizer = new Organizers { Id = id, Fullname = $"City Events & Recreation {id}" },
             AgeRange = "All ages",
-            DateEnd = DateTime.Now.AddDays(7).AddHours(4),
-            ActivitiesCategoryId = 1,
-            ActivitiesOrganizerId = 1
+            DateEnd = DateTime.Now.AddDays(id+7).AddHours(id+3),
+            ActivitiesCategoryId = id,
+            ActivitiesOrganizerId = id
         };
 
-        // Convert the mock activity to the view model
         var activityViewModel = new ActivityViewModel()
         {
             Id = mockActivity.Id,
