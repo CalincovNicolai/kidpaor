@@ -1,9 +1,8 @@
-﻿using AutoMapper;
-using Core.Entities.Identity;
+﻿using Core.Entities.Identity;
 using Core.Interfaces;
 using Kidpaor.Dtos;
 using Kidpaor.Errors;
-using Kidpaor.Extensions;
+using Kidpaor.ViewModels.Account;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -15,51 +14,20 @@ public class AccountController : BaseApiController
     private readonly UserManager<AppUser> _userManager;
     private readonly SignInManager<AppUser> _signInManager;
     private readonly ITokenService _tokenService;
-    private readonly IMapper _mapper;
     private readonly RoleManager<IdentityRole> _roleManager;
 
     public AccountController(UserManager<AppUser> userManager, SignInManager<AppUser> signInManager, 
-        ITokenService tokenService, IMapper mapper, RoleManager<IdentityRole> roleManager)
+        ITokenService tokenService, RoleManager<IdentityRole> roleManager)
     {
         _userManager = userManager;
         _signInManager = signInManager;
         _tokenService = tokenService;
-        _mapper = mapper;
         _roleManager = roleManager;
     }
 
-    [HttpGet("emailexists")]
-    public async Task<ActionResult<bool>> CheckEmailExistsAsync([FromQuery] string email)
-    {
-        return await _userManager.FindByEmailAsync(email) != null;
-    }
-    
-    [Authorize]
-    [HttpGet("address")]
-    public async Task<ActionResult<AddressDto>> GetUserAddress()
-    {
-        var user = await _userManager.FindByEmailWithAddressAsync(User);
-        
-        return _mapper.Map<AddressDto>(user.Address);
-    }
-    
-    [HttpPut("address")]
-    public async Task<ActionResult<AddressDto>> UpdateUserAddress(AddressDto address)
-    {
-        var user = await _userManager.FindByEmailWithAddressAsync(User);
-        
-        user.Address = _mapper.Map<Address>(address);
-        
-        var result = await _userManager.UpdateAsync(user);
-        
-        if (result.Succeeded) return Ok(_mapper.Map<AddressDto>(user.Address));
-        
-        return BadRequest("Problem updating the user");
-    }
-    
     [AllowAnonymous]
     [HttpPost("login")]
-    public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
+    public async Task<ActionResult<UserViewModel>> Login(LoginDto loginDto)
     {
         var user = await _userManager.FindByEmailAsync(loginDto.Email);
         
@@ -69,7 +37,7 @@ public class AccountController : BaseApiController
         
         if (!result.Succeeded) return Unauthorized(new ApiResponse(401));
 
-        return Ok(new UserDto
+        return Ok(new UserViewModel
             {
                 Email = user.Email,
                 Role = (await _userManager.GetRolesAsync(user))[0],
@@ -80,13 +48,13 @@ public class AccountController : BaseApiController
     }
 
     [HttpPost("register")]
-    public async Task<ActionResult<UserDto>> Register(RegisterDto registerDto)
+    public async Task<ActionResult<UserViewModel>> Register(RegisterDto registerDto)
     {
         var user = new AppUser
         {
             DisplayName = registerDto.DisplayName,
             Email = registerDto.Email,
-            UserName = registerDto.Email
+            UserName = registerDto.DisplayName
         };
         
         var result = await _userManager.CreateAsync(user, registerDto.Password);
@@ -99,7 +67,7 @@ public class AccountController : BaseApiController
         }
         await _userManager.AddToRoleAsync(user, registerDto.Role);
 
-        return Ok(new UserDto
+        return Ok(new UserViewModel
         {
             DisplayName = user.DisplayName,
             Email = user.Email,
