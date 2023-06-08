@@ -25,7 +25,7 @@ public class ParentsController : BaseApiController
     
     [HttpGet("{id}")]
     [ProducesResponseType(StatusCodes.Status200OK)]
-    public async Task<ActionResult<Parents>> GetActivity(int id)
+    public async Task<ActionResult<Parents>> GetParent(int id)
     {
         return await _parentRepository.GetParentByIdAsync(id);
     }

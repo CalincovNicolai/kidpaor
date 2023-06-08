@@ -1,5 +1,4 @@
-﻿using Core.Entities;
-using Core.Interfaces;
+﻿using Core.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Kidpaor.Controllers;

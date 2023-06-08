@@ -1,11 +1,8 @@
-﻿using System.Security.Claims;
-using Core.Entities;
+﻿using Core.Entities;
 using Core.Entities.Identity;
 using Core.Interfaces;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
-using Activity = Core.Entities.Activity;
 
 namespace Kidpaor.Controllers;
 
@@ -32,7 +29,30 @@ public class ActivitiesController : BaseApiController
             throw new UnauthorizedAccessException("Only parents can access this information.");
         }*/
 
-        var allActivities = await _activityRepository.GetActivitiesAsync();
+        /*var allActivities = await _activityRepository.GetActivitiesAsync();*/
+        
+        var allActivities = new List<Activity>();
+
+        for (int i = 1; i <= 10; i++)
+        {
+            var mockActivity = new Activity
+            {
+                Id = i,
+                Title = $"Family Picnic {i}",
+                DateStart = DateTime.Now.AddDays(i),
+                Location = $"Central Park {i}",
+                Category = new ActivitiesCategories { Id = i, Name = $"Outdoor Activities {i}" },
+                Cost = "10.0",
+                Description = "Enjoy a fun-filled day at Central Park with your family and friends. Pack a picnic basket and join us for various games and activities.",
+                Organizer = new Organizers { Id = i, Fullname = $"City Events & Recreation {i}" },
+                AgeRange = $"{i+6}+ years",
+                DateEnd = DateTime.Now.AddDays(i+7).AddHours(i+3),
+                ActivitiesCategoryId = i,
+                ActivitiesOrganizerId = i
+            };
+
+            allActivities.Add(mockActivity);
+        }
 
         var activitiesItemViewModels = allActivities.Select(a => new ActivityItemViewModel()
         {
@@ -49,7 +69,7 @@ public class ActivitiesController : BaseApiController
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<ActivityViewModel>> GetActivity(int id)
     {
-        var activity = await _activityRepository.GetActivityByIdAsync(id);
+        /*var activity = await _activityRepository.GetActivityByIdAsync(id);
         var activityViewModel = new ActivityViewModel()
         {
             Id = activity.Id,
@@ -64,6 +84,39 @@ public class ActivitiesController : BaseApiController
             DateEnd = activity.DateEnd,
             ActivitiesCategoryId = activity.ActivitiesCategoryId,
             ActivitiesOrganizerId = activity.ActivitiesOrganizerId
+        };*/
+        
+        var mockActivity = new Activity
+        {
+            Id = id,
+            Title = "Family Picnic",
+            DateStart = DateTime.Now.AddDays(7),
+            Location = "Central Park",
+            Category = new ActivitiesCategories { Id = 1, Name = "Outdoor Activities" },
+            Cost = "10.0",
+            Description = "Enjoy a fun-filled day at Central Park with your family and friends. Pack a picnic basket and join us for various games and activities.",
+            Organizer = new Organizers { Id = 1, Fullname = "City Events & Recreation" },
+            AgeRange = "All ages",
+            DateEnd = DateTime.Now.AddDays(7).AddHours(4),
+            ActivitiesCategoryId = 1,
+            ActivitiesOrganizerId = 1
+        };
+
+        // Convert the mock activity to the view model
+        var activityViewModel = new ActivityViewModel()
+        {
+            Id = mockActivity.Id,
+            Title = mockActivity.Title,
+            DateStart = mockActivity.DateStart,
+            Location = mockActivity.Location,
+            Category = mockActivity.Category,
+            Cost = mockActivity.Cost,
+            Description = mockActivity.Description,
+            Organizer = mockActivity.Organizer,
+            AgeRange = mockActivity.AgeRange,
+            DateEnd = mockActivity.DateEnd,
+            ActivitiesCategoryId = mockActivity.ActivitiesCategoryId,
+            ActivitiesOrganizerId = mockActivity.ActivitiesOrganizerId
         };
 
         return Ok(activityViewModel);
