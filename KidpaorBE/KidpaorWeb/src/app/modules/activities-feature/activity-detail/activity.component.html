@@ -1,84 +1,86 @@
 <app-kidpaor-layout image="../../../assets/kidpaor-activities.jpeg">
   <div class="activity-page__content">
     <div class="activity-page__content__wrapper" *tuiLet="(activity$ | async) as activity">
-      <tui-scrollbar>
-        <div class="container-wrapper">
-          <div class="top-section">
-            <img class="top-section__image" [src]="getActivityImage(activity!.imageName)" alt="activity-image">
-            <div @slideInOut class="top-section__details">
-              <p class="top-section__details__title">{{ activity?.title }}</p>
-              <p class="top-section__details__category">{{ activity?.category!.name | translate }}</p>
-              <div class="top-section__details__location">
-                <tui-svg src="tuiIconMapPinLarge" class="top-section__details__location__icon"></tui-svg>
-                <p class="top-section__details__location__name">{{ activity?.location }}</p>
-              </div>
-              <div class="top-section__details__dates">
-                <p class="top-section__details__dates__label">{{ 'DateStart' | translate }}</p>
-                <p class="top-section__details__dates__date">{{ activity?.dateStart | date: 'dd/MM/YYYY' }}</p>
-              </div>
-              <div class="top-section__details__dates">
-                <p class="top-section__details__dates__label">{{ 'DateEnd' | translate }}</p>
-                <p class="top-section__details__dates__date">{{ activity?.dateEnd | date: 'dd/MM/YYYY' }}</p>
-              </div>
+      <div @slideInOut class="container-wrapper">
+        <div class="left-section">
+          <img class="left-section__image" [src]="getActivityImage(activity!.imageName)" alt="activity-image">
+          <div class="left-section__details">
+            <p class="left-section__details__title">{{ activity?.title }}</p>
+            <p class="left-section__details__category">{{ activity?.category!.name | translate }}</p>
+            <div class="left-section__details__location">
+              <tui-svg src="tuiIconMapPinLarge" class="top-section__details__location__icon"></tui-svg>
+              <p class="left-section__details__location__name">{{ activity?.location }}</p>
             </div>
-          </div>
-          <p class="section-header">{{ 'ActivityDescription' | translate }}</p>
-          <div class="divider"></div>
-          <div class="middle-section">
-            <p class="middle-section__description">{{ activity?.description }}</p>
-          </div>
-          <p class="section-header">{{ 'KidsRegistered' | translate }}</p>
-          <div class="divider"></div>
-          <div class="bottom-section" *tuiLet="(activityKids$ | async) as kids">
-            <div *ngFor="let kid of kids" class="bottom-section__kid">
-              <div class="bottom-section__kid__avatar">
-                <tui-avatar
-                  [text]="kid.fullname"
-                  size="l"
-                  [rounded]="true"
-                ></tui-avatar>
-              </div>
-              <div class="bottom-section__kid__details">
-                <div class="bottom-section__kid__details__name">
-                  {{kid.fullname}}
-                </div>
-                <div class="bottom-section__kid__details__age">
-                  <p class="bottom-section__kid__details__age__label">{{ 'Age' | translate }}</p>
-                  <p class="bottom-section__kid__details__age__value">{{kid.age}}</p>
-                </div>
-              </div>
-              <div class="bottom-section__kid__menu">
-                <tui-hosted-dropdown
-                  tuiDropdownAlign="right"
-                  tuiDropdownDirection="bottom"
-                  [sided]="true"
-                  [content]="dropdown"
-                >
-                  <tui-svg class="bottom-section__kid__menu__icon" src="tuiIconMoreVerticalLarge"></tui-svg>
-                </tui-hosted-dropdown>
-                <ng-template
-                  #dropdown
-                >
-                  <div class="bottom-section__kid__menu__user">
-                    <tui-opt-group>
-                      <div class="menu-container" (click)="editKid(kid.id)">
-                        <tui-svg class="menu-container__icon" src="tuiIconEdit3Large"></tui-svg>
-                        <p class="menu-container__text">{{ 'Edit' | translate }}</p>
-                      </div>
-                    </tui-opt-group>
-                    <tui-opt-group>
-                      <div class="menu-container" (click)="deleteKid(kid.id)">
-                        <tui-svg class="menu-container__icon" src="tuiIconTrashLarge"></tui-svg>
-                        <p class="menu-container__text">{{ 'Delete' | translate }}</p>
-                      </div>
-                    </tui-opt-group>
-                  </div>
-                </ng-template>
-              </div>
+            <div class="left-section__details__dates">
+              <p class="left-section__details__dates__label">{{ 'DateStart' | translate }}</p>
+              <p class="left-section__details__dates__date">{{ activity?.dateStart | date: 'dd/MM/YYYY' }}</p>
+            </div>
+            <div class="left-section__details__dates">
+              <p class="left-section__details__dates__label">{{ 'DateEnd' | translate }}</p>
+              <p class="left-section__details__dates__date">{{ activity?.dateEnd | date: 'dd/MM/YYYY' }}</p>
             </div>
           </div>
         </div>
-      </tui-scrollbar>
+        <tui-scrollbar class="right-section">
+          <div class="right-section__wrapper">
+            <div class="right-section__description">
+              <p class="section-header">{{ 'ActivityDescription' | translate }}</p>
+              <div class="divider"></div>
+              <p class="right-section__description__text">{{ activity?.description }}</p>
+            </div>
+            <p class="section-header">{{ 'KidsRegistered' | translate }}</p>
+            <div class="divider"></div>
+            <div class="bottom-section" *tuiLet="(activityKids$ | async) as kids">
+              <div *ngFor="let kid of kids" class="bottom-section__kid">
+                <div class="bottom-section__kid__avatar">
+                  <tui-avatar
+                    [text]="kid.fullname"
+                    size="l"
+                    [rounded]="true"
+                  ></tui-avatar>
+                </div>
+                <div class="bottom-section__kid__details">
+                  <div class="bottom-section__kid__details__name">
+                    {{kid.fullname}}
+                  </div>
+                  <div class="bottom-section__kid__details__age">
+                    <p class="bottom-section__kid__details__age__label">{{ 'Age' | translate }}</p>
+                    <p class="bottom-section__kid__details__age__value">{{kid.age}}</p>
+                  </div>
+                </div>
+                <div class="bottom-section__kid__menu">
+                  <tui-hosted-dropdown
+                    tuiDropdownAlign="right"
+                    tuiDropdownDirection="bottom"
+                    [sided]="true"
+                    [content]="dropdown"
+                  >
+                    <tui-svg class="bottom-section__kid__menu__icon" src="tuiIconMoreVerticalLarge"></tui-svg>
+                  </tui-hosted-dropdown>
+                  <ng-template
+                    #dropdown
+                  >
+                    <div class="bottom-section__kid__menu__user">
+                      <tui-opt-group>
+                        <div class="menu-container" (click)="editKid(kid.id)">
+                          <tui-svg class="menu-container__icon" src="tuiIconEdit3Large"></tui-svg>
+                          <p class="menu-container__text">{{ 'Edit' | translate }}</p>
+                        </div>
+                      </tui-opt-group>
+                      <tui-opt-group>
+                        <div class="menu-container" (click)="deleteKid(kid.id)">
+                          <tui-svg class="menu-container__icon" src="tuiIconTrashLarge"></tui-svg>
+                          <p class="menu-container__text">{{ 'Delete' | translate }}</p>
+                        </div>
+                      </tui-opt-group>
+                    </div>
+                  </ng-template>
+                </div>
+              </div>
+            </div>
+          </div>
+        </tui-scrollbar>
+      </div>
     </div>
   </div>
 </app-kidpaor-layout>
