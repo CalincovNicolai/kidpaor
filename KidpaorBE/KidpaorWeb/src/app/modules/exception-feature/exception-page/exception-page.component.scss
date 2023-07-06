@@ -111,21 +111,3 @@
     }
   }
 }
-
-@media only screen and (min-width: 1200px) and (max-width: 1400px) {
-  .login-page {
-    &__content {
-      top: 20%;
-      left: 15%;
-    }
-  }
-}
-
-@media only screen and (min-width: 1400px) and (max-width: 1600px) {
-  .login-page {
-    &__content {
-      top: 20%;
-      left: 15%;
-    }
-  }
-}
