@@ -14,6 +14,7 @@ public class ActivityConfiguration : IEntityTypeConfiguration<Activity>
         builder.Property(p => p.AgeRange).IsRequired();
         builder.Property(p => p.Location).IsRequired();
         builder.Property(p => p.Cost).IsRequired();
+        builder.Property(p => p.ImageName).IsRequired();
         builder.Property(p => p.DateStart).IsRequired();
         builder.Property(p => p.DateEnd).IsRequired();
         builder.HasOne(b => b.Category).WithMany()

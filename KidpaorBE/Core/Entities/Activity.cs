@@ -7,6 +7,7 @@ public class Activity : BaseEntity
     public string AgeRange { get; set; }
     public string Location { get; set; }
     public string Cost { get; set; }
+    public string ImageName { get; set; }
     public DateTime DateStart { get; set; }
     public DateTime DateEnd { get; set; }
     public ActivitiesCategories Category { get; set; }

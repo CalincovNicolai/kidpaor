@@ -6,6 +6,7 @@ export interface ActivityViewModel {
   ageRange: string;
   location: string;
   cost: string;
+  imageName: string;
   dateStart: Date;
   dateEnd: Date;
 }
@@ -15,6 +16,7 @@ export interface ActivityBriefViewModel {
   title: string;
   category: string;
   location: string;
+  imageName: string;
   dateStart: Date;
 }
 

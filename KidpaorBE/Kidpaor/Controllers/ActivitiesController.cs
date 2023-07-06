@@ -59,6 +59,7 @@ public class ActivitiesController : BaseApiController
             Id = a.Id,
             Location = a.Location,
             Title = a.Title,
+            ImageName = a.ImageName,
             DateStart = a.DateStart
         });
 
@@ -69,7 +70,7 @@ public class ActivitiesController : BaseApiController
     [ProducesResponseType(StatusCodes.Status200OK)]
     public async Task<ActionResult<ActivityViewModel>> GetActivity(int id)
     {
-        /*var activity = await _activityRepository.GetActivityByIdAsync(id);
+        var activity = await _activityRepository.GetActivityByIdAsync(id);
         var activityViewModel = new ActivityViewModel()
         {
             Id = activity.Id,
@@ -78,15 +79,16 @@ public class ActivitiesController : BaseApiController
             Location = activity.Location,
             Category = activity.Category,
             Cost = activity.Cost,
+            ImageName = activity.ImageName,
             Description = activity.Description,
             Organizer = activity.Organizer,
             AgeRange = activity.AgeRange,
             DateEnd = activity.DateEnd,
             ActivitiesCategoryId = activity.ActivitiesCategoryId,
             ActivitiesOrganizerId = activity.ActivitiesOrganizerId
-        };*/
+        };
         
-        var mockActivity = new Activity
+        /*var mockActivity = new Activity
         {
             Id = id,
             Title = $"Family Picnic {id}",
@@ -100,9 +102,9 @@ public class ActivitiesController : BaseApiController
             DateEnd = DateTime.Now.AddDays(id+7).AddHours(id+3),
             ActivitiesCategoryId = id,
             ActivitiesOrganizerId = id
-        };
+        };*/
 
-        var activityViewModel = new ActivityViewModel()
+        /*var activityViewModel = new ActivityViewModel()
         {
             Id = mockActivity.Id,
             Title = mockActivity.Title,
@@ -116,7 +118,7 @@ public class ActivitiesController : BaseApiController
             DateEnd = mockActivity.DateEnd,
             ActivitiesCategoryId = mockActivity.ActivitiesCategoryId,
             ActivitiesOrganizerId = mockActivity.ActivitiesOrganizerId
-        };
+        };*/
 
         return Ok(activityViewModel);
     }

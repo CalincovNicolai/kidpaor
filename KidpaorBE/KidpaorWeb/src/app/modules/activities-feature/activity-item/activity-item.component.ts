@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivityBriefViewModel } from '../../../models/activity.model';
 
 @Component({
@@ -6,6 +6,14 @@ import { ActivityBriefViewModel } from '../../../models/activity.model';
   templateUrl: './activity-item.component.html',
   styleUrls: ['./activity-item.component.scss']
 })
-export class ActivityItemComponent {
+export class ActivityItemComponent implements OnInit {
   @Input() activity!: ActivityBriefViewModel;
+
+  getActivityImage(imageName: string) {
+    return `assets/${ imageName }`;
+  }
+
+  ngOnInit(): void {
+    console.log(this.activity);
+  }
 }

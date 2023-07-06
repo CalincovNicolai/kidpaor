@@ -54,6 +54,10 @@ export class ActivityComponent implements OnInit {
     });
   }
 
+  getActivityImage(imageName: string) {
+    return `assets/${ imageName }`;
+  }
+
   editKid(id: number) {
     console.log();
   }
