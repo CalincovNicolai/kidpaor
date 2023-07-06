@@ -127,7 +127,7 @@
       line-height: 1.6rem;
       display: flex;
       align-items: center;
-      color: #FDBF46;
+      color: #75512F;
     }
 
     &__button {
@@ -170,7 +170,7 @@
       }
 
       ::ng-deep .t-icon tui-svg {
-        color: #FDBF46;
+        color: #75512F;
       }
 
       input {
@@ -185,7 +185,7 @@
 .field-error {
   font-family: Mitr, 'sans-serif';
   margin-top: 0.5rem;
-  color: var(--tui-negative);
+  color: #75512F;
   font-size: 1.4rem;
   white-space: pre-wrap;
 }

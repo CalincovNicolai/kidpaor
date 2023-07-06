@@ -29,9 +29,9 @@ public class ActivitiesController : BaseApiController
             throw new UnauthorizedAccessException("Only parents can access this information.");
         }*/
 
-        /*var allActivities = await _activityRepository.GetActivitiesAsync();*/
+        var allActivities = await _activityRepository.GetActivitiesAsync();
         
-        var allActivities = new List<Activity>();
+        /*var allActivities = new List<Activity>();
 
         for (int i = 1; i <= 10; i++)
         {
@@ -52,7 +52,7 @@ public class ActivitiesController : BaseApiController
             };
 
             allActivities.Add(mockActivity);
-        }
+        }*/
 
         var activitiesItemViewModels = allActivities.Select(a => new ActivityItemViewModel()
         {
