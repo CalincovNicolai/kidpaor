@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { ActivityBriefViewModel, CategoryViewModel } from '../../../models/activity.model';
-import { ActivitiesService } from '../activities.service';
+import { CategoryViewModel } from '../../../models/activity.model';
+import { ActivitiesService } from '../../activities-feature/activities.service';
 import { AuthorizationService } from '../../../shared/utils/services/authorization.service';
 
 @Component({
-  selector: 'app-activities-list',
-  templateUrl: './activities.component.html',
-  styleUrls: ['./activities.component.scss']
+  selector: 'app-support-page',
+  templateUrl: './support-page.component.html',
+  styleUrls: ['./support-page.component.scss']
 })
-export class ActivitiesComponent implements OnInit {
+export class SupportPageComponent  implements OnInit {
   activities$ = this.activitiesService.data.activitiesAll$;
   searchControl = new FormControl();
   categories: CategoryViewModel[] = [

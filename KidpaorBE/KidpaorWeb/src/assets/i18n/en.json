@@ -57,5 +57,8 @@
   "SuccessfullyKidRemoved": "Kid was removed from activity",
   "SuccessfullyRegistered": "Successfully registered!",
   "PleaseLogin": "Please sign in to continue",
-  "Welcome": "Welcome!"
+  "Welcome": "Welcome!",
+  "ExceptionSubtitle": "Uh oh! I think you're lost.",
+  "ExceptionDescription": "It looks like the page you're looking for doesn't exist.",
+  "GoHome": "Go back home"
 }

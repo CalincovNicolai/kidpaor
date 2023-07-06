@@ -33,7 +33,7 @@
       appearance="mono"
       type="button"
       size="m"
-      [ngClass]="{'active-nav-margin': rta.isActive}"
+      [ngClass]="{'active-nav-margin': rta.isActive, 'hide-nav': !nav.permission}"
       [routerLink]="nav.url"
       class="navbar__button nav-items"
       routerLinkActive

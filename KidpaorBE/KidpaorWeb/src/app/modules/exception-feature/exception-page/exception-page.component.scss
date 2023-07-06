@@ -1,0 +1,131 @@
+.exception-page {
+  &__content {
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    width: 90%;
+
+    &__wrapper {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 93%;
+      align-items: center;
+
+      .exception-title {
+        font-family: Mitr, 'sans-serif';
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.90);
+        text-align: center;
+        font-size: 12.8rem;
+        font-weight: 500;
+        line-height: 13rem;
+      }
+
+      .exception-subtitle {
+        font-family: Mitr, 'sans-serif';
+        display: flex;
+        align-items: center;
+        color: rgba(247, 210, 137, 0.9);
+        text-align: center;
+        font-size: 3.6rem;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      .exception-description {
+        font-family: Mitr, 'sans-serif';
+        display: flex;
+        align-items: center;
+        color: rgba(255, 255, 255, 0.90);
+        text-align: center;
+        font-size: 1.4rem;
+        font-weight: 500;
+        line-height: normal;
+      }
+
+      ::ng-deep .go-home-button .t-wrapper {
+        font-family: Mitr, 'sans-serif';
+        width: 100%;
+        font-weight: 500;
+        font-size: 2rem;
+        line-height: 3.1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #FEF0CD;
+        padding: 4rem 10rem !important;
+        transition: all .2s ease-in-out;
+        border-radius: 3rem;
+        background: rgba(247, 210, 137, 0.9);
+        text-align: center;
+      }
+
+      ::ng-deep .go-home-button .t-wrapper:hover {
+        background: #75512F;
+        color: #FEF0CD !important;
+      }
+
+      ::ng-deep .go-home-button .t-wrapper:active {
+        background: #75512F;
+        color: #F7D289 !important;
+        transform: scale(0.9);
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 300px) and (max-width: 576px) {
+  .exception-page {
+    &__content {
+      top: 25%;
+
+      &__wrapper {
+        .exception-title {
+          font-size: 10rem;
+          line-height: 10rem;
+        }
+
+        .exception-subtitle {
+          font-size: 2.4rem;
+        }
+
+        .exception-description {
+          font-size: 1.6rem;
+        }
+
+        ::ng-deep .go-home-button .t-wrapper {
+          padding: 3rem 5rem !important;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1200px) {
+  .exception-page {
+    &__content {
+      top: 15%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1200px) and (max-width: 1400px) {
+  .login-page {
+    &__content {
+      top: 20%;
+      left: 15%;
+    }
+  }
+}
+
+@media only screen and (min-width: 1400px) and (max-width: 1600px) {
+  .login-page {
+    &__content {
+      top: 20%;
+      left: 15%;
+    }
+  }
+}

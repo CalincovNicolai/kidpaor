@@ -6,6 +6,9 @@ import { RegisterComponent } from '../account/register/register.component';
 import { HomeComponent } from '../modules/home-feature/home/home.component';
 import { ActivitiesComponent } from '../modules/activities-feature/activities-list/activities.component';
 import { ActivityComponent } from '../modules/activities-feature/activity-detail/activity.component';
+import { SupportPageComponent } from '../modules/support-feature/support-page/support-page.component';
+import { AboutUsPageComponent } from '../modules/about-us-feature/about-us-page/about-us-page.component';
+import { ExceptionPageComponent } from '../modules/exception-feature/exception-page/exception-page.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: "full" },
@@ -48,7 +51,19 @@ const routes: Routes = [
     path: 'activities/:id',
     component: ActivityComponent,
   },
-  { path: '**', redirectTo: 'exception/404' }
+  {
+    path: 'support',
+    component: SupportPageComponent,
+  },
+  {
+    path: 'about',
+    component: AboutUsPageComponent,
+  },
+  {
+    path: 'not-found',
+    component: ExceptionPageComponent,
+  },
+  { path: '**', redirectTo: 'not-found' }
 ];
 
 @NgModule({

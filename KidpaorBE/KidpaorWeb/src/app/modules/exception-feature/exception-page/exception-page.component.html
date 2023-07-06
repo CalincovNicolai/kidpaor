@@ -1,0 +1,19 @@
+<app-kidpaor-layout image="../../../assets/kidpaor-404.jpeg">
+  <div class="exception-page__content">
+    <div class="exception-page__content__wrapper">
+      <div class="exception-title">404</div>
+      <div class="exception-subtitle">{{ 'ExceptionSubtitle' | translate | uppercase }}</div>
+      <div class="exception-description">{{ 'ExceptionDescription' | translate | uppercase}}</div>
+      <button
+        tuiButton
+        class="go-home-button"
+        appearance="mono"
+        type="button"
+        size="m"
+        [routerLink]="'/home'"
+      >
+        {{ 'GoHome' | translate | uppercase }}
+      </button>
+    </div>
+  </div>
+</app-kidpaor-layout>

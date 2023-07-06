@@ -58,5 +58,8 @@
   "SuccessfullyRegistered": "Înregistrare cu succes!",
   "SuccessfullyLoggedIn": "Autentificare cu succes!",
   "PleaseLogin": "Logați-vă pentru a continua",
-  "Welcome": "Bine ați venit!"
+  "Welcome": "Bine ați venit!",
+  "ExceptionSubtitle": "Uh oh! Cred că v-ați pierdut.",
+  "ExceptionDescription": "Se pare că pagina pe care o căutați nu există.",
+  "GoHome": "Acasă"
 }

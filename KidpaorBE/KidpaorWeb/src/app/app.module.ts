@@ -18,6 +18,9 @@ import { AccountModule } from './account/account.module';
 import { HomeModule } from './modules/home-feature/home.module';
 import { ActivitiesFeatureModule } from './modules/activities-feature/activities-feature.module';
 import { KidpaorDestroyService } from './services/kidpaor-destroy.service';
+import { SupportFeatureModule } from './modules/support-feature/support-feature.module';
+import { AboutUsFeatureModule } from './modules/about-us-feature/about-us-feature.module';
+import { ExceptionFeatureModule } from './modules/exception-feature/exception-feature.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -40,6 +43,9 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     LayoutModule,
     RoutesModule,
     ActivitiesFeatureModule,
+    SupportFeatureModule,
+    AboutUsFeatureModule,
+    ExceptionFeatureModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

@@ -7,6 +7,7 @@ import { TUI_VALIDATION_ERRORS } from '@taiga-ui/kit';
 import { Router } from '@angular/router';
 import { TuiAlertService, TuiNotification } from '@taiga-ui/core';
 import { TranslateService } from '@ngx-translate/core';
+import { AuthorizationService } from '../../shared/utils/services/authorization.service';
 
 @Component({
   selector: 'app-login',
@@ -32,6 +33,7 @@ export class LoginComponent implements OnInit {
     private cdr: ChangeDetectorRef,
     private location: Location,
     @Inject(TuiAlertService) private readonly alerts: TuiAlertService,
+    private authorizationService: AuthorizationService,
     private translate: TranslateService
   ) {
   }
@@ -72,6 +74,7 @@ export class LoginComponent implements OnInit {
         localStorage.setItem('token', user.token);
         localStorage.setItem('role', user.role);
         localStorage.setItem('user', user.displayName);
+        this.authorizationService.setUserRole(user.role);
         let label = '';
         let content = '';
         this.translate.get('SuccessfullyLoggedIn').subscribe(translation => {

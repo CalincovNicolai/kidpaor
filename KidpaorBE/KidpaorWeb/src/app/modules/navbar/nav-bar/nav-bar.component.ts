@@ -3,6 +3,7 @@ import { MenuModel } from '../models';
 import { TuiHostedDropdownComponent } from '@taiga-ui/core';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { ScreenSizeService } from '../../../shared/utils/services/screen-size.service';
+import { AuthorizationService } from '../../../shared/utils/services/authorization.service';
 
 @Component({
   selector: 'app-nav-bar',
@@ -31,27 +32,33 @@ export class NavBarComponent implements OnInit {
     {
       name: 'Home',
       url: '/home',
+      permission: true,
     },
     {
       name: 'Activities',
       url: '/activities',
+      permission: true,
     },
     {
       name: 'Kids',
       url: '/kids',
+      permission: this.authorizationService.isParent(),
     },
     {
       name: 'Support',
       url: '/support',
+      permission: true,
     },
     {
       name: 'AboutUs',
       url: '/about',
+      permission: true,
     }
   ];
 
   constructor(
-    private screenSizeService: ScreenSizeService
+    private screenSizeService: ScreenSizeService,
+    private authorizationService: AuthorizationService,
   ) {
   }
 

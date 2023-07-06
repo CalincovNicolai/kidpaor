@@ -15,15 +15,15 @@ import { NavbarModule } from '../modules/navbar/navbar.module';
     StartWindowComponent,
     KidpaorLayoutComponent
   ],
-    imports: [
-        CommonModule,
-        CoreModule,
-        RouterOutlet,
-        TranslateModule,
-        LanguageSwitcherModule,
-        RouterLink,
-        NavbarModule
-    ],
+  imports: [
+    CommonModule,
+    CoreModule,
+    RouterOutlet,
+    TranslateModule,
+    LanguageSwitcherModule,
+    RouterLink,
+    NavbarModule
+  ],
   exports: [StartWindowComponent, BasicComponent, KidpaorLayoutComponent]
 })
 export class LayoutModule {
