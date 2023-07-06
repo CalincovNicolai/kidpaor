@@ -6,6 +6,7 @@ import { ActivitiesService } from '../activities.service';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { TuiDialogContext, TuiDialogService, TuiHostedDropdownComponent } from '@taiga-ui/core';
 import { PolymorpheusContent } from '@tinkoff/ng-polymorpheus';
+import { AuthorizationService } from '../../../shared/utils/services/authorization.service';
 
 @Component({
   selector: 'app-activity',
@@ -31,17 +32,20 @@ export class ActivityComponent implements OnInit {
   activity$ = this.activitiesService.data.activityData$;
   activityKids$ = this.activitiesService.data.activityKidsData$;
   id: string = '';
+  isBooked: boolean = false;
 
   constructor(
     @Inject(TuiDialogService) private readonly dialogService: TuiDialogService,
     private activitiesService: ActivitiesService,
     private route: ActivatedRoute,
     private router: Router,
-    private destroy$: KidpaorDestroyService
+    private destroy$: KidpaorDestroyService,
+    public authorizationService: AuthorizationService
   ) {
   }
 
   ngOnInit(): void {
+    this.authorizationService.setUserRole();
     this.component?.nativeFocusableElement?.focus();
     this.route.params
       .pipe(
@@ -54,7 +58,7 @@ export class ActivityComponent implements OnInit {
     });
   }
 
-  getActivityImage(imageName: string) {
+  getActivityImage(imageName: string | undefined) {
     return `assets/${ imageName }`;
   }
 
@@ -64,5 +68,9 @@ export class ActivityComponent implements OnInit {
 
   deleteKid(id: number) {
     this.activitiesService.deleteActivityKidsById(Number(this.id), id);
+  }
+
+  bookSpace() {
+    this.isBooked = !this.isBooked;
   }
 }

@@ -61,5 +61,9 @@
   "Welcome": "Bine ați venit!",
   "ExceptionSubtitle": "Uh oh! Cred că v-ați pierdut.",
   "ExceptionDescription": "Se pare că pagina pe care o căutați nu există.",
-  "GoHome": "Acasă"
+  "GoHome": "Acasă",
+  "BookSpace": "Rezervați un loc",
+  "SuccessfullyBookSpace": "Rezervat cu succes",
+  "AddActivity": "Adăugați Activitate",
+  "AddKid": "Adăugați Copil"
 }

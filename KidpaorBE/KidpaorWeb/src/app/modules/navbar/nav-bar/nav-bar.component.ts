@@ -28,6 +28,7 @@ export class NavBarComponent implements OnInit {
   open = false;
   isMenuOpen = false;
   screenWidth: number = 0;
+  hasPermission = false;
   menu: MenuModel[] = [
     {
       name: 'Home',
@@ -42,7 +43,7 @@ export class NavBarComponent implements OnInit {
     {
       name: 'Kids',
       url: '/kids',
-      permission: this.authorizationService.isParent(),
+      permission: this.checkPermission(),
     },
     {
       name: 'Support',
@@ -71,6 +72,11 @@ export class NavBarComponent implements OnInit {
         this.isMenuOpen = false;
       }
     });
+  }
+
+  checkPermission() {
+    const role = localStorage.getItem('role');
+    return this.hasPermission = role === 'Parent';
   }
 
   toggleNavBar() {

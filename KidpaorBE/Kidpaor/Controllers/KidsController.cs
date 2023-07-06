@@ -18,11 +18,11 @@ public class KidsController : BaseApiController
     [HttpGet("ByActivity/{activityId}")]
     public async Task<ActionResult<IEnumerable<KidBriefViewModel>>> GetKidsByActivity(int activityId)
     {
-        /*var activity = await _activityRepository.GetActivityByIdAsync(activityId);
+        var activity = await _activityRepository.GetActivityByIdAsync(activityId);
         if (activity == null)
-            return NotFound();*/
+            return NotFound();
         
-        var mockActivity = new Activity
+        /*var mockActivity = new Activity
         {
             Id = activityId,
             Title = $"Family Picnic {activityId}",
@@ -36,17 +36,17 @@ public class KidsController : BaseApiController
             DateEnd = DateTime.Now.AddDays(activityId+7).AddHours(activityId+3),
             ActivitiesCategoryId = activityId,
             ActivitiesOrganizerId = activityId
-        };
+        };*/
 
-        /*var kidsByActivity = await _kidRepository.GetKidsByActivityIdAsync(activityId);
+        var kidsByActivity = await _kidRepository.GetKidsByActivityIdAsync(activityId);
         var kids = kidsByActivity.Select(a => new KidBriefViewModel()
         {
             Id = a.Id,
             Fullname = a.Fullname,
             Age = a.Age
-        });*/
+        });
 
-        var mockKids = new List<Kid>
+        /*var mockKids = new List<Kid>
         {
             new Kid
             {
@@ -78,14 +78,14 @@ public class KidsController : BaseApiController
                 Fullname = "Jacob Lee",
                 Age = "11"
             }
-        };
+        };*/
         
-        var kids = mockKids.Select(k => new KidBriefViewModel()
+        /*var kids = mockKids.Select(k => new KidBriefViewModel()
         {
             Id = k.Id,
             Fullname = k.Fullname,
             Age = k.Age
-        }).ToList();
+        }).ToList();*/
 
         return Ok(kids);
     }
@@ -93,7 +93,7 @@ public class KidsController : BaseApiController
     [HttpDelete("DeleteFromActivity/{activityId}/{kidId}")]
     public async Task<ActionResult> DeleteKidFromActivity(int activityId, int kidId)
     {
-        /*var activity = await _activityRepository.GetActivityByIdAsync(activityId);
+        var activity = await _activityRepository.GetActivityByIdAsync(activityId);
         if (activity == null)
             return NotFound($"Activity with ID {activityId} not found.");
 
@@ -103,9 +103,9 @@ public class KidsController : BaseApiController
         
         await _kidRepository.DeleteKidFromActivityAsync(activityId, kidId);
 
-        return Ok($"Kid was successfully removed from {activity.Title}.");*/
+        return Ok($"Kid was successfully removed from {activity.Title}.");
         
-        var mockActivity = new Activity
+        /*var mockActivity = new Activity
         {
             Id = activityId,
             Title = "Sample Activity"
@@ -125,6 +125,6 @@ public class KidsController : BaseApiController
 
         await Task.Delay(100);
 
-        return Ok($"Kid was successfully removed from {mockActivity.Title}.");
+        return Ok($"Kid was successfully removed from {mockActivity.Title}.");*/
     }
 }

@@ -3,7 +3,7 @@
     <div class="activity-page__content__wrapper" *tuiLet="(activity$ | async) as activity">
       <div @slideInOut class="container-wrapper">
         <div class="left-section">
-          <img class="left-section__image" [src]="getActivityImage(activity!.imageName)" alt="activity-image">
+          <img class="left-section__image" [src]="getActivityImage(activity?.imageName)" alt="activity-image">
           <div class="left-section__details">
             <p class="left-section__details__title">{{ activity?.title }}</p>
             <p class="left-section__details__category">{{ activity?.category!.name | translate }}</p>
@@ -19,6 +19,32 @@
               <p class="left-section__details__dates__label">{{ 'DateEnd' | translate }}</p>
               <p class="left-section__details__dates__date">{{ activity?.dateEnd | date: 'dd/MM/YYYY' }}</p>
             </div>
+            <div *ngIf="authorizationService.isParent()">
+              <button
+                *ngIf="!isBooked"
+                tuiButton
+                class="book-space"
+                appearance="mono"
+                type="button"
+                size="m"
+                (click)="bookSpace()"
+              >
+                {{ 'BookSpace' | translate | uppercase }}
+              </button>
+              <button
+                *ngIf="isBooked"
+                tuiButton
+                class="success-book-space"
+                appearance="mono"
+                type="button"
+                size="m"
+              >
+                <div class="success-book-message">
+                  <tui-svg class="book-icon" src="tuiIconCheckSquareLarge"></tui-svg>
+                  {{ 'SuccessfullyBookSpace' | translate | uppercase }}
+                </div>
+              </button>
+            </div>
           </div>
         </div>
         <tui-scrollbar class="right-section">
@@ -28,53 +54,55 @@
               <div class="divider"></div>
               <p class="right-section__description__text">{{ activity?.description }}</p>
             </div>
-            <p class="section-header">{{ 'KidsRegistered' | translate }}</p>
-            <div class="divider"></div>
-            <div class="bottom-section" *tuiLet="(activityKids$ | async) as kids">
-              <div *ngFor="let kid of kids" class="bottom-section__kid">
-                <div class="bottom-section__kid__avatar">
-                  <tui-avatar
-                    [text]="kid.fullname"
-                    size="l"
-                    [rounded]="true"
-                  ></tui-avatar>
-                </div>
-                <div class="bottom-section__kid__details">
-                  <div class="bottom-section__kid__details__name">
-                    {{kid.fullname}}
+            <div *ngIf="authorizationService.isOrganizer()">
+              <p class="section-header">{{ 'KidsRegistered' | translate }}</p>
+              <div class="divider"></div>
+              <div class="bottom-section" *tuiLet="(activityKids$ | async) as kids">
+                <div *ngFor="let kid of kids" class="bottom-section__kid">
+                  <div class="bottom-section__kid__avatar">
+                    <tui-avatar
+                      [text]="kid.fullname"
+                      size="l"
+                      [rounded]="true"
+                    ></tui-avatar>
                   </div>
-                  <div class="bottom-section__kid__details__age">
-                    <p class="bottom-section__kid__details__age__label">{{ 'Age' | translate }}</p>
-                    <p class="bottom-section__kid__details__age__value">{{kid.age}}</p>
-                  </div>
-                </div>
-                <div class="bottom-section__kid__menu">
-                  <tui-hosted-dropdown
-                    tuiDropdownAlign="right"
-                    tuiDropdownDirection="bottom"
-                    [sided]="true"
-                    [content]="dropdown"
-                  >
-                    <tui-svg class="bottom-section__kid__menu__icon" src="tuiIconMoreVerticalLarge"></tui-svg>
-                  </tui-hosted-dropdown>
-                  <ng-template
-                    #dropdown
-                  >
-                    <div class="bottom-section__kid__menu__user">
-                      <tui-opt-group>
-                        <div class="menu-container" (click)="editKid(kid.id)">
-                          <tui-svg class="menu-container__icon" src="tuiIconEdit3Large"></tui-svg>
-                          <p class="menu-container__text">{{ 'Edit' | translate }}</p>
-                        </div>
-                      </tui-opt-group>
-                      <tui-opt-group>
-                        <div class="menu-container" (click)="deleteKid(kid.id)">
-                          <tui-svg class="menu-container__icon" src="tuiIconTrashLarge"></tui-svg>
-                          <p class="menu-container__text">{{ 'Delete' | translate }}</p>
-                        </div>
-                      </tui-opt-group>
+                  <div class="bottom-section__kid__details">
+                    <div class="bottom-section__kid__details__name">
+                      {{kid.fullname}}
                     </div>
-                  </ng-template>
+                    <div class="bottom-section__kid__details__age">
+                      <p class="bottom-section__kid__details__age__label">{{ 'Age' | translate }}</p>
+                      <p class="bottom-section__kid__details__age__value">{{kid.age}}</p>
+                    </div>
+                  </div>
+                  <div class="bottom-section__kid__menu">
+                    <tui-hosted-dropdown
+                      tuiDropdownAlign="right"
+                      tuiDropdownDirection="bottom"
+                      [sided]="true"
+                      [content]="dropdown"
+                    >
+                      <tui-svg class="bottom-section__kid__menu__icon" src="tuiIconMoreVerticalLarge"></tui-svg>
+                    </tui-hosted-dropdown>
+                    <ng-template
+                      #dropdown
+                    >
+                      <div class="bottom-section__kid__menu__user">
+                        <tui-opt-group>
+                          <div class="menu-container" (click)="editKid(kid.id)">
+                            <tui-svg class="menu-container__icon" src="tuiIconEdit3Large"></tui-svg>
+                            <p class="menu-container__text">{{ 'Edit' | translate }}</p>
+                          </div>
+                        </tui-opt-group>
+                        <tui-opt-group>
+                          <div class="menu-container" (click)="deleteKid(kid.id)">
+                            <tui-svg class="menu-container__icon" src="tuiIconTrashLarge"></tui-svg>
+                            <p class="menu-container__text">{{ 'Delete' | translate }}</p>
+                          </div>
+                        </tui-opt-group>
+                      </div>
+                    </ng-template>
+                  </div>
                 </div>
               </div>
             </div>

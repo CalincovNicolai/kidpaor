@@ -312,3 +312,60 @@
   border: 1px solid rgba(117, 81, 47, 0.5);
   width: 100%;
 }
+
+::ng-deep .book-space .t-wrapper {
+  font-family: Mitr, 'sans-serif';
+  width: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #75512F;
+  padding: 4rem 10rem !important;
+  transition: all .2s ease-in-out;
+  border-radius: 3rem;
+  background: rgba(247, 210, 137, 0.9);
+  text-align: center;
+}
+
+::ng-deep .go-home-button .t-wrapper:hover {
+  background: #75512F;
+  color: #FEF0CD !important;
+}
+
+::ng-deep .go-home-button .t-wrapper:active {
+  background: #75512F;
+  color: #F7D289 !important;
+  transform: scale(0.9);
+}
+
+::ng-deep .success-book-space .t-wrapper {
+  font-family: Mitr, 'sans-serif';
+  width: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #75512F;
+  padding: 4rem 10rem !important;
+  transition: all .2s ease-in-out;
+  border-radius: 3rem;
+  background: var(--tui-success-bg-night);
+  text-align: center;
+}
+
+.success-book-message {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.book-icon {
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.6rem;
+}

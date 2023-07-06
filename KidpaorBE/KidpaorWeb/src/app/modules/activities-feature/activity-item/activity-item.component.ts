@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ActivityBriefViewModel } from '../../../models/activity.model';
+import { AuthorizationService } from '../../../shared/utils/services/authorization.service';
 
 @Component({
   selector: 'app-activity-item',
@@ -14,6 +15,5 @@ export class ActivityItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log(this.activity);
   }
 }

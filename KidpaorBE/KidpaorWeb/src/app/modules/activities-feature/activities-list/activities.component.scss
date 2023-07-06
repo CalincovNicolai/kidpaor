@@ -175,3 +175,51 @@
   border: 1px solid rgba(117, 81, 47, 0.5);
   height: 100%;
 }
+
+.create-activity {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+  padding-right: 1rem;
+}
+
+::ng-deep .activity-button .t-wrapper {
+  font-family: Mitr, 'sans-serif';
+  width: 100%;
+  font-weight: 500;
+  font-size: 2rem;
+  line-height: 3.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FEF0CD;
+  background: #75512F;
+  border-radius: 3rem;
+  padding: 3rem 5rem !important;
+  transition: all .2s ease-in-out;
+}
+
+::ng-deep .activity-button .t-wrapper:hover {
+  background: #FDBF46;
+  color: #796156 !important;
+}
+
+::ng-deep .activity-button .t-wrapper:active {
+  background: #FDBF46;
+  color: #75512F !important;
+  transform: scale(0.9);
+}
+
+.activity-button-message {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.add-icon {
+  width: 3rem;
+  height: 3rem;
+  font-size: 2rem;
+}

@@ -32,8 +32,22 @@
           </div>
           <div class="divider"></div>
           <tui-scrollbar>
+            <div *ngIf="authorizationService.isOrganizer()" class="create-activity">
+              <button
+                tuiButton
+                class="activity-button"
+                appearance="mono"
+                type="button"
+              >
+                <div class="activity-button-message">
+                  <tui-svg class="add-icon" src="tuiIconPlusLarge"></tui-svg>
+                  {{ 'AddActivity' | translate | uppercase }}
+                </div>
+              </button>
+            </div>
             <div class="activities-list__activities" *tuiLet="(activities$ | async) as activities">
-              <div *ngFor="let activity of activities! | customFilter : filter.value : filterBy" class="activities-list__activities__container">
+              <div *ngFor="let activity of activities! | customFilter : filter.value : filterBy"
+                   class="activities-list__activities__container">
                 <app-activity-item [activity]="activity"></app-activity-item>
               </div>
             </div>

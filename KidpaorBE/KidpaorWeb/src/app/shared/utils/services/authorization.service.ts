@@ -11,8 +11,9 @@ export class AuthorizationService {
     userRole$: this._userRole$.asObservable()
   };
 
-  setUserRole(role: string) {
-    this._userRole$.next(role);
+  setUserRole() {
+    const role = localStorage.getItem('role');
+    if (role) this._userRole$.next(role);
   }
 
   isParent(): boolean {

@@ -9,6 +9,7 @@ import { ActivityComponent } from '../modules/activities-feature/activity-detail
 import { SupportPageComponent } from '../modules/support-feature/support-page/support-page.component';
 import { AboutUsPageComponent } from '../modules/about-us-feature/about-us-page/about-us-page.component';
 import { ExceptionPageComponent } from '../modules/exception-feature/exception-page/exception-page.component';
+import { KidsComponent } from '../modules/kids-feature/kids/kids.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'welcome', pathMatch: "full" },
@@ -48,15 +49,31 @@ const routes: Routes = [
     component: ActivitiesComponent,
   },
   {
+    path: 'kids',
+    data: {
+      title: 'Kids'
+    },
+    component: KidsComponent,
+  },
+  {
     path: 'activities/:id',
+    data: {
+      title: 'Activity'
+    },
     component: ActivityComponent,
   },
   {
     path: 'support',
+    data: {
+      title: 'Support'
+    },
     component: SupportPageComponent,
   },
   {
     path: 'about',
+    data: {
+      title: 'About Us'
+    },
     component: AboutUsPageComponent,
   },
   {

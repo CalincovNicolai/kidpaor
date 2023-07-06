@@ -21,6 +21,7 @@ import { KidpaorDestroyService } from './services/kidpaor-destroy.service';
 import { SupportFeatureModule } from './modules/support-feature/support-feature.module';
 import { AboutUsFeatureModule } from './modules/about-us-feature/about-us-feature.module';
 import { ExceptionFeatureModule } from './modules/exception-feature/exception-feature.module';
+import { KidsFeatureModule } from './modules/kids-feature/kids-feature.module';
 
 export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
   return new TranslateHttpLoader(http);
@@ -43,6 +44,7 @@ export function HttpLoaderFactory(http: HttpClient): TranslateHttpLoader {
     LayoutModule,
     RoutesModule,
     ActivitiesFeatureModule,
+    KidsFeatureModule,
     SupportFeatureModule,
     AboutUsFeatureModule,
     ExceptionFeatureModule,

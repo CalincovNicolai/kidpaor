@@ -60,5 +60,9 @@
   "Welcome": "Welcome!",
   "ExceptionSubtitle": "Uh oh! I think you're lost.",
   "ExceptionDescription": "It looks like the page you're looking for doesn't exist.",
-  "GoHome": "Go back home"
+  "GoHome": "Go back home",
+  "BookSpace": "Book Space",
+  "SuccessfullyBookSpace": "Successfully Booked",
+  "AddActivity": "Add Activity",
+  "AddKid": "Add Kid"
 }

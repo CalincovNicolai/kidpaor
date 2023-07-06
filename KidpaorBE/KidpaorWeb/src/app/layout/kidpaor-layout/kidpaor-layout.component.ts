@@ -16,7 +16,7 @@ export class KidpaorLayoutComponent implements OnInit {
   ngOnInit(): void {
     this.route.url.subscribe(url => {
       const currentRoute = url[0].path;
-      this.showComponent = (currentRoute !== 'support') && (currentRoute !== 'about');
+      this.showComponent = (currentRoute !== 'support') && (currentRoute !== 'about') && (currentRoute !== 'kids');
     });
   }
 }
